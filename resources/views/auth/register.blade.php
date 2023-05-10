@@ -18,6 +18,6 @@
             <label for="exampleInputPassword1" class="form-label">Conferma Password</label>
             <input type="password" class="form-control" id="exampleInputPassword1" name="password_confirmation">
           </div>        
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Registrati</button>
       </form>
 </x-layout>

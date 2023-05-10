@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Announcement;
 
 class Category extends Model
 {
@@ -11,4 +12,7 @@ class Category extends Model
     protected $fillable = [
         'name',
     ];
+    public function announcements(){
+        return $this->hasMany(Announcement::class);
+    }
 }
