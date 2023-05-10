@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\PublicController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FrontController;
+use App\Http\Controllers\PublicController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [PublicController::class,'welcome'])->name('welcome');
+Route::get('/', [FrontController::class,'welcome'])->name('welcome');
 Route::get('/articleNew', [PublicController::class, 'articleNew'])->name('articleNew');
+Route::get('/category/{category}', [FrontController::class,'categoryShow'] )->name('categoryShow');

@@ -5,7 +5,7 @@
         {{session('message')}}
     </div>
     @endif
-    {{-- <form wire:submit.prevent="store"> --}}
+    <form wire:submit.prevent="store">
         <div class="mb-3">
             <label class="form-label">Titolo Annuncio</label>
             <input type="text" class="form-control @error('name') is-invalid @enderror" wire:model.lazy="name">
@@ -40,5 +40,5 @@
             </div>
         </div>
         <button type="button" wire:click="store" class="btn btn-primary" >Inserisci articolo</button>
-    {{-- </form> --}}
+    </form>
 </div>

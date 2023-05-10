@@ -6,11 +6,20 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          
-          @guest
           <a class="nav-link active" aria-current="page" href="{{route('welcome')}}">Home</a>
+          @guest          
             <a class="nav-link" href="{{route('login')}}">Accedi</a>
             <a class="nav-link" href="{{route('register')}}">Registrati</a> 
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Categorie
+              </a>
+              <ul class="dropdown-menu">
+                @foreach ($categories as $category)
+                <li><a class="dropdown-item" href="{{route('categoryShow',compact('category'))}}">{{$category->name}}</a></li>
+                @endforeach
+              </ul>
+            </li>
           @else
             <a class="nav-link" href="{{route('articleNew')}}">Inserisci il tuo prodotto</a>
             <h3>Ciao, {{Auth::user()->name}}</h3>
@@ -19,8 +28,7 @@
               document.getElementById('logout-form').submit();">Logout</a>
             <form id="logout-form" action="{{route('logout')}}" method="POST" class="d-none">
               @csrf
-            </form>
-   
+            </form>    
           @endguest
         </div>
       </div>

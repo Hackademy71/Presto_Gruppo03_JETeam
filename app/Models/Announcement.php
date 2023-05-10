@@ -2,9 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
 use App\Models\Category;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 
 class Announcement extends Model
@@ -15,7 +16,11 @@ class Announcement extends Model
         "name", "description", "price", "category_id",
     ];
 
-    public function categories(){
+    public function category(){
         return $this->belongsTo(Category::class);
+    }
+
+    public function user () {
+        return $this->belongsTo(User::class);
     }
 }

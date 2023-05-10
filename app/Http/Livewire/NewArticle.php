@@ -2,9 +2,10 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Announcement;
-use App\Models\Category;
 use Livewire\Component;
+use App\Models\Category;
+use App\Models\Announcement;
+use Illuminate\Support\Facades\Auth;
 
 class NewArticle extends Component
 {
@@ -27,20 +28,15 @@ class NewArticle extends Component
 
     public function store()
     {
-        dd($this->name,$this->description, $this->price);
+        
         $category = Category::find($this->category);
-        Announcement::create([
+        Auth::user()->announcements()->create([
             'name' => $this->name,
             'description' => $this->description,
             'price' => $this->price,
             'category_id'=>$category->id,
         ]);
-        // $category->announcements()->create([
-        //     'name'=>$this->name,
-        //     'description'=>$this->description,
-        //     'price'=>$this->price,
-
-        // ]);
+        
         session()->flash('message', 'Articolo inserito con successo');
         $this->cleanForm();
     }
