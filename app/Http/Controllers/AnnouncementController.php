@@ -10,9 +10,12 @@ class AnnouncementController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Announcement $announcements)
     {
-        //
+        $announcements=Announcement::orderBy('created_at', 'DESC')->paginate(4);
+                
+        // $announcements=Announcement::paginate(4);
+        return view('annunci.indexAnnouncement', compact('announcements'));
     }
 
     /**
