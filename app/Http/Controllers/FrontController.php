@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class FrontController extends Controller
 {
     public function welcome () {
-        $announcements=Announcement::take(6)->get()->sortByDesc('created_at');
+        $announcements=Announcement::orderBy('created_at', 'DESC')->paginate(6);
        
         return view('welcome', compact('announcements'));
     }

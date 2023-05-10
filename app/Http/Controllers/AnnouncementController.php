@@ -20,7 +20,9 @@ class AnnouncementController extends Controller
      */
     public function create()
     {
-        //
+        return view('annunci.articleNew'); 
+        
+        
     }
 
     /**
@@ -36,7 +38,7 @@ class AnnouncementController extends Controller
      */
     public function show(Announcement $announcement)
     {
-        //
+        return view ('annunci.detArticle', compact('announcement'));
     }
 
     /**
