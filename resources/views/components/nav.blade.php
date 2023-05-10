@@ -13,6 +13,7 @@
             <a class="nav-link" href="{{route('register')}}">Registrati</a> 
           @else
             <a class="nav-link" href="{{route('articleNew')}}">Inserisci il tuo prodotto</a>
+            <h3>Ciao, {{Auth::user()->name}}</h3>
             <a class="nav-link" href="{{ route('logout') }}" 
           onclick="event.preventDefault(); 
               document.getElementById('logout-form').submit();">Logout</a>

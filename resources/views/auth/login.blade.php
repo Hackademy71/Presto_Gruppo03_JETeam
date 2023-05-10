@@ -10,10 +10,13 @@
          
         </div>
         <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <label for="InputPassword1" class="form-label">Password</label>
           <input type="password" class="form-control" id="exampleInputPassword1" name="password">
         </div>
-        
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" name="remember">
+          <label for="exampleCheck1" class="form-check-label"> Ricordati di me</label>
+        </div>        
         <button type="submit" class="btn btn-primary">Login</button>
       </form>
     </div>
