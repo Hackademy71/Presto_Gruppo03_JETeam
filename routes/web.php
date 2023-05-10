@@ -15,4 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PublicController::class,'welcome'])->name('welcome');
-Route::get('/articleNew', [PublicController::class, 'annunci.articleNew'])->name('articleNew');
+Route::get('/articleNew', [PublicController::class, 'articleNew'])->name('articleNew');
