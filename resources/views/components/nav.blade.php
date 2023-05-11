@@ -1,4 +1,4 @@
-  <nav class="navbar navbar-expand-lg bg-light">
+  <nav class="navbar navbar-expand-lg p-0 m-0 bgmy1">
       <div class="container-fluid">
           <img src="img/logo.png" width="50" alt="" href="{{ route('welcome') }}">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
@@ -6,7 +6,13 @@
               <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div class="navbar-nav">
+              <div class="navbar-nav container">
+                  <div class="container">
+                      <form class="d-flex" role="search">
+                        <input class="form-control m-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline bgoutline m-2 h-75" type="submit"><img src=".\img\icons8-cerca-di-più-30.png" alt="searchBtn"></button>
+                      </form>
+                  </div>
                   <a class="nav-link active" aria-current="page" href="{{ route('welcome') }}">Home</a>
                   <li class="nav-item dropdown">
                       <a aria-expanded="false" class="nav-link dropdown-toggle" role="button"
@@ -67,15 +73,17 @@
                           <a class="nav-link dropdown-toggle d-flex align-items-center"role="button"
                               data-bs-toggle="dropdown" aria-expanded="false">
                               <h5>Area Revisore</h5>
-                              <span> {{App\Models\Announcement::toBeRevisionedCount()}}<span class="visually-hidden">Unreaded messages</span> </span> 
-                              </a>
+                              <span> {{ App\Models\Announcement::toBeRevisionedCount() }}<span
+                                      class="visually-hidden">Unreaded messages</span> </span>
+                          </a>
                           <ul class="dropdown-menu">
-                              <li class="dropdown-item">
-                                  <a class="nav-link" href="{{ route('indexRevisor') }}">Annunci da convalidare</a>
+                              <li><a class="nav-link dropdown-item" href="{{ route('indexRevisor') }}">Annunci da
+                                      convalidare</a>
                               </li>
                           </ul>
                       @endif
                   @endguest
+
               </div>
           </div>
       </div>
