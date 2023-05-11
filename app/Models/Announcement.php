@@ -13,7 +13,7 @@ class Announcement extends Model
     use HasFactory;
 
     protected $fillable= [
-        "name", "description", "price", "category_id",
+        "name", "description", "price", "category_id", "is_accepted"
     ];
 
     public function category(){
@@ -22,5 +22,8 @@ class Announcement extends Model
 
     public function user () {
         return $this->belongsTo(User::class);
+    }
+    public static function toBeRevisionedCount(){
+        return Announcement::where('is_accepted',null)->count();
     }
 }

@@ -12,25 +12,26 @@
                       <a aria-expanded="false" class="nav-link dropdown-toggle" role="button"
                           data-bs-toggle="dropdown">Annunci</a>
                       <ul class="dropdown-menu">
-                          <li >
-                              <a class="dropdown-link nav-link" href="{{ route('indexAnnouncement') }}">Tutti gli annunci</a>
+                          <li>
+                              <a class="dropdown-link nav-link" href="{{ route('indexAnnouncement') }}">Tutti gli
+                                  annunci</a>
                           </li>
                           <li>
                               <a class="dropdown-link nav-link" href="{{ route('articleNew') }}">Inserisci annuncio</a>
                           </li>
                       </ul>
                   <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown"
-                          aria-expanded="false">
+                      <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button"
+                          data-bs-toggle="dropdown" aria-expanded="false">
                           Categorie
                       </a>
-                       <ul class="dropdown-menu">
+                      <ul class="dropdown-menu">
                           @foreach ($categories as $category)
                               <li><a class="dropdown-item"
                                       href="{{ route('categoryShow', compact('category')) }}">{{ $category->name }}</a>
                               </li>
                           @endforeach
-                      </ul> 
+                      </ul>
                   </li>
                   <li class="nav-item dropdown">
                       @guest
@@ -47,23 +48,35 @@
                               </li>
                           </ul>
                       @else
-                              <a class="nav-link dropdown-toggle d-flex align-items-center"role="button"
-                                  data-bs-toggle="dropdown" aria-expanded="false">
-                                  <h5>Ciao, {{ Auth::user()->name }}</h5>
-                              </a>
-                              <ul class="dropdown-menu">
-                                  <li><a class="nav-link dropdown-item" href="">Dettagli profilo</a></li>
-                                  <li><a class="nav-link dropdown-item" href="{{ route('logout') }}"
-                                          onclick="event.preventDefault(); 
+                          <a class="nav-link dropdown-toggle d-flex align-items-center"role="button"
+                              data-bs-toggle="dropdown" aria-expanded="false">
+                              <h5>Ciao, {{ Auth::user()->name }}</h5>
+                          </a>
+                          <ul class="dropdown-menu">
+                              <li><a class="nav-link dropdown-item" href="">Dettagli profilo</a></li>
+                              <li><a class="nav-link dropdown-item" href="{{ route('logout') }}"
+                                      onclick="event.preventDefault(); 
                   document.getElementById('logout-form').submit();">Logout</a>
-                                      <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                          @csrf
-                                      </form>
-                                  </li>
-                              </ul>
+                                  <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                      @csrf
+                                  </form>
+                              </li>
+                          </ul>
                       </li>
-              @endguest
+                      @if (Auth::user()->is_revisor)
+                          <a class="nav-link dropdown-toggle d-flex align-items-center"role="button"
+                              data-bs-toggle="dropdown" aria-expanded="false">
+                              <h5>Area Revisore</h5>
+                              <span> {{App\Models\Announcement::toBeRevisionedCount()}}<span class="visually-hidden">Unreaded messages</span> </span> 
+                              </a>
+                          <ul class="dropdown-menu">
+                              <li class="dropdown-item">
+                                  <a class="nav-link" href="{{ route('indexRevisor') }}">Annunci da convalidare</a>
+                              </li>
+                          </ul>
+                      @endif
+                  @endguest
+              </div>
           </div>
-      </div>
       </div>
   </nav>
