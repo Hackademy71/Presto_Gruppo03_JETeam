@@ -8,11 +8,7 @@ use Illuminate\Http\Request;
 
 class FrontController extends Controller
 {
-    public function welcome () {
-        $announcements=Announcement::orderBy('created_at', 'DESC')->paginate(4);
-       
-        return view('welcome', compact('announcements'));
-    }
+
 
     public function categoryShow (Category $category) {
 

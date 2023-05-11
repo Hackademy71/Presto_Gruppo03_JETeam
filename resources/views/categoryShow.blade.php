@@ -1,5 +1,5 @@
 <x-layout>
-    <h1>Categorie</h1>
+    <h1>Categoria {{$category->name}}</h1>
     <div class="container">
         <div class="row">
         @forelse ($category->announcements as $announcement)

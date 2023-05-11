@@ -24,13 +24,13 @@
                           aria-expanded="false">
                           Categorie
                       </a>
-                      {{-- <ul class="dropdown-menu">
+                       <ul class="dropdown-menu">
                           @foreach ($categories as $category)
                               <li><a class="dropdown-item"
                                       href="{{ route('categoryShow', compact('category')) }}">{{ $category->name }}</a>
                               </li>
                           @endforeach
-                      </ul> --}}
+                      </ul> 
                   </li>
                   <li class="nav-item dropdown">
                       @guest
