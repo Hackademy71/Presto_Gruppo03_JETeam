@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\AnnouncementController;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\RevisorController;
+use App\Http\Controllers\AnnouncementController;
 
 Route::get('/', [PublicController::class,'welcome'])->name('welcome');
 Route::get('/articleNew', [AnnouncementController::class, 'create'])->name('articleNew');
@@ -14,4 +15,4 @@ Route::get('/indexAnnouncement', [AnnouncementController::class, 'index'])->name
 
 //Rotte per i Revisori
 
-Route::get('/revisor/home', [RevisorController::class, 'index'])->middleware('is_a_Revisor')->name('indexRevisor');
+Route::get('/revisor/home', [RevisorController::class, 'index'])->middleware('isRevisor')->name('indexRevisor');

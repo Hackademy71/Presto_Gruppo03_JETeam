@@ -24,11 +24,13 @@ class NewArticle extends Component
         'required' => 'Il campo :attribute è richiesto',
         'min' => 'Il campo :attribute è troppo corto',
         'numeric' => 'Il campo :attribute deve essere in SOLO in numeri',
+        // 'category.required' => 'categoria obbligatoria',
+
     ];
 
     public function store()
     {
-        
+        $this->validate();
         $category = Category::find($this->category);
         Auth::user()->announcements()->create([
             'name' => $this->name,
