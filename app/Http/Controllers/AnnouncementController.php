@@ -20,6 +20,7 @@ class AnnouncementController extends Controller
         // $announcements=Announcement::paginate(4);
         return view('annunci.indexAnnouncement', compact('announcements'));
     }
+    
 
     /**
      * Show the form for creating a new resource.

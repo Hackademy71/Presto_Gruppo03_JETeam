@@ -13,6 +13,7 @@
                 <p class="card-text">{{$announcement->price}} €</p>
                 <p class="card-text">Aggiunto il {{$announcement->created_at->format('d/m/Y')}}</p>
                 <p class="card-text">Aggiunto da {{$announcement->user->name}}</p>
+                <a href="{{route('detArticle', compact ('announcement'))}}" class="btn btn-primary">Visualizza dettaglio</a>
                 </div>
             </div>
     </div>
