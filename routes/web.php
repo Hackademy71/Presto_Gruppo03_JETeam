@@ -18,3 +18,8 @@ Route::get('/indexAnnouncement', [AnnouncementController::class, 'index'])->name
 Route::get('/revisor/home', [RevisorController::class, 'index'])->middleware('isRevisor')->name('indexRevisor');
 Route::patch('/announcement/accept/{announcement}', [RevisorController::class, 'acceptAnnouncement'])->name ('acceptAnnouncement');
 Route::patch('/announcement/refuse/{announcement}', [RevisorController::class, 'refuseAnnouncement'])->name ('refuseAnnouncement');
+
+// Rotte footer
+
+Route::get('/workWithUs', [RevisorController::class,'workWithUs'])->middleware('auth')->name('workWithUs');
+Route::get('/revisor/{user}', [RevisorController::class,'makeRevisor'])->name('make.revisor');
