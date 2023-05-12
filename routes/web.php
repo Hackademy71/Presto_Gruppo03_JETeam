@@ -23,3 +23,5 @@ Route::patch('/announcement/refuse/{announcement}', [RevisorController::class, '
 
 Route::get('/workWithUs', [RevisorController::class,'workWithUs'])->middleware('auth')->name('workWithUs');
 Route::get('/revisor/{user}', [RevisorController::class,'makeRevisor'])->name('make.revisor');
+
+Route::get('/ricerca/annuncio', [AnnouncementController::class, 'searchAnnouncement'])->name('searchAnn');

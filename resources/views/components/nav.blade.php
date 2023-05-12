@@ -8,9 +8,11 @@
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav container">
                   <div class="container">
-                      <form class="d-flex" role="search">
-                        <input class="form-control m-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline bgoutline m-2 h-75" type="submit"><img src=".\img\icons8-cerca-di-più-30.png" alt="searchBtn"></button>
+                      <form class="d-flex" role="search" action="{{ route('searchAnn') }}" method="GET">
+                        @csrf
+                          <input class="form-control m-2" type="search" placeholder="Search" aria-label="Search" name="searched">
+                          <button class="btn btn-outline bgoutline m-2 h-75" type="submit"><img
+                                  src=".\img\icons8-cerca-di-più-30.png" alt="searchBtn"></button>
                       </form>
                   </div>
                   <a class="nav-link active" aria-current="page" href="{{ route('welcome') }}">Home</a>

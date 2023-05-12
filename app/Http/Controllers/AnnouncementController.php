@@ -20,7 +20,11 @@ class AnnouncementController extends Controller
         // $announcements=Announcement::paginate(4);
         return view('annunci.indexAnnouncement', compact('announcements'));
     }
-    
+
+     public function searchAnnouncement (Request $request){
+        $announcements=Announcement::search($request->searched)->where('is_accepted', true)->paginate(10);
+        return view('annunci.indexAnnouncement', compact('announcements'));
+    }
 
     /**
      * Show the form for creating a new resource.
