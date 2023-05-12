@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class PublicController extends Controller
 {
     public function welcome () {
-        $announcements=Announcement::orderBy('created_at', 'DESC')->paginate(4);
+        $announcements=Announcement::where('is_accepted',true)->orderBy('created_at', 'DESC')->paginate(4);
        
         return view('welcome', compact('announcements'));
     }
