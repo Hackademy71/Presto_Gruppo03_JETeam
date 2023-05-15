@@ -51,11 +51,14 @@
     transform: translate(-50%, -50%);
     color: var(--tot-c);
 }
-.bgoutline{
+.bgoutline3{
     border-color: #07ad87;
     color: #07ad87;
     outline: pagination-focus-outline;
 }
 .shwi{
 width: 200px;
+}
+.logoimg{
+    border-radius: 50%;
 }

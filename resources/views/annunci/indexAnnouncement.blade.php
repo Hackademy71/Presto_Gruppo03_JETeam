@@ -1,5 +1,5 @@
 <x-layout>
-    <h1>I nostri prodotti</h1>
+    <h1 class="f-p">I nostri prodotti</h1>
     <div class="container">
         <div class="row">
             @forelse ($announcements as $announcement)
@@ -7,21 +7,21 @@
                     <div class="card" style="width: 18rem;">
                         <img src="https://picsum.photos/200" class="card-img-top" alt="">
                         <div class="card-body">
-                            <h5 class="card-title">{{ $announcement->name }}</h5>
-                            <p class="card-text">{{ $announcement->description }}</p>
-                            <p class="card-text">{{ $announcement->price }} €</p>
-                            <p class="card-text">Aggiunto il {{ $announcement->created_at->format('d/m/Y') }}</p>
+                            <h5 class="card-title f-p">{{ $announcement->name }}</h5>
+                            <p class="card-text f-s">{{ $announcement->description }}</p>
+                            <p class="card-text f-s">{{ $announcement->price }} €</p>
+                            <p class="card-text f-s">Aggiunto il {{ $announcement->created_at->format('d/m/Y') }}</p>
                             <a href="{{ route('detArticle', compact('announcement')) }}"
-                                class="btn btn-primary">Visualizza dettaglio</a>
+                                class="btn btn-primary f-p m-3">Visualizza dettaglio</a>
                             <a href="{{ route('categoryShow', ['category' => $announcement->category]) }}"
-                                class="btn btn-primary">Categoria: {{ $announcement->category->name }}</a>
+                                class="btn btn-primary f-p m-3">Categoria: {{ $announcement->category->name }}</a>
                         </div>
                     </div>
                 </div>
                 @empty                   
                
                 <div class="col-12">
-                    <div class="alert alert-warning" role="alert"> Non ci sono annunci
+                    <div class="alert alert-warning f-s" role="alert"> Non ci sono annunci
                     </div>
                 </div>
                

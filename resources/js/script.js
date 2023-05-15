@@ -1,10 +1,10 @@
 const img=document.querySelector("#imgNav2");
 
 document.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-      nav.classList.add('bg-sec')
-      nav.style.transition = ".2s"
+    if (window.scrollY > 70) {
+      img.classList.remove('d-none')
+      img.style.transition = ".4s"
     } else {
-      nav.classList.remove('bg-sec')
+      img.classList.add('d-none')
     }
   })

@@ -1,6 +1,6 @@
 
     <x-layout>
-        <h1>Ciao Revisore, non essere troppo severo con i nostri utenti</h1>
+        <h1 class="f-p">Ciao Revisore, non essere troppo severo con i nostri utenti</h1>
         <div class="container">
             <div class="row">
 
@@ -43,21 +43,21 @@
 
                                 <div class="card-body">
                                   
-                                    <h5 class="card-title">{{ $announcement->name }}</h5>
-                                    <p class="card-text">{{ $announcement->description }}</p>
-                                    <p class="card-text">{{ $announcement->price }} €</p>
-                                    <p class="card-text">{{ $announcement->category->name }}</p>
-                                    <p class="card-text">Aggiunto il {{ $announcement->created_at->format('d/m/Y') }}
+                                    <h5 class="card-title f-p">{{ $announcement->name }}</h5>
+                                    <p class="card-text f-s">{{ $announcement->description }}</p>
+                                    <p class="card-text f-s">{{ $announcement->price }} €</p>
+                                    <p class="card-text f-s">{{ $announcement->category->name }}</p>
+                                    <p class="card-text f-s">Aggiunto il {{ $announcement->created_at->format('d/m/Y') }}
                                     </p>
                                     
                                     <a  onclick="event.preventDefault(); 
-                                    document.getElementById('accept-form').submit();" class="btn btn-success">Approva</a>
+                                    document.getElementById('accept-form').submit();" class="btn btn-success f-p">Approva</a>
                                     <form id="accept-form" action="{{ route('acceptAnnouncement', compact('announcement'))}}" method="POST" class="d-none">
                                         @csrf
                                         @method('PATCH')
                                     </form>
                                     <a  onclick="event.preventDefault(); 
-                                    document.getElementById('refuse-form').submit();" class="btn btn-danger">Rifiuta</a>
+                                    document.getElementById('refuse-form').submit();" class="btn btn-danger f-p">Rifiuta</a>
                                     <form id="refuse-form" action="{{ route('refuseAnnouncement',compact('announcement')) }}" method="POST" class="d-none">
                                         @csrf
                                         @method('PATCH')

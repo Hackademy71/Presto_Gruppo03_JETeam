@@ -32,13 +32,13 @@
           {{$announcement->name}}
         </div>
         <div class="card-body">
-          <h5 class="card-title">Descrizione</h5>
-          <p class="card-text">{{$announcement->description}}</p>
-          <p class="card-text">Prezzo: {{$announcement->price}}</p>
-          <p class="card-text">Caricato da: {{$announcement->user->name}}</p>
-          <a href="#" class="btn btn-primary">Contatta venditore</a>
+          <h5 class="card-title f-p">Descrizione</h5>
+          <p class="card-text f-s">{{$announcement->description}}</p>
+          <p class="card-text f-s">Prezzo: {{$announcement->price}}</p>
+          <p class="card-text f-s">Caricato da: {{$announcement->user->name}}</p>
+          <a href="#" class="btn btn-primary f-p">Contatta venditore</a>
         </div>
-        <div class="card-footer text-muted">
+        <div class="card-footer text-muted f-s">
           Aggiunto il {{$announcement->created_at}}
         </div>
       </div>
