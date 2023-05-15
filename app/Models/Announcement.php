@@ -15,7 +15,7 @@ class Announcement extends Model
     use HasFactory, Searchable;
 
     protected $fillable= [
-        "name", "description", "price", "category_id", "is_accepted",
+        "name", "description", "price", "category_id", "is_accepted", "revisor_id","user_id"
         ];
 
     public function category(){
@@ -26,7 +26,7 @@ class Announcement extends Model
         return $this->belongsTo(User::class);
     }
     public function revisor (){
-        return $this->hasOne(Revisor_announcement::class);
+        return $this->belongsTo(User::class);
     }
         public static function toBeRevisionedCount(){
         return Announcement::where('is_accepted',null)->count();

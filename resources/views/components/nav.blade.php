@@ -1,21 +1,16 @@
+<x-navSearch/>
   <nav class="navbar navbar-expand-lg p-0 m-0 bgmy1">
       <div class="container-fluid">
-          <img src="./img/logo.png" width="50" alt="">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
               aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav container">
-                  <div class="container">
-                      <form class="d-flex" role="search" action="{{ route('searchAnn') }}" method="GET">
-                        @csrf
-                          <input class="form-control m-2" type="search" placeholder="Search" aria-label="Search" name="searched">
-                          <button class="btn btn-outline bgoutline m-2 h-75" type="submit"><i class="bi bi-search"></i></button>
-                      </form>
-                  </div>
-                  <a class="nav-link active" aria-current="page" href="{{ route('welcome') }}">Home</a>
-                  <li class="nav-item dropdown">
+               <li>
+                      <a class="nav-link active" aria-current="page" href="{{ route('welcome') }}">Home</a>
+                </li>
+                    <li class="nav-item dropdown">
                       <a aria-expanded="false" class="nav-link dropdown-toggle" role="button"
                           data-bs-toggle="dropdown">Annunci</a>
                       <ul class="dropdown-menu">
@@ -27,6 +22,7 @@
                               <a class="dropdown-link nav-link" href="{{ route('articleNew') }}">Inserisci annuncio</a>
                           </li>
                       </ul>
+                    </li>
                   <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button"
                           data-bs-toggle="dropdown" aria-expanded="false">
@@ -57,7 +53,7 @@
                       @else
                           <a class="nav-link dropdown-toggle d-flex align-items-center"role="button"
                               data-bs-toggle="dropdown" aria-expanded="false">
-                              <h5>Ciao, {{ Auth::user()->name }}</h5>
+                              Ciao, {{ Auth::user()->name }}
                           </a>
                           <ul class="dropdown-menu">
                               <li><a class="nav-link dropdown-item" href="">Dettagli profilo</a></li>
@@ -71,18 +67,20 @@
                           </ul>
                       </li>
                       @if (Auth::user()->is_revisor)
+                      <li class="nav-item dropdown">
                           <a class="nav-link dropdown-toggle d-flex align-items-center"role="button"
-                              data-bs-toggle="dropdown" aria-expanded="false">
-                              <h5>Area Revisore</h5>
-                              <span> {{ App\Models\Announcement::toBeRevisionedCount() }}<span
-                                      class="visually-hidden">Unreaded messages</span> </span>
-                          </a>
-                          <ul class="dropdown-menu">
-                              <li><a class="nav-link dropdown-item" href="{{ route('indexRevisor') }}">Annunci da
-                                      convalidare</a>
-                              </li>
-                              <li><a class="nav-link dropdown-item" href="{{ route('recheck') }}"> Secondo check
-                          </ul>
+                          data-bs-toggle="dropdown" aria-expanded="false">
+                          Area Revisore
+                          <span> {{ App\Models\Announcement::toBeRevisionedCount() }}<span
+                            class="visually-hidden">Unreaded messages</span> </span>
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li><a class="nav-link dropdown-item" href="{{ route('indexRevisor') }}">Annunci da
+                                  convalidare</a>
+                          </li>
+                          <li><a class="nav-link dropdown-item" href="{{ route('recheck') }}"> Secondo check
+                        </ul>
+                    </li>
                       @endif
                   @endguest
 

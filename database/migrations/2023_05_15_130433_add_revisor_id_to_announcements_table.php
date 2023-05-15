@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('announcements', function (Blueprint $table) {
-            $table->string('revisionatedBy')->nullable();
+            $table->unsignedBigInteger('revisor_id')->nullable();
+            $table->foreign('revisor_id')->references('id')->on('users');
         });
     }
 
@@ -22,7 +23,8 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('announcements', function (Blueprint $table) {
-            $table->dropColumn('revisionatedBy');
+            $table->dropForeign(['revisor_id']);
+            $table->dropColumn(['revisor_id']);
         });
     }
 };

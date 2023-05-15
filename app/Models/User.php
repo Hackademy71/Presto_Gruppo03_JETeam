@@ -50,7 +50,7 @@ class User extends Authenticatable
         return $this->hasMany(Announcement::class);
     }
     public function revisor (){
-        return $this->belongsTo(Revisor_announcement::class);
+        return $this->hasMany(Announcement::class);
     }
 
 }
