@@ -20,14 +20,17 @@ class RevisorController extends Controller
     }
     public function acceptAnnouncement(Announcement $announcement){
         
-        $announcement->setAccepted(true);
-        if(!$announcement->revisor_id) {$announcement->User::revisor();};
+        $announcement->setAccepted(true);        
+       
+            $announcement->setRevisor();
+            
         return redirect()->back()->with('message',"Complimenti, hai accettato l'annuncio");
 
     }
     public function refuseAnnouncement(Announcement $announcement){
+        
         $announcement->setAccepted(false);
-        $announcement->User::revisor();
+        $announcement->setRevisor();      
         return redirect()->back()->with('message',"Peccato, hai rifiutato l'annuncio");
 
     }
@@ -40,11 +43,12 @@ class RevisorController extends Controller
     public function makeRevisor (User $user )
     {
         Artisan::call('presto:makeUsersRevisor',["email"=>$user->email]);
-        return redirect ('/')->with('message','Complimenti! E\' diventato revisore');
+        return redirect ('/')->with('message','Complimenti! Sei diventato revisore');
     }
 
     public function recheck (Announcement $announcements) {
-        $announcements=Announcement::revisor();
+
+        $announcements=Auth::user()->announcements();
         $announcements=Announcement::where('is_accepted',false)->get();
        return view ('revisor.recheck',compact('announcements'));
     }
@@ -55,4 +59,5 @@ class RevisorController extends Controller
 
     }
 
+   
 }

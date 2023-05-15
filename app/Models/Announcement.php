@@ -3,9 +3,10 @@
 namespace App\Models;
 
 use App\Models\User;
-use App\Models\Revisor_announcement;
 use App\Models\Category;
 use Laravel\Scout\Searchable;
+use App\Models\Revisor_announcement;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -15,7 +16,13 @@ class Announcement extends Model
     use HasFactory, Searchable;
 
     protected $fillable= [
-        "name", "description", "price", "category_id", "is_accepted", "revisor_id","user_id"
+        "name",
+        "description",
+        "price",
+        "category_id",
+        "is_accepted",
+        "revisor_id",
+        "user_id"
         ];
 
     public function category(){
@@ -34,6 +41,12 @@ class Announcement extends Model
     public function setAccepted($value){
        
         $this->is_accepted=$value;
+        $this->save();
+        return true;
+    }
+
+    public function setRevisor(){
+        $this->revisor_id=Auth::user()->id;
         $this->save();
         return true;
     }

@@ -78,7 +78,8 @@
                           <li><a class="nav-link dropdown-item" href="{{ route('indexRevisor') }}">Annunci da
                                   convalidare</a>
                           </li>
-                          <li><a class="nav-link dropdown-item" href="{{ route('recheck') }}"> Secondo check
+                          <li><a class="nav-link dropdown-item" href="{{ route('recheck') }}"> Secondo check</a>
+                          </li>
                         </ul>
                     </li>
                       @endif
