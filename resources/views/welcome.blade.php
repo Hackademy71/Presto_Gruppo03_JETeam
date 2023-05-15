@@ -10,8 +10,8 @@
                 </div>
             </div>
             @foreach ($announcements as $announcement)
-                <div class="col-6 mt-3 mb-3 bgmy3">
-                    <div class="card" style="width: 18rem;">
+                <div class="col-3 mt-3 mb-3 bgmy3">
+                    <div class="card mb-3" style="width: 18rem;">
                         <img src="https://picsum.photos/200" class="card-img-top" alt="">
                         <div class="card-body">
                             <h5 class="card-title f-p">{{ $announcement->name }}</h5>
