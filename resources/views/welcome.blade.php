@@ -3,10 +3,11 @@
         <div class="row">
             <div class="col-12 ps-0">
                 <div id="imgHead">
-                    <img class="vw-100" src="https://www.tuttobarche.it/magazine/wp-content/uploads/sites/2/2020/05/contratto-compravendita-di-una-barca.jpg" alt="img-header">
+                    <img class="vw-100" src="./img/online.png" alt="img-header">
                 </div>
-                <div id="headTitle" class=" align-items-center">
-                    <h1 class="f-p fw-bold fs-1">  Benvenuti in Presto.it</h1>
+                <div id="headTitle">
+                    <h1 class="f-p fw-bold fs-1 justify-content-end">  Benvenuti in Presto.it</h1>
+                    <p class="f-p fs-2 justify-content-center">Il tuo marketplace preferito!</p>
                 </div>
             </div>
             @foreach ($announcements as $announcement)
@@ -19,9 +20,9 @@
                             <p class="card-text f-s">{{ $announcement->price }} €</p>
                             <p class="card-text f-s">Aggiunto il {{ $announcement->created_at->format('d/m/Y') }}</p>
                             <a href="{{ route('detArticle', compact('announcement')) }}"
-                                class="btn btn-primary f-p m-3">Visualizza dettaglio</a>
+                                class="btn bgmy4 f-p m-3">Visualizza dettaglio</a>
                             <a href="{{ route('categoryShow', ['category' => $announcement->category]) }}"
-                                class="btn btn-primary f-s m-3">Categoria: {{ $announcement->category->name }}</a>
+                                class="btn bgmy4 f-s m-3">Categoria: {{ $announcement->category->name }}</a>
                         </div>
                     </div>
                 </div>

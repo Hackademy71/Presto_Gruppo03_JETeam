@@ -12,9 +12,9 @@
                             <p class="card-text f-s">{{ $announcement->price }} €</p>
                             <p class="card-text f-s">Aggiunto il {{ $announcement->created_at->format('d/m/Y') }}</p>
                             <a href="{{ route('detArticle', compact('announcement')) }}"
-                                class="btn btn-primary f-p m-3">Visualizza dettaglio</a>
+                                class="btn bgmy4 f-p m-3">Visualizza dettaglio</a>
                             <a href="{{ route('categoryShow', ['category' => $announcement->category]) }}"
-                                class="btn btn-primary f-p m-3">Categoria: {{ $announcement->category->name }}</a>
+                                class="btn bgmy4 f-p m-3">Categoria: {{ $announcement->category->name }}</a>
                         </div>
                     </div>
                 </div>

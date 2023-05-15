@@ -23,7 +23,7 @@
         <div> 
             <p class="f-s"> Non sono presenti annunci in questa categoria </p>
             <p class="f-s"> Sii il primo </p>
-            <a class="btn btn-primary f-p" href="{{route('articleNew')}}">Inserisci articolo</a>
+            <a class="btn bgmy4 f-p" href="{{route('articleNew')}}">Inserisci articolo</a>
         </div>
     @endforelse
 

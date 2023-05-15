@@ -36,7 +36,7 @@
           <p class="card-text f-s">{{$announcement->description}}</p>
           <p class="card-text f-s">Prezzo: {{$announcement->price}}</p>
           <p class="card-text f-s">Caricato da: {{$announcement->user->name}}</p>
-          <a href="#" class="btn btn-primary f-p">Contatta venditore</a>
+          <a href="#" class="btn bgmy4 f-p">Contatta venditore</a>
         </div>
         <div class="card-footer text-muted f-s">
           Aggiunto il {{$announcement->created_at}}

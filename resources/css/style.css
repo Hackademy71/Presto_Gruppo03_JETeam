@@ -44,12 +44,10 @@
 
 }
 #headTitle{
-    text-align: center;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: var(--tot-c);
+    top: 29%;
+    left: 68%;    
+    color: var(--thi-c);
 }
 .bgoutline3{
     border-color: #07ad87;
