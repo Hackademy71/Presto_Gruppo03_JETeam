@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Mail\BecomeRevisor;
 use App\Models\Announcement;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Auth;
@@ -23,12 +21,13 @@ class RevisorController extends Controller
     public function acceptAnnouncement(Announcement $announcement){
         
         $announcement->setAccepted(true);
-        // $announcement->revisionatedBy=User::users->id;
+        if(!$announcement->revisor_id) {$announcement->User::revisor();};
         return redirect()->back()->with('message',"Complimenti, hai accettato l'annuncio");
 
     }
     public function refuseAnnouncement(Announcement $announcement){
         $announcement->setAccepted(false);
+        $announcement->User::revisor();
         return redirect()->back()->with('message',"Peccato, hai rifiutato l'annuncio");
 
     }
@@ -45,6 +44,7 @@ class RevisorController extends Controller
     }
 
     public function recheck (Announcement $announcements) {
+        $announcements=Announcement::revisor();
         $announcements=Announcement::where('is_accepted',false)->get();
        return view ('revisor.recheck',compact('announcements'));
     }
