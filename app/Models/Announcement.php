@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\User;
+use App\Models\Revisor;
 use App\Models\Category;
 use App\Models\Announcement;
 use Laravel\Scout\Searchable;
@@ -25,7 +26,10 @@ class Announcement extends Model
     public function user () {
         return $this->belongsTo(User::class);
     }
-    public static function toBeRevisionedCount(){
+    public function revisor (){
+        return $this->hasOne(Revisor::class);
+    }
+        public static function toBeRevisionedCount(){
         return Announcement::where('is_accepted',null)->count();
     }
     public function setAccepted($value){
