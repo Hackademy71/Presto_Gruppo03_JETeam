@@ -1,5 +1,5 @@
 <x-navSearch/>
-  <nav class="navbar navbar-expand-lg p-0 m-0 bgmy1">
+  <nav class="navbar navbar-expand-lg p-0 m-0 bgmy1 sticky-top">
       <div class="container-fluid">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
               aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -7,6 +7,9 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav container">
+
+                <img class="navbar-brand d-none" id="imgNav2" src="./img/logo.png" width="50" alt="">
+
                <li>
                       <a class="nav-link active" aria-current="page" href="{{ route('welcome') }}">Home</a>
                 </li>
@@ -59,7 +62,7 @@
                               <li><a class="nav-link dropdown-item" href="">Dettagli profilo</a></li>
                               <li><a class="nav-link dropdown-item" href="{{ route('logout') }}"
                                       onclick="event.preventDefault(); 
-                  document.getElementById('logout-form').submit();">Logout</a>
+                                      document.getElementById('logout-form').submit();">Logout</a>
                                   <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                       @csrf
                                   </form>
