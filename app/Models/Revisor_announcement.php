@@ -7,7 +7,7 @@ use App\Models\Announcement;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Revisor extends Model
+class Revisor_announcement extends Model
 {
     use HasFactory;
     protected $fillable=[

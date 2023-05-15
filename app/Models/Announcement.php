@@ -3,9 +3,8 @@
 namespace App\Models;
 
 use App\Models\User;
-use App\Models\Revisor;
+use App\Models\Revisor_announcement;
 use App\Models\Category;
-use App\Models\Announcement;
 use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Request;
@@ -27,7 +26,7 @@ class Announcement extends Model
         return $this->belongsTo(User::class);
     }
     public function revisor (){
-        return $this->hasOne(Revisor::class);
+        return $this->hasOne(Revisor_announcement::class);
     }
         public static function toBeRevisionedCount(){
         return Announcement::where('is_accepted',null)->count();
