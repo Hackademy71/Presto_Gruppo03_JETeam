@@ -1,6 +1,6 @@
   <nav class="navbar navbar-expand-lg p-0 m-0 bgmy1">
       <div class="container-fluid">
-          <img src="img/logo.png" width="50" alt="" href="{{ route('welcome') }}">
+          <img src="./img/logo.png" width="50" alt="">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
               aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -11,8 +11,7 @@
                       <form class="d-flex" role="search" action="{{ route('searchAnn') }}" method="GET">
                         @csrf
                           <input class="form-control m-2" type="search" placeholder="Search" aria-label="Search" name="searched">
-                          <button class="btn btn-outline bgoutline m-2 h-75" type="submit"><img
-                                  src=".\img\icons8-cerca-di-più-30.png" alt="searchBtn"></button>
+                          <button class="btn btn-outline bgoutline m-2 h-75" type="submit"><i class="bi bi-search"></i></button>
                       </form>
                   </div>
                   <a class="nav-link active" aria-current="page" href="{{ route('welcome') }}">Home</a>
@@ -82,6 +81,7 @@
                               <li><a class="nav-link dropdown-item" href="{{ route('indexRevisor') }}">Annunci da
                                       convalidare</a>
                               </li>
+                              <li><a class="nav-link dropdown-item" href="{{ route('recheck') }}"> Secondo check
                           </ul>
                       @endif
                   @endguest

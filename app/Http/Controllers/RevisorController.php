@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\BecomeRevisor;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Auth;
@@ -40,6 +41,17 @@ class RevisorController extends Controller
     {
         Artisan::call('presto:makeUsersRevisor',["email"=>$user->email]);
         return redirect ('/')->with('message','Complimenti! E\' diventato revisore');
+    }
+
+    public function recheck (Announcement $announcements) {
+        $announcements=Announcement::where('is_accepted',false)->get();
+       return view ('revisor.recheck',compact('announcements'));
+    }
+
+    public function defDelete (Announcement $announcement) {
+        $announcement->delete();
+        return redirect()->back()->with('message',"Complimenti, hai eliminato definitivamente l'annuncio");
+
     }
 
 }
