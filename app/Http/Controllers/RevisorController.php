@@ -23,6 +23,7 @@ class RevisorController extends Controller
     public function acceptAnnouncement(Announcement $announcement){
         
         $announcement->setAccepted(true);
+        $announcement->revisionatedBy=User::users->id;
         return redirect()->back()->with('message',"Complimenti, hai accettato l'annuncio");
 
     }

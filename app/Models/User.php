@@ -48,4 +48,5 @@ class User extends Authenticatable
     public function announcements () {
         return $this->hasMany(Announcement::class);
     }
+    
 }
