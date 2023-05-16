@@ -173,7 +173,7 @@ width: 200px;
 .logoimg{
     border-radius: 50%;
 }
-<<<<<<< HEAD
+
 .upper-nav{
     height: 30%;
    border-right:2px #AD3E18 solid;
@@ -182,7 +182,7 @@ width: 200px;
 .botton-nav{
     height: 70%;
     border-left:2px #ffd2b3 solid;
-=======
+}
 .bordo{
     border-color: #FA6D3D;
     border-width: 5px;
@@ -190,5 +190,4 @@ width: 200px;
 
 .card:hover {
     transform: scale(1.05); 
->>>>>>> d3b130c82e9e72e979a757b6f065da3ac3ef52cd
 }
