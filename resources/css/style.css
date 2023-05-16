@@ -60,3 +60,11 @@ width: 200px;
 .logoimg{
     border-radius: 50%;
 }
+.bordo{
+    border-color: #FA6D3D;
+    border-width: 5px;
+}
+
+.card:hover {
+    transform: scale(1.05); 
+}

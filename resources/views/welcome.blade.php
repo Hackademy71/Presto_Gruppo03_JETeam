@@ -6,13 +6,13 @@
                     <img class="vw-100" src="./img/online.png" alt="img-header">
                 </div>
                 <div id="headTitle">
-                    <h1 class="f-p fw-bold fs-1 justify-content-end">  Benvenuti in Presto.it</h1>
+                    <h1 class="f-p fw-bold fs-1 justify-content-end">  Benvenuti in Presto.it </h1>
                     <p class="f-p fs-2 justify-content-center">Il tuo marketplace preferito!</p>
                 </div>
             </div>
             @foreach ($announcements as $announcement)
-                <div class="col-3 mt-3 mb-3 bgmy3">
-                    <div class="card mb-3" style="width: 18rem;">
+                <div class="col-3 mt-3 mb-3  ">
+                    <div class="card mb-3 bordo" style="width: 18rem;">
                         <img src="https://picsum.photos/200" class="card-img-top" alt="">
                         <div class="card-body">
                             <h5 class="card-title f-p">{{ $announcement->name }}</h5>
