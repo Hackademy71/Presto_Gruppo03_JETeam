@@ -8,13 +8,8 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
 </head>
-<<<<<<< HEAD
     <body>
     <x-nav2/>
-=======
-    <body >
-    <x-nav/>
->>>>>>> d3b130c82e9e72e979a757b6f065da3ac3ef52cd
     @if (session()->has('message'))
     <div class="flex flex-row justify-center my-2 alert alert-success">
         {{session('message')}}

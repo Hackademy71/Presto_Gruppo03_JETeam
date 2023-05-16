@@ -6,13 +6,8 @@
                     <img class="vw-100" src="./img/online.png" alt="img-header">
                 </div>
                 <div id="headTitle">
-<<<<<<< HEAD
                     <h1 class="f-p fw-bold fs-1 justify-content-end text-gradient-50">  Benvenuti in Presto.it</h1>
                     <p class="f-p fs-2 justify-content-center text-gradient-50">Il tuo marketplace preferito!</p>
-=======
-                    <h1 class="f-p fw-bold fs-1 justify-content-end">  Benvenuti in Presto.it </h1>
-                    <p class="f-p fs-2 justify-content-center">Il tuo marketplace preferito!</p>
->>>>>>> d3b130c82e9e72e979a757b6f065da3ac3ef52cd
                 </div>
             </div>
             @foreach ($announcements as $announcement)

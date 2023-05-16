@@ -1,4 +1,4 @@
-{{-- <x-navSearch/> --}}
+ <!-- <x-navSearch/> -->
   <nav class="navbar navbar-expand-md px-3 bgmy1 sticky-top">
       <div class="container-fluid">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
@@ -61,7 +61,7 @@
                           <ul class="dropdown-menu">
                               <li><a class="nav-link dropdown-item f-p" href="">Dettagli profilo</a></li>
                               <li><a class="nav-link dropdown-item f-p" href="{{ route('logout') }}"
-                                      onclick="event.preventDefault(); 
+                                      onclick="event.preventDefault();
                                       document.getElementById('logout-form').submit();">Logout</a>
                                   <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                       @csrf
