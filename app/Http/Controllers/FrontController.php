@@ -11,8 +11,9 @@ class FrontController extends Controller
 
 
     public function categoryShow (Category $category) {
-
-        return view ('categoryShow', compact ('category'));
+       
+       $announcements=$category->announcements->where('is_accepted',true);
+        return view ('categoryShow', compact ('announcements'));
 
     }
 }

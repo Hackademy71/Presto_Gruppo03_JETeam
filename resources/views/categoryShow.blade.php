@@ -1,8 +1,9 @@
 <x-layout>
-    <h1 class=" f-p">Categoria {{$category->name}}</h1>
+   
+    
     <div class="container">
         <div class="row">
-        @forelse ($category->announcements as $announcement)
+        @forelse ($announcements as $announcement)
 
     <div class="col-6 mt-3 mb-3">
             <div class="card" style="width: 18rem;">
