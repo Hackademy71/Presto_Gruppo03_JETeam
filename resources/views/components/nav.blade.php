@@ -1,5 +1,5 @@
-<x-navSearch/>
-  <nav class="navbar navbar-expand-lg p-0 m-0 bgmy1 sticky-top">
+{{-- <x-navSearch/> --}}
+  <nav class="navbar navbar-expand-md px-3 bgmy1 sticky-top">
       <div class="container-fluid">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
               aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">

@@ -9,7 +9,7 @@
     @livewireStyles
 </head>
     <body class="bgmy3">
-    <x-nav/>
+    <x-nav2/>
     @if (session()->has('message'))
     <div class="flex flex-row justify-center my-2 alert alert-success">
         {{session('message')}}
