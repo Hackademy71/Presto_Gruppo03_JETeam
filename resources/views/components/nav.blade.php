@@ -1,4 +1,4 @@
- <!-- <x-navSearch/> -->
+ 
   <nav class="navbar navbar-expand-md px-3 bgmy1 sticky-top">
       <div class="container-fluid">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"

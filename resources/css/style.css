@@ -1,121 +1,125 @@
 @import url(https://fonts.bunny.net/css?family=roboto:100,100i,300,300i,400,400i,500,500i,700,700i);
 @import url(https://fonts.bunny.net/css?family=inria-serif:300,300i,400,400i,700,700i);
+
 :root {
-    --tot-c: #ffd2b3;
-    --main-c: #AD3E18;
-    --sec-c: #FF8157;
-    --thi-c: #07ad87;
-    --acc-c: #3CFACE;
-  }
-.f-p{
-    font-family: 'Roboto', sans-serif;
+  --tot-c: #ffd2b3;
+  --main-c: #ffa469;
+  --sec-c: #FF8157;
+  --thi-c: #bee4d6;
+  --acc-c: #3CFACE;
 }
-.f-s{
-    font-family: 'Inria Serif', serif;
+
+.f-p {
+  font-family: 'Roboto', sans-serif;
 }
-.bgmy1{
-    background-color: var(--tot-c);
+
+.f-s {
+  font-family: 'Inria Serif', serif;
 }
-.bgmy2{
-    background-color: var(--main-c);
+
+.bgmy1 {
+  background-color: var(--tot-c);
 }
-.bgmy3{
-    background-color: var(--sec-c);
+
+.bgmy2 {
+  background-color: var(--main-c);
 }
-.bgmy4{
-    background-color: var(--thi-c);
+
+.bgmy3 {
+  background-color: var(--sec-c);
 }
-.bgmy5{
-    background-color: var(--acc-c);
+
+.bgmy4 {
+  background-color: var(--thi-c);
+}
+
+.bgmy5 {
+  background-color: var(--acc-c);
 }
 
 /* inizio css navbar */
 .top-bar .nav-item {
-    display: inline-block;
-  }
-  
-  nav {
-    padding: 0px;
-  }
-  
-  nav.top-bar-wrap {
-    background: #ffd2b3;
-  }
-  
-  .top-bar-wrap {
-    height: 40px;
-    line-height: 40px;
-  }
-  
-  .main-nav-wrap {
-    height: 80px;
-    line-height: 80px;
-  }
-  
-  nav.main-nav-wrap {
-    background: #AD3E18;
-    font-size: 1.25rem
-  }
-  
-  nav.top-bar-wrap ul,
-  nav.main-nav-wrap ul {
-    margin-bottom: 0px;
-    margin-top: 0px
-  }
-  
-  a.nav-link:hover {
-    background: rgba(0, 0, 0, 0.2);
-    color: #fff;
-    border-left: 12px solid rgba(0, 0, 0, 0.3);
-  }
-  
-  a.nav-link {
-    border-left: 12px solid transparent;
-    border-right: 12px solid transparent;
-    color: #f9f9f9;
-    text-transform: uppercase;
-    font-family: '
-    Rubik'
-    ,
-    sans-serif;
-    transform: skew(-25deg);
-    transition: all 400ms ease-out
-  }
-  
-  a .inner-link {
-    display: inline-block;
-    transform: skew(25deg)
-  }
-  
-  .nav-link {
-    padding: 0px;
-  }
-  
-  .top-bar-wrap a {
-    padding-left: 12px;
-  }
-  
-  .main-nav-wrap a {
-    padding-left: 18px;
-  }
-  
-  .brand-logo img {
-    height: 40px;
-    transform: skew(25deg)
-  }
-  
-  .brand-phone a {
-    display: block;
-    font-size: 1.25em;
-    text-decoration: none;
-    color: #000000;
-    letter-spacing: 2px;
-    height: 40px;
-    line-height: 1.5em;
-    transform: skew(25deg)
-  }
-  
-  /* .brand-phone,
+  display: inline-block;
+}
+
+nav {
+  padding: 0px;
+}
+
+nav.top-bar-wrap {
+  background: #ffd2b3;
+}
+
+.top-bar-wrap {
+  height: 40px;
+  line-height: 40px;
+}
+
+.main-nav-wrap {
+  height: 80px;
+  line-height: 80px;
+}
+
+nav.main-nav-wrap {
+  background: #AD3E18;
+  font-size: 1.25rem
+}
+
+nav.top-bar-wrap ul,
+nav.main-nav-wrap ul {
+  margin-bottom: 0px;
+  margin-top: 0px
+}
+
+a.nav-link:hover {
+  background: #ffa469;
+  color: black;
+  border-left: 12px solid #FF8157;
+}
+
+a.nav-link {
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  color: white;
+  text-transform: uppercase;
+  transform: skew(-25deg);
+  transition: all 400ms ease-out
+}
+
+a .inner-link {
+  display: inline-block;
+  transform: skew(25deg)
+}
+
+.nav-link {
+  padding: 0px;
+}
+
+.top-bar-wrap a {
+  padding-left: 12px;
+}
+
+.main-nav-wrap a {
+  padding-left: 18px;
+}
+
+.brand-logo img {
+  height: 40px;
+  transform: skew(25deg)
+}
+
+.brand-phone a {
+  display: block;
+  font-size: 1.25em;
+  text-decoration: none;
+  color: #000000;
+  letter-spacing: 2px;
+  height: 40px;
+  line-height: 1.5em;
+  transform: skew(25deg)
+}
+
+/* .brand-phone,
   .brand-logo {
     padding: 40px;
     position: absolute;
@@ -123,71 +127,146 @@
     height: 120px;
   
     transform: skewX(-25deg); */
-  
-  
-  /* .brand-logo {
+
+
+/* .brand-logo {
     left: -30px;
     padding-left: 70px;
     background: #AD3E18;
     border-right: 2px solid #ffd2b3;
   
   } */
-  
-  /* .brand-phone {
+
+/* .brand-phone {
     right: 0;
     right: -30px;
     padding-right: 70px;
     background: #ffd2b3;
     border-left: 3px solid #AD3E18;
   } */
-  /* fine navbar */
+/* fine navbar */
 
-#imgHead{
-      /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("photographer.jpg");
 
-  /* Set a specific height */
-    height: 80%;
-    max-width:100%;
-  /* Position and center the image to scale nicely on all screens */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+.hero-image {
   position: relative;
-
-}
-#headTitle{
-    position: absolute;
-    top: 29%;
-    left: 68%;    
-    color: var(--thi-c);
-}
-.bgoutline3{
-    border-color: #07ad87;
-    color: #07ad87;
-    outline: pagination-focus-outline;
-}
-.shwi{
-width: 200px;
-}
-.logoimg{
-    border-radius: 50%;
+  height: 400px;
 }
 
-.upper-nav{
-    height: 30%;
-   border-right:2px #AD3E18 solid;
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
 }
 
-.botton-nav{
-    height: 70%;
-    border-left:2px #ffd2b3 solid;
+.hero-text {
+  position: absolute;
+  top: 25%;
+  left: 73%;
+  transform: translate(-50%, -50%);
+  color: white;
 }
-.bordo{
-    border-color: #FA6D3D;
-    border-width: 5px;
+
+.hero-text h1 {
+  font-size: 32px;
+  margin-bottom: 16px;
 }
+
+.hero-text p {
+  font-size: 18px;
+}
+
+.bgoutline3 {
+  border-color: #07ad87;
+  color: #07ad87;
+  outline: pagination-focus-outline;
+}
+
+.shwi {
+  width: 200px;
+}
+
+.logoimg {
+  border-radius: 50%;
+}
+
+/* .bordo {
+  border-color: #FA6D3D;
+  border-width: 5px;
+} */
 
 .card:hover {
-    transform: scale(1.05); 
+  transform: scale(1.05);
+} 
+
+.upper-nav {
+  height: 30%;
+  border-right: 2px #AD3E18 solid;
+}
+
+.botton-nav {
+  height: 70%;
+  border-left: 2px #ffd2b3 solid;
+}
+
+.card-border {
+  background-color: #fff;
+  border: 2px solid #ffd2b3;
+  overflow: hidden;
+  box-shadow: 0 4px 21px -12px #AD3E18;
+}
+
+.card-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  border: 1px solid #ffd2b3;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 21px -12px #AD3E18;
+  margin-left: 400px
+}
+
+.card-content {
+  text-align: center;
+}
+
+h3 {
+  margin-top: 0;
+}
+
+form {
+  margin-top: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+
+}
+
+input[type="email"],
+input[type="text"],
+input[type="number"],
+input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ffa469;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px;
+  color: #FF8157;
+  border: #FF8157;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.color-category {
+  border: 1px solid #ffa469;
+  border-radius: 4px;
 }
