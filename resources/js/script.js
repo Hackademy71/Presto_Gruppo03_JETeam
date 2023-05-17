@@ -8,3 +8,4 @@ document.addEventListener('scroll', () => {
       img.classList.add('d-none')
     }
   })
+

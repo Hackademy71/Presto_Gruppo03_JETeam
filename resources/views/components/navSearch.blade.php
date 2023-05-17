@@ -1,6 +1,6 @@
 <nav class="navbar bgmy1">
     <div class="container-fluid">
-      {{-- <a class="navbar-brand">Navbar</a> --}}
+      <!-- <a class="navbar-brand">Navbar</a> -->
         <img class="navbar-brand logoimg" src="./img/logo.png" width="50" alt="">
           
       <form class="d-flex" role="search" action="{{ route('searchAnn') }}" method="GET">

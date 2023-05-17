@@ -11,8 +11,14 @@ class FrontController extends Controller
 
 
     public function categoryShow (Category $category) {
-        $announcements=$category->announcements()->where('is_accepted',true);
+       
+       $announcements=$category->announcements->where('is_accepted',true);
         return view ('categoryShow', compact ('announcements'));
 
+    }
+
+    public function setLanguage ($lang) {
+        session()->put('locale',$lang);
+        return redirect()->back();
     }
 }
