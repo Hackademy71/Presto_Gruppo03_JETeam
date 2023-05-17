@@ -42,7 +42,7 @@
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-sm-12 d-flex justify-content-center">
-            <div class="fw-bold">
+            <div class="fw-bold mt-4">
                 {{ $announcements->links() }}
 
             </div>

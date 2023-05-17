@@ -27,6 +27,7 @@ class AnnouncementController extends Controller
     }
      public function reportAnnouncement (Announcement $announcement){
         $announcement->is_accepted=null;
+        $announcement->save();
         return redirect()->back()->with('message',"Grazie per la segnalazione, un revisore controllerà l'annuncio");
      }
     /**

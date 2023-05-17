@@ -71,7 +71,7 @@
                     Aggiunto il: {{ $announcement->created_at->format('d/m/Y') }}
                 </p>
                 <a href="#" class="btn bgmy4 f-p text-center">Contatta venditore</a>
-                <a href="{{route('reportAnnouncement'), compact('announcement')}}" class="f-s text-center text-light">Segnala annuncio</a>
+                <a href="{{route('reportAnnouncement', compact('announcement'))}}" class="f-s text-center tx-link">Segnala annuncio</a>
             </div>
         </div>
     </div>

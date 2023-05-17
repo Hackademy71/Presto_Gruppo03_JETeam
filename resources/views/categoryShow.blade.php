@@ -44,6 +44,7 @@
                                 <h1 class="f-p">Non sono presenti annunci in questa categoria</h1>
                                 <h2 class="f-p">Sii il primo</h2>
                                 <a class="btn bgmy4 f-p" href="{{ route('articleNew') }}">Inserisci articolo</a>
+                                <h3 class="f-p">Altre categorie</h3>
                             </div>
                         </div>
             @endforelse
