@@ -8,64 +8,83 @@
 
         <div class="container-fluid">
             <div class="row justify-content-center">
-                @foreach ($announcements as $announcement)
-                    <div class="col-sm-4 d-flex justify-content-center mt-4 align-items-center">
-                        <div class="card card-border" style="width: 18rem;">
-                            <img src="https://picsum.photos/200" class="card-img-top" alt="">
-                            <div class="card-body">
-                                <h5 class="card-title f-p">{{ $announcement->name }}</h5>
-                                <p class="card-text f-s">{{ $announcement->description }}</p>
-                                <p class="card-text f-s">{{ $announcement->price }} €</p>
-                                <p class="card-text f-s">Aggiunto il {{ $announcement->created_at->format('d/m/Y') }}
-                                </p>
-                                <a onclick="event.preventDefault(); 
-                                document.getElementById('accept-form').submit();"
-                                    class="btn btn-success">Approva</a>
-                                <form id="accept-form"
-                                    action="{{ route('acceptAnnouncement', compact('announcement')) }}" method="POST"
-                                    class="d-none">
-                                    @csrf
-                                    @method('PATCH')
-                                </form>
-                                <a onclick="event.preventDefault(); 
-                                document.getElementById('defDelete').submit();"
-                                    class="btn btn-danger">Elimina</a>
-                                <form id="defDelete" action="{{ route('defDelete', compact('announcement')) }}"
-                                    method="POST" class="d-none">
-                                </form>
-                                @csrf
+            @foreach ($announcements as $announcement)
+                    <div class="col-6 mt-3 mb-3">
+                        <div class="card" style="width: 18rem;">
+                            <div class="container card-img-top">
+                                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+                                 
+                                    @if($announcement->images()->get()->isNotEmpty())
+                                        <div class="carousel-inner">
+                                            
+                                            @foreach ($announcement->images as $image)
+                                            
+                                            <div class="carousel-item @if($loop->first)active @endif">
+                                                <img src="{{Storage::url($image->path)}}" class=" d-block w-100" alt="...">
+                                            </div>
+                                            @endforeach
+                                        </div>
+                                    @else
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <img src="https://picsum.photos/200" class="d-block w-100" alt="...">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="https://picsum.photos/200" class="d-block w-100" alt="...">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="https://picsum.photos/200" class="d-block w-100" alt="...">
+                                        </div>
+                                    </div>
+                                    @endif
+                                    <button class="carousel-control-prev" type="button"
+                                        data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button"
+                                        data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                </div>
+
+                                <div class="card-body">
+
+                                    <h5 class="card-title f-p">{{ $announcement->name }}</h5>
+                                    <p class="card-text f-s">{{ $announcement->description }}</p>
+                                    <p class="card-text f-s">{{ $announcement->price }} €</p>
+                                    <p class="card-text f-s">{{ $announcement->category->name }}</p>
+                                    <p class="card-text f-s">Aggiunto il
+                                        {{ $announcement->created_at->format('d/m/Y') }}
+                                    </p>
+
+                                    <a onclick="event.preventDefault(); 
+                                    document.getElementById('accept-form').submit();"
+                                        class="btn btn-success f-p">Approva</a>
+                                    <form id="accept-form"
+                                        action="{{ route('acceptAnnouncement', compact('announcement')) }}"
+                                        method="POST" class="d-none">
+                                        @csrf
+                                        @method('PATCH')
+                                    </form>
+                                    <a onclick="event.preventDefault(); 
+                                    document.getElementById('refuse-form').submit();"
+                                        class="btn btn-danger f-p">Rifiuta</a>
+                                    <form id="refuse-form"
+                                        action="{{ route('refuseAnnouncement', compact('announcement')) }}"
+                                        method="POST" class="d-none">
+                                        @csrf
+                                        @method('PATCH')
+                                    </form>
+
+
+                                </div>
                             </div>
                         </div>
-                    </div>
                 @endforeach
             </div>
         </div>
 
-        {{-- @foreach ($announcements as $announcement)
-    <div class="col-6 mt-3 mb-3">
-            <div class="card" style="width: 18rem;">
-            <img src="https://picsum.photos/200" class="card-img-top" alt="...">
-                <div class="card-body">
-                <h5 class="card-title">{{$announcement->name}}</h5>
-                <p class="card-text">{{$announcement->description}}</p>
-                <p class="card-text">{{$announcement->price}} €</p>
-                <p class="card-text">Aggiunto il {{$announcement->created_at->format('d/m/Y')}}</p>
-                <p class="card-text">Aggiunto da {{$announcement->user->name}}</p>
-                <a  onclick="event.preventDefault(); 
-                document.getElementById('accept-form').submit();" class="btn btn-success">Approva</a>
-                    <form id="accept-form" action="{{ route('acceptAnnouncement', compact('announcement'))}}" method="POST" class="d-none">
-                    @csrf
-                    @method('PATCH')
-                    </form>
-                <a  onclick="event.preventDefault(); 
-                document.getElementById('defDelete').submit();" class="btn btn-danger">Elimina</a>
-                    <form id="defDelete" action="{{ route('defDelete', compact('announcement'))}}" method="POST" class="d-none">
-                    @csrf
-                   
-                    </form>
-                
-                </div>
-            </div>
-    </div>
-    @endforeach  --}}
+      
 </x-layout>

@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 mt-4">
-                <h1 class="f-p text-center"Categoria {{$announcements->category()->name}}</h1>
+                <h1 class="f-p text-center"Categoria {{$announcements->category->name}}</h1>
             </div>
         </div>
     </div>

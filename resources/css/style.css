@@ -258,3 +258,8 @@ button {
   border: 1px solid #ffa469;
   border-radius: 4px;
 }
+
+.img-preview {
+  width:200px;
+  height: 200px;
+}
