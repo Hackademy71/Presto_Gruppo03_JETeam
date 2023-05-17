@@ -9,7 +9,7 @@
     <div class="container-fluid">
         <div class="row justify-content-center">
             @forelse ($announcements as $announcement)
-                <div class="col-sm-4 d-flex justify-content-center mt-4 align-items-center">
+                <div class="col-sm-3 d-flex justify-content-center mt-4 align-items-center mb-3">
                     <div class="card card-border" style="width: 18rem;">
                         <img src="{{$announcement->images()->get()->isNotEmpty() ?  $announcement->images()->first()->getUrl(400,300)  : 'https://picsum.photos/200' }}" class="card-img-top" alt="">
                         <div class="card-body">
