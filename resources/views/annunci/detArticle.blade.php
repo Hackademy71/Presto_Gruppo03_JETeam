@@ -20,11 +20,11 @@
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
                             aria-label="Slide 3"></button>
                     </div>
-                    @if ($announcement->images)
+                    @if ($announcement->images()->get()->isNotEmpty())
                         <div class="carousel-inner">
                             @foreach ($announcement->images as $image)
                                 <div class="carousel-item @if ($loop->first) active @endif">
-                                    <img src="{{ Storage::url($image->path) }}" class="img-fluid p-3 rounded"
+                                    <img src="{{$announcement->images()->first()->getUrl(400, 300)}}" class="img-fluid p-3 rounded"
                                         alt="...">
                                 </div>
                             @endforeach
@@ -61,9 +61,9 @@
                 <p class="fs-3 text-center mt-4">
                     €{{ $announcement->price }}
                 </p>
-                <h3 class="f-s text-center mt-4">
+                <h5 class="f-s text-center mt-4">
                     {{ $announcement->description }}
-                </h3>
+                </h5>
                 <p class="fs-3 text-center mt-4">
                     Venditore: {{ $announcement->user->name }}
                 </p>

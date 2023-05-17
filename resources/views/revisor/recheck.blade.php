@@ -8,9 +8,9 @@
     </div>
 
     <div class="container-fluid">
-        <div class="row">
+        <div class="row justify-content-center">
             @foreach ($announcements as $announcement)
-                <div class="col-6 mt-3 mb-3">
+                <div class="col-6 col-sm-3 d-flex justify-content-center mt-4 align-items-center">
                     <div class="card" style="width: 18rem;">
                         <div class="container card-img-top">
                             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
