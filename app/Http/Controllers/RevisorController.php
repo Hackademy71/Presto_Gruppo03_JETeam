@@ -54,7 +54,7 @@ class RevisorController extends Controller
     public function recheck (Announcement $announcements) {
 
         $announcements=Auth::user()->announcements();
-        $announcements=Announcement::where('revisor_id',(Auth::user()->id))->get();
+        $announcements=Announcement::where('revisor_id',(Auth::user()->id))->orderBy('created_at', 'DESC')->get();
         
        return view ('revisor.recheck',compact('announcements'));
     }

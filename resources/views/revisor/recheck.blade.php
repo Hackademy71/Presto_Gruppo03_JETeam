@@ -70,20 +70,26 @@
                                 <p class="card-text f-s">Aggiunto il
                                     {{ $announcement->created_at->format('d/m/Y') }}
                                 </p>
+                                <div>
+                                    <div class="row">
+                                        <div class="col-12 align-items-center">
 
-                                @if ($announcement->is_accepted)
-                                    <a href="{{ route('refuseAnnouncement', ['announcement' => $announcement]) }}"
-                                        class="btn btn-danger f-p">Rifiuta</a>
-                                @else
-                                    <a href="{{ route('acceptAnnouncement', ['announcement' => $announcement]) }}"
-                                        class="btn btn-success f-p">Approva</a>
-                                @endif
-                                <form
-                                    class="m-0"action="{{ route('defDelete', ['announcement' => $announcement]) }}"
-                                    method="POST">
-                                    @csrf
-                                    <button class="btn btn-danger f-p" type="submit">Elimina</button>
-                                </form>
+                                            @if ($announcement->is_accepted)
+                                                <a href="{{ route('refuseAnnouncement', ['announcement' => $announcement]) }}"
+                                                    class="btn btn-danger f-p">Rifiuta</a>
+                                            @else
+                                                <a href="{{ route('acceptAnnouncement', ['announcement' => $announcement]) }}"
+                                                    class="btn btn-success f-p">Approva</a>
+                                            @endif
+                                            <form
+                                                class="m-0"action="{{ route('defDelete', ['announcement' => $announcement]) }}"
+                                                method="POST">
+                                                @csrf
+                                                <button class="btn btn-danger f-p" type="submit">Elimina</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

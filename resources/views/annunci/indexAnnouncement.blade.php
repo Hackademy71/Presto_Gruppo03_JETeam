@@ -11,7 +11,8 @@
             @forelse ($announcements as $announcement)
                 <div class="col-sm-3 d-flex justify-content-center mt-4 align-items-center mb-3">
                     <div class="card card-border" style="width: 18rem;">
-                        <img src="{{$announcement->images()->get()->isNotEmpty() ?  $announcement->images()->first()->getUrl(400,300)  : 'https://picsum.photos/200' }}" class="card-img-top" alt="">
+                        <img src="{{ $announcement->images()->get()->isNotEmpty()? $announcement->images()->first()->getUrl(400, 300): 'https://picsum.photos/200' }}"
+                            class="card-img-top" alt="">
                         <div class="card-body">
                             <h5 class="card-title f-p">{{ $announcement->name }}</h5>
                             <p class="card-text f-s">{{ $announcement->description }}</p>
@@ -28,13 +29,15 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12 text-center">
-                            <div class="alert alert-warning" role="alert"> 
+                            <div class="alert alert-warning" role="alert">
                                 <h1 class="f-p">Non ci sono annunci in questa sezione</h1>
                             </div>
                         </div>
             @endforelse
-            {{ $announcements->links() }}
         </div>
+    </div>
+    <div>
+        {{ $announcements->links() }}
     </div>
     </div>
     </div>
