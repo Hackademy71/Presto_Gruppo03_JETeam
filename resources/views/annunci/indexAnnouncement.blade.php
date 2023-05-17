@@ -36,10 +36,19 @@
             @endforelse
         </div>
     </div>
-    <div>
-        {{ $announcements->links() }}
+    
     </div>
     </div>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-sm-12 d-flex justify-content-center">
+            <div class="fw-bold">
+                {{ $announcements->links() }}
+
+            </div>
+        </div>
+
     </div>
+</div>
 
 </x-layout>
