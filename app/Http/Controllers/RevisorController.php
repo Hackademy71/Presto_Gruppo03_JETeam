@@ -22,9 +22,9 @@ class RevisorController extends Controller
         
         // $announcement->setAccepted(true);        
        
-        //     $announcement->setRevisor();
+        $announcement->setRevisor();
         $announcement->is_accepted=true;
-        $announcement->user_id=Auth::user()->id;
+        // $announcement->user_id=Auth::user()->id;
         $announcement->save();
             
         return redirect()->back()->with('message',"Complimenti, hai accettato l'annuncio");
@@ -32,8 +32,9 @@ class RevisorController extends Controller
     }
     public function refuseAnnouncement(Announcement $announcement){
         
+        $announcement->setRevisor();
         $announcement->is_accepted=false;
-        $announcement->user_id=Auth::user()->id;
+        // $announcement->user_id=Auth::user()->id;
         $announcement->save();     
         return redirect()->back()->with('message',"Peccato, hai rifiutato l'annuncio");
 
