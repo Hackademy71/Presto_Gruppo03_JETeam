@@ -25,7 +25,10 @@ class AnnouncementController extends Controller
         $announcements=Announcement::search($request->searched)->where('is_accepted', true)->paginate(10);
         return view('annunci.indexAnnouncement', compact('announcements'));
     }
-
+     public function reportAnnouncement (Announcement $announcement){
+        $announcement->is_accepted=null;
+        return redirect()->back()->with('message',"Grazie per la segnalazione, un revisore controllerà l'annuncio");
+     }
     /**
      * Show the form for creating a new resource.
      */

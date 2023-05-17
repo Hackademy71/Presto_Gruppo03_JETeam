@@ -30,3 +30,5 @@ Route::post('revisor/defDelete/{announcement}', [RevisorController::class,'defDe
 Route::get('/ricerca/annuncio', [AnnouncementController::class, 'searchAnnouncement'])->name('searchAnn');
 
 Route::post('/lingua/{lang}',[FrontController::class,'setLanguage'])->name('set_language_locale');
+//Rotta segnalazione annunci
+Route::get('/report/{$announcement}', [AnnouncementController::class, 'reportAnnouncement'])->name('reportAnnouncement');
