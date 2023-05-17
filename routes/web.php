@@ -22,9 +22,9 @@ Route::get('/announcement/refuse/{announcement}', [RevisorController::class, 're
 // Rotte footer
 
 Route::get('/workWithUs', [RevisorController::class,'workWithUs'])->middleware('auth')->name('workWithUs');
-Route::get('/revisor/{user}', [RevisorController::class,'makeRevisor'])->name('make.revisor');
-Route::get('/recheck', [RevisorController::class, 'recheck'])->name('recheck');
-Route::post('revisor/defDelete/{announcement}', [RevisorController::class,'defDelete'])->name('defDelete');
+Route::get('/revisor/{user}', [RevisorController::class,'makeRevisor'])->name('make.revisor');//ok
+Route::get('/recheck', [RevisorController::class, 'recheck'])->name('recheck');//ok
+Route::post('revisor/defDelete/{announcement}', [RevisorController::class,'defDelete'])->name('defDelete');//ok
 
 
 Route::get('/ricerca/annuncio', [AnnouncementController::class, 'searchAnnouncement'])->name('searchAnn');
