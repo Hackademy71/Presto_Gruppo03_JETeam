@@ -6,6 +6,15 @@
         <li class="nav-item"><a href="#" class="nav-link px-2 text-muted f-s">Pricing</a></li>
         <li class="nav-item"><a href="#" class="nav-link px-2 text-muted f-s">FAQs</a></li>
         <li class="nav-item"><a href="#" class="nav-link px-2 text-muted f-s">About</a></li>
+        <li>
+<x-_locale lang="it" />
+</li>
+<li>
+<x-_locale lang="en" />
+</li>
+<li>
+<x-_locale lang="es" />
+</li>
       </ul>
       <p class="text-center text-muted f-s">© 2022 Company, Inc</p>
     </footer>
