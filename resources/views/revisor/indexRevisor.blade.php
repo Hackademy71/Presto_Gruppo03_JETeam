@@ -6,11 +6,11 @@
             </div>
         </div>
         
-        <div class="container">
-            <div class="row">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
 
                 @foreach ($announcement_to_check as $announcement)
-                    <div class="col-6 mt-3 mb-3">
+                    <div class="col-sm-3 d-flex justify-content-center align-items-center mt-3 mb-3">
                         <div class="card" style="width: 18rem;">
                             <div class="container card-img-top">
                                 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
