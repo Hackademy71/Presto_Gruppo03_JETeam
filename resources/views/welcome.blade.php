@@ -18,7 +18,7 @@
                     @foreach ($announcements as $announcement)
                         <div class="col-sm-3 d-flex justify-content-center mt-4 align-items-center">
                             <div class="card card-border" style="width: 18rem;">
-                                <img src="{{!$announcement->images()->get()->isEmpty() ? Storage::url($announcement->images()->first()->path) : 'https://picsum.photos/200' }}" class="card-img-top" alt="">
+                                <img src="{{!$announcement->images()->get()->isEmpty() ? $announcement->images()->first()->getUrl(400,300) : 'https://picsum.photos/200' }}" class="card-img-top" alt="">
                                 <div class="card-body">
                                     <h5 class="card-title f-p">{{ $announcement->name }}</h5>
                                     <p class="card-text f-s">{{ $announcement->description }}</p>

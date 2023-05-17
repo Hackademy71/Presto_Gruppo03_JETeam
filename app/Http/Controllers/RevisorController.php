@@ -20,17 +20,21 @@ class RevisorController extends Controller
     }
     public function acceptAnnouncement(Announcement $announcement){
         
-        $announcement->setAccepted(true);        
+        // $announcement->setAccepted(true);        
        
-            $announcement->setRevisor();
+        //     $announcement->setRevisor();
+        $announcement->is_accepted=true;
+        $announcement->user_id=Auth::user()->id;
+        $announcement->save();
             
         return redirect()->back()->with('message',"Complimenti, hai accettato l'annuncio");
 
     }
     public function refuseAnnouncement(Announcement $announcement){
         
-        $announcement->setAccepted(false);
-        $announcement->setRevisor();      
+        $announcement->is_accepted=false;
+        $announcement->user_id=Auth::user()->id;
+        $announcement->save();     
         return redirect()->back()->with('message',"Peccato, hai rifiutato l'annuncio");
 
     }

@@ -21,7 +21,7 @@
                                             @foreach ($announcement->images as $image)
                                             
                                             <div class="carousel-item @if($loop->first)active @endif">
-                                                <img src="{{Storage::url($image->path)}}" class=" d-block w-100" alt="...">
+                                                <img src="{{($image->getUrl(400,300))}}" class=" d-block w-100" alt="...">
                                             </div>
                                             @endforeach
                                         </div>
@@ -60,24 +60,12 @@
                                         {{ $announcement->created_at->format('d/m/Y') }}
                                     </p>
 
-                                    <a onclick="event.preventDefault(); 
-                                    document.getElementById('accept-form').submit();"
+                                    <a href="{{route('acceptAnnouncement', ['announcement'=>$announcement])}}"
                                         class="btn btn-success f-p">Approva</a>
-                                    <form id="accept-form"
-                                        action="{{ route('acceptAnnouncement', compact('announcement')) }}"
-                                        method="POST" class="d-none">
-                                        @csrf
-                                        @method('PATCH')
-                                    </form>
-                                    <a onclick="event.preventDefault(); 
-                                    document.getElementById('refuse-form').submit();"
+                                    
+                                    <a href="{{route('refuseAnnouncement', ['announcement'=>$announcement])}}"
                                         class="btn btn-danger f-p">Rifiuta</a>
-                                    <form id="refuse-form"
-                                        action="{{ route('refuseAnnouncement', compact('announcement')) }}"
-                                        method="POST" class="d-none">
-                                        @csrf
-                                        @method('PATCH')
-                                    </form>
+                                    
 
 
                                 </div>
