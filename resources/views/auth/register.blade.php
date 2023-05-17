@@ -7,38 +7,6 @@
         </div>
     </div>
 </div>
-<div class="containe">
-  <div class="row">
-    <div class="col-sm-12">
-      <form method="POST" action="{{route('register')}}">          
-          @csrf
-          <div class="mb-3 text-center">
-            <label class="form-label f-p">Nome</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name">          
-            @error('name') <span class="f-s error text-danger">{{ $message }}</span> @enderror
-          </div>
-          <div class="mb-3 text-center">
-              <label for="exampleInputEmail1" class="form-label f-p">Email</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">          
-              @error('email') <span class="f-s error text-danger">{{ $message }}</span> @enderror
-            </div>
-          <div class="mb-3 text-center">
-            <label for="exampleInputPassword1" class="form-label f-p">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" name="password">
-            @error('password') <span class="f-s error text-danger">{{ $message }}</span> @enderror
-          </div>
-          <div class="mb-3 text-center">
-              <label for="exampleInputPassword1" class="form-label f-p">Conferma Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" name="password_confirmation">
-            @error('password_confirmation') <span class="f-s error text-danger">{{ $message }}</span> @enderror
-            </div> 
-            <div class="text-center">
-              <button type="submit" class="btn bgmy3 f-p text fw-bold">Registrati</button>
-              </div>       
-        </form>
-    </div>
-  </div>
-</div>
 
 <div class="container">
   <div class="row">

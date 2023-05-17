@@ -38,7 +38,7 @@
 }
 
 /* inizio css navbar */
-.top-bar .nav-item {
+/* .top-bar .nav-item {
   display: inline-block;
 }
 
@@ -117,7 +117,7 @@ a .inner-link {
   height: 40px;
   line-height: 1.5em;
   transform: skew(25deg)
-}
+} */
 
 /* .brand-phone,
   .brand-logo {
@@ -181,30 +181,23 @@ a .inner-link {
   outline: pagination-focus-outline;
 }
 
-.shwi {
-  width: 200px;
-}
 
 .logoimg {
   border-radius: 50%;
 }
 
-/* .bordo {
-  border-color: #FA6D3D;
-  border-width: 5px;
-} */
 
 .card:hover {
   transform: scale(1.05);
 } 
 
 .upper-nav {
-  height: 30%;
-  border-right: 2px #AD3E18 solid;
+  height: 40%;
+  border-right: 2px #ffa469 solid;
 }
 
 .botton-nav {
-  height: 70%;
+  height: 60%;
   border-left: 2px #ffd2b3 solid;
 }
 
