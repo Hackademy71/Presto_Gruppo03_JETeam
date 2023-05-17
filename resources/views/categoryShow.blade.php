@@ -26,10 +26,11 @@
                                 <a href="{{ route('detArticle', compact('announcement')) }}"
                                     class="btn bgmy4 f-p m-3">Visualizza dettaglio</a>
                                 @auth
-                                {{-- <a href="" class="text-light"> Segnala annuncio </a>     --}}
-                                @if(Auth:user()->is_revisor && $announcement->revisor_id===Auth:user()->id)
-                                <a href="{{ route('refuseAnnouncement', ['announcement' => $announcement]) }}"
-                                    class="btn btn-danger f-p">Rimanda in revisione</a>
+                                    {{-- <a href="" class="text-light"> Segnala annuncio </a>     --}}
+                                    @if (Auth::user()->is_revisor && $announcement->revisor_id === Auth::user()->id)
+                                        <a href="{{ route('refuseAnnouncement', ['announcement' => $announcement]) }}"
+                                            class="btn btn-danger f-p">Rimanda in revisione</a>
+                                    @endif
                                 @endauth
                             </div>
                         </div>

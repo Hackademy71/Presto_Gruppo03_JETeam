@@ -1,20 +1,18 @@
 <x-layout>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12 mt-4 mb-3">
                 <h1 class="f-s text-center">Accedi</h1>
             </div>
         </div>
-    </div>   
 
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 mx-auto">
+        <div class="row justify-content-center ">
+            <div class="col-12 col-md-6 mx-auto justify-content-center">
                 <div class="card-login d-flex justify-content-center align-items-center">
                     <div class="card-content">
-                        <h3 class="f-s text-center">
+                        {{-- <h3 class="f-s text-center">
                             Accedi
-                        </h3>
+                        </h3> --}}
                         <form class="mt-2" method="POST" action="{{ route('login') }}">
                             @csrf
                             <div class="form-group mb-3 text-center">
