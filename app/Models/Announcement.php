@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\User;
+use App\Models\Image;
 use App\Models\Category;
 use Laravel\Scout\Searchable;
 use App\Models\Revisor_announcement;
@@ -34,6 +35,9 @@ class Announcement extends Model
     }
     public function revisor (){
         return $this->belongsTo(User::class);
+    }
+    public function images(){
+        return $this->hasMany(Image::class);
     }
         public static function toBeRevisionedCount(){
         return Announcement::where('is_accepted',null)->count();
