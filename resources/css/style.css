@@ -148,23 +148,17 @@ a .inner-link {
 
 
 .hero-image {
-  background-image: url("./img/online.png");
-  
-  height: 400px;
-}
-
-.hero-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: fill;
+  background-image: url("../../public/img/online.png");  
+  background-size:cover;
+  height: 50vh;
 }
 
 .hero-text {
-  position: absolute;
+  /* position: relative;
   top: 25%;
   left: 73%;
-  transform: translate(-50%, -50%);
-  color: white;
+  transform: translate(-50%, -50%); */
+  color: black;
 }
 
 .hero-text h1 {
