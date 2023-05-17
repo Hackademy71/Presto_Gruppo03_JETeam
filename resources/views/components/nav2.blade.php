@@ -16,54 +16,54 @@
                 <ul class="top-bar">
 
                     @guest
-                                                                    <li class="nav-item dropdown align-self-center">
-                                                                        <a class="nav-link dropdown-toggle f-p"role="button" data-bs-toggle="dropdown"
-                                                                            aria-expanded="false">
-                                                                            <span class="inner-link">Area Utenti</span>
-                                                                        </a>
-                                                                        <ul class="dropdown-menu">
-                                                                            <li>
-                                                                                <a class="nav-link dropdown-item f-p" href="{{ route('login') }}">Accedi</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a class="nav-link dropdown-item f-p" href="{{ route('register') }}">Registrati</a>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </li>
-@else
-    <li>
-                                                                        <a class="nav-link dropdown-toggle d-flex align-items-center f-p"role="button"
-                                                                            data-bs-toggle="dropdown" aria-expanded="false">
-                                                                            Ciao, {{ Auth::user()->name }}
-                                                                        </a>
-                                                                        <ul class="dropdown-menu">
-                                                                            <li><a class="nav-link dropdown-item f-p" href="">Dettagli profilo</a></li>
-                                                                            <li><a class="nav-link dropdown-item f-p" href="{{ route('logout') }}"
-                                                                                    onclick="event.preventDefault(); 
-                            document.getElementById('logout-form').submit();">Logout</a>
-                                                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                                                                    @csrf
-                                                                                </form>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </li>
-                                                                    @if (Auth::user()->is_revisor)
-    <li class="nav-item dropdown">
+                                                                        <li class="nav-item dropdown align-self-center">
                                                                             <a class="nav-link dropdown-toggle f-p"role="button" data-bs-toggle="dropdown"
                                                                                 aria-expanded="false">
-                                                                                Area Revisore
-                                                                                <span> {{ App\Models\Announcement::toBeRevisionedCount() }}<span
-                                                                                        class="visually-hidden f-p">Unreaded messages</span> </span>
+                                                                                <span class="inner-link">Area Utenti</span>
                                                                             </a>
                                                                             <ul class="dropdown-menu">
-                                                                                <li><a class="nav-link dropdown-item f-p" href="{{ route('indexRevisor') }}">Annunci da
-                                                                                        convalidare</a>
+                                                                                <li>
+                                                                                    <a class="nav-link dropdown-item f-p" href="{{ route('login') }}">Accedi</a>
                                                                                 </li>
-                                                                                <li><a class="nav-link dropdown-item f-p" href="{{ route('recheck') }}"> Secondo
-                                                                                        check</a>
+                                                                                <li>
+                                                                                    <a class="nav-link dropdown-item f-p" href="{{ route('register') }}">Registrati</a>
                                                                                 </li>
                                                                             </ul>
                                                                         </li>
+@else
+    <li>
+                                                                            <a class="nav-link dropdown-toggle d-flex align-items-center f-p"role="button"
+                                                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                                                Ciao, {{ Auth::user()->name }}
+                                                                            </a>
+                                                                            <ul class="dropdown-menu">
+                                                                                <li><a class="nav-link dropdown-item f-p" href="">Dettagli profilo</a></li>
+                                                                                <li><a class="nav-link dropdown-item f-p" href="{{ route('logout') }}"
+                                                                                        onclick="event.preventDefault(); 
+                            document.getElementById('logout-form').submit();">Logout</a>
+                                                                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                                                        @csrf
+                                                                                    </form>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </li>
+                                                                        @if (Auth::user()->is_revisor)
+    <li class="nav-item dropdown">
+                                                                                <a class="nav-link dropdown-toggle f-p"role="button" data-bs-toggle="dropdown"
+                                                                                    aria-expanded="false">
+                                                                                    Area Revisore
+                                                                                    <span> {{ App\Models\Announcement::toBeRevisionedCount() }}<span
+                                                                                            class="visually-hidden f-p">Unreaded messages</span> </span>
+                                                                                </a>
+                                                                                <ul class="dropdown-menu">
+                                                                                    <li><a class="nav-link dropdown-item f-p" href="{{ route('indexRevisor') }}">Annunci da
+                                                                                            convalidare</a>
+                                                                                    </li>
+                                                                                    <li><a class="nav-link dropdown-item f-p" href="{{ route('recheck') }}"> Secondo
+                                                                                            check</a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </li>
     @endif
                     @endguest
             </nav>
@@ -220,7 +220,28 @@
                                      </li>
                                  @endforeach
                              </ul>
-                         </div>
+                            </div>
+                            <div class="dropdown px-2">
+                                <a class="text-decoration-none text-white dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Lingue
+                            </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <x-_locale lang="it" />
+                                        Italiano
+                                    </li>
+                                    <li>
+                                        <x-_locale lang="en" />
+                                        English
+                                    </li>
+                                    <li>
+                                        <x-_locale lang="es" />
+                                        Español
+                                    </li>
+
+                                </ul>
+                            </div>
 
                      </nav>
                  </div>

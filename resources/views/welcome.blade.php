@@ -1,14 +1,16 @@
 <x-layout>
-    <div class="container-fluid">
+    <div class="container-fluid hero-image">
         <div class="row">
-            <div class="col-12 ps-0">
-                <div class="hero-image">
+            <div class="col-sm-12 ps-0">
+                
                     <img src="./img/online.png" alt="img-header">
-                </div>
-                <div class="hero-text">
+                
+                {{-- <div class="hero-text">
                     <h1 class="f-p fw-bold fs-1 justify-content-end text-gradient-50"> {{__('ui.welcome')}}</h1>
-                    <p class="f-p fs-2 justify-content-center text-gradient-50">Il tuo marketplace preferito!</p>
-                </div>
+                    <p class="f-p fs-2 justify-content-center text-gradient-50">
+                        {{__('ui.slogan')}}
+                    </p>
+                </div> --}}
             </div>
 
             <div class="container-fluid">

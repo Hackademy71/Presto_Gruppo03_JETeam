@@ -148,7 +148,8 @@ a .inner-link {
 
 
 .hero-image {
-  position: relative;
+  background-image: url("./img/online.png");
+  
   height: 400px;
 }
 
