@@ -30,6 +30,9 @@ class AnnouncementController extends Controller
         $announcement->save();
         return redirect()->back()->with('message',"Grazie per la segnalazione, un revisore controllerà l'annuncio");
      }
+     public function modifyAnnouncement(Announcement $announcement){
+        return view('annunci.modifyAnnouncement',compact('announcement'));
+     }
     /**
      * Show the form for creating a new resource.
      */

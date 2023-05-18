@@ -11,12 +11,12 @@ Route::get('/', [PublicController::class,'welcome'])->name('welcome');
 
 //Rotte per Users
 Route::get('/user/annunci', [FrontController::class,'userAnnouncements'])->name('userAnnouncements');
-
 //Rotte per Annunci e Categorie
 
 Route::get('/articleNew', [AnnouncementController::class, 'create'])->name('articleNew');
 Route::get('/annunci/detArticle/{announcement}', [AnnouncementController::class, 'show'])->name('detArticle');
 Route::get('/index/annunci', [AnnouncementController::class, 'index'])->name('indexAnnouncement');
+Route::get('/modifica/{announcement}',[AnnouncementController::class,'modifyAnnouncement'])->name('modifyAnnouncement');
 Route::get('/category/{category}', [FrontController::class,'categoryShow'] )->name('categoryShow');
 
 //Rotte per i Revisori

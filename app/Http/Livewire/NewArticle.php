@@ -89,6 +89,7 @@ class NewArticle extends Component
     public function updated($propertyName)
     {
         $this->validateOnly($propertyName);
+        
     }
     public function cleanForm()
     {
@@ -96,10 +97,8 @@ class NewArticle extends Component
         $this->description = "";
         $this->price = "";
         $this->category = "";
-        $this->image="";
         $this->images=[];
         $this->temporary_images=[];
-        $this->form_id=rand();
     }
     public function render()
     {
