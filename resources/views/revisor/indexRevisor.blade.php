@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 mt-4">
-                <h1 class="f-p">Ciao {{ Auth::user()->name }}, benvenuto nell'area revisori</h1>
+                <h1 class="f-p tx-color">Ciao {{ Auth::user()->name }}, benvenuto nell'area revisori</h1>
             </div>
         </div>
         <div class="row justify-content-center">
@@ -62,9 +62,9 @@
                                     {{ $announcement->created_at->format('d/m/Y') }}
                                 </p>
                                 <a href="{{ route('acceptAnnouncement', ['announcement' => $announcement]) }}"
-                                    class="btn btn-success f-p">Approva</a>
+                                    class="btn bgmy4 f-p">Approva</a>
                                 <a href="{{ route('refuseAnnouncement', ['announcement' => $announcement]) }}"
-                                    class="btn btn-danger f-p">Rifiuta</a>
+                                    class="btn bgmy4 f-p">Rifiuta</a>
                             </div>
                         </div>
                     </div>

@@ -6,8 +6,8 @@
               
 
                 <div class="hero-text text-end h-100">
-                    <h1 class="f-p fw-bold fs-1 justify-content-end text-gradient-50"> {{ __('ui.welcome') }}</h1>
-                    <p class="f-p fs-2 justify-content-center text-gradient-50">
+                    <h1 class="f-p fw-bold fs-1 justify-content-end text-gradient-50 tx-color"> {{ __('ui.welcome') }}</h1>
+                    <p class="f-p fs-2 justify-content-center text-gradient-50 tx-color">
                         {{ __('ui.slogan') }}
                     </p>
                 </div>

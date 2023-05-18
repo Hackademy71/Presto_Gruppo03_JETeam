@@ -152,22 +152,22 @@
                  <div class="col-12 upper-nav bgmy1">
                      <nav class="nav justify-content-center align-items-center h-100">
                          <div class="dropdown px-2">
-                             <a class="text-decoration-none text-white dropdown-toggle" href="#" role="button"
+                             <a class="text-decoration-none tx-color dropdown-toggle" href="#" role="button"
                                  data-bs-toggle="dropdown" aria-expanded="false">
                                  Area Utente
                              </a>
                              @guest
                                  <ul class="dropdown-menu">
-                                     <li><a class="dropdown-item" href="{{ route('login') }}">Login</a></li>
-                                     <li><a class="dropdown-item" href="{{ route('register') }}">Registrati</a></li>
+                                     <li><a class="dropdown-item tx-color" href="{{ route('login') }}">Login</a></li>
+                                     <li><a class="dropdown-item tx-color" href="{{ route('register') }}">Registrati</a></li>
                                  </ul>
                              @else
                                  <ul class="dropdown-menu">
-                                     <li><a class="dropdown-item" href="#">Profilo Utente</a></li>
+                                     <li><a class="dropdown-item tx-color" href="#">Profilo Utente</a></li>
                                      <li>
                                          <form class="m-0"action="{{ route('logout') }}" method="POST">
                                              @csrf
-                                             <button class="btn" type="submit">Logout</button>
+                                             <button class="btn tx-color" type="submit">Logout</button>
                                          </form>
                                      </li>
 
@@ -175,16 +175,16 @@
                              </div>
                              <div class="dropdown px-2">
                                  @if (Auth::user()->is_revisor)
-                                     <a class="text-decoration-none text-white dropdown-toggle" href="#"
+                                     <a class="text-decoration-none dropdown-toggle tx-color" href="#"
                                          role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                          Area Revisore
                                          <span> {{ App\Models\Announcement::toBeRevisionedCount() }}<span
                                                  class="visually-hidden f-p">Unreaded messages</span> </span>
                                      </a>
                                      <ul class="dropdown-menu">
-                                         <li><a class="dropdown-item" href="{{ route('indexRevisor') }}">Annunci da
+                                         <li><a class="dropdown-item tx-color" href="{{ route('indexRevisor') }}">Annunci da
                                                  revisionare</a></li>
-                                         <li><a class="dropdown-item" href="{{ route('recheck') }}">Recheck</a></li>
+                                         <li><a class="dropdown-item tx-color" href="{{ route('recheck') }}">Recheck</a></li>
                                      </ul>
                                  @endif
                              @endguest

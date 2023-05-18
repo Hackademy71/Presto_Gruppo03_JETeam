@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <h1 class="f-p text-center mt-4">Crea il tuo annuncio!</h1>
+                <h1 class="f-p text-center tx-color mt-4">Crea il tuo annuncio!</h1>
             </div>
         </div>
     </div>
@@ -12,7 +12,7 @@
             <label class="form-label f-p">Titolo Annuncio</label>
             <input type="text" class="form-control @error('name') is-invalid @enderror" wire:model.lazy="name">
             @error('name')
-                <span class="f-s error text-danger">{{ $message }}</span>
+                <span class="f-s error tx-color">{{ $message }}</span>
             @enderror
         </div>
 
@@ -21,7 +21,7 @@
                 placeholder="scrivi la descrizione" id="floatingTextarea2" style="height: 100px"></textarea>
             <label for="floatingTextarea2">Descrivi il prodotto</label>
             @error('description')
-                <span class="f-s error text-danger">{{ $message }}</span>
+                <span class="f-s error tx-color">{{ $message }}</span>
             @enderror
         </div>
 
@@ -30,7 +30,7 @@
             <input type="number" class="form-control f-p @error('price') is-invalid @enderror"
                 wire:model.lazy="price">
             @error('price')
-                <span class="f-s error text-danger">{{ $message }}</span>
+                <span class="f-s error tx-color">{{ $message }}</span>
             @enderror
         </div>
         <div class="mb-3">
@@ -40,21 +40,21 @@
                         <label class="f-p" for="category">Categoria</label>
                         <select wire:model.defer="category" id="category" class="form-control color-category">
 
-                            <option class="f-s color-category"value="">Scegli la categoria</option>
+                            <option class="f-s color-category "value="">Scegli la categoria</option>
                             @foreach ($categories as $category)
                                 <option class="f-p"value="{{ $category->id }}">{{ $category->name }}</option>
                             @endforeach
                         </select>
                         @error('category')
-                            <span class=" text-danger f-s error">{{ $message }}</span>
+                            <span class=" tx-color f-s error">{{ $message }}</span>
                         @enderror
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3 mt-3">
                         <input wire:model="temporary_images" type="file" name="images" multiple
                             class="form-control shadow @error('temporary_images.*') is-invalid @enderror"
                             placeholder="Img" />
                         @error('temporary_images.*')
-                            <p class="text-danger mt-2">{{ $message }}</p>
+                            <p class="tx-color mt-2">{{ $message }}</p>
                         @enderror
                     </div>
                     @if (!empty($images))
