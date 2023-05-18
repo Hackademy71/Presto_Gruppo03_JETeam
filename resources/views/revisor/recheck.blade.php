@@ -13,16 +13,16 @@
                 <div class="col-6 col-sm-3 d-flex justify-content-center mt-4 align-items-center">
                     <div class="card" style="width: 18rem;">
                         <div class="container card-img-top">
-                            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
-                                <div class="carousel-indicators">
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
+                            <div id="announcement-{{$announcement->id}}" class="carousel slide" data-bs-ride="true">
+                                {{-- <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#announcement-{{$announcement->id}}"
                                         data-bs-slide-to="0" class="active" aria-current="true"
                                         aria-label="Slide 1"></button>
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
+                                    <button type="button" data-bs-target="#announcement-{{$announcement->id}}"
                                         data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
+                                    <button type="button" data-bs-target="#announcement-{{$announcement->id}}"
                                         data-bs-slide-to="2" aria-label="Slide 3"></button>
-                                </div>
+                                </div> --}}
                                 @if ($announcement->images()->get()->isNotEmpty())
                                     <div class="carousel-inner">
 
@@ -47,12 +47,12 @@
                                     </div>
                                 @endif
                                 <button class="carousel-control-prev" type="button"
-                                    data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                    data-bs-target="#announcement-{{$announcement->id}}" data-bs-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Previous</span>
                                 </button>
                                 <button class="carousel-control-next" type="button"
-                                    data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                    data-bs-target="#announcement-{{$announcement->id}}" data-bs-slide="next">
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Next</span>
                                 </button>
