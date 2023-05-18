@@ -46,12 +46,12 @@
                                         </div>
                                     </div>
                                 @endif
-                                <button class="carousel-control-prev" type="button"
+                                <button class="carousel-control-prev tx-color" type="button"
                                     data-bs-target="#announcement-{{$announcement->id}}" data-bs-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Previous</span>
                                 </button>
-                                <button class="carousel-control-next" type="button"
+                                <button class="carousel-control-next tx-color" type="button"
                                     data-bs-target="#announcement-{{$announcement->id}}" data-bs-slide="next">
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Next</span>
