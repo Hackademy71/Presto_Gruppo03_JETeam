@@ -37,11 +37,12 @@
                     </div>
                     <div class="col-12">
                         <label class="f-p form-label my-3" for="category">Categoria</label>
-                        <select wire:model.defer="category" id="category" class="form-control color-category">
+                        <select wire:model.defer="catAnnouncement" id="category" class="form-control color-category">
 
-                            <option class="f-s color-category my-3" value="">Scegli la categoria</option>
+                            <option class="f-s color-category my-3">Scegli la categoria</option>
                             @foreach ($categories as $category)
-                                <option class="f-p"value="{{ $category->id }}">{{ $category->name }}
+                            <option class="f-p" value="{{ $category->id }}">{{ $category->name }}
+                                
                                 </option>
                             @endforeach
                         </select>
@@ -67,7 +68,8 @@
                                         <div class="col my-3">
                                             <div class="img-preview mx-auto shadow rounded">
                                                 {{-- style="background-image:url({{ $image->temporaryUrl() }}) cover;"> --}}
-                                                <img class="img-fluid" src="{{$image->temporaryUrl()}}" alt="">
+                                                {{-- <img class="img-fluid" src="{{$image->temporaryUrl()}}" alt=""> --}}
+                                                <img class="img-fluid" src="{{$image->getUrl(400, 300)}}" alt="">
                                             </div>
                                             <button type="button"
                                                 class="btn btn-danger shadow d-block text-center mt-2 mx-auto"
