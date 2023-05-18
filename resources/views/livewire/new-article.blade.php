@@ -54,6 +54,7 @@
                                     @enderror
                                 </div>
                                 <div class="mb-3">
+                                    <p class="mb-3">Aggiungi delle foto al tuo annuncio</p>                                    
                                     <input wire:model="temporary_images" type="file" name="images" multiple
                                         class="form-control shadow @error('temporary_images.*') is-invalid @enderror"
                                         placeholder="Img" />
