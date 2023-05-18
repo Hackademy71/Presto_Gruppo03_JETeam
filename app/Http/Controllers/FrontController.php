@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Announcement;
+use Illuminate\Support\Facades\Auth;
 
 class FrontController extends Controller
 {
@@ -18,9 +19,9 @@ class FrontController extends Controller
         session()->put('locale', $lang);
         return redirect()->back();
     }
-    public function userAnnouncements(Auth $user)
+    public function userAnnouncements()
     {
-        $announcements=Announcement::where('user_id', $user->id )->get();
+        $announcements=Announcement::where('user_id', Auth::user()->id)->where('is_accepted', true)->orderBy('created_at', 'DESC')->paginate(12);
         return view('user.userAnnouncements_index', compact('announcements'));
     }
 }

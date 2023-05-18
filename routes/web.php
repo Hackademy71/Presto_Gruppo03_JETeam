@@ -10,7 +10,7 @@ use App\Http\Controllers\AnnouncementController;
 Route::get('/', [PublicController::class,'welcome'])->name('welcome');
 
 //Rotte per Users
-Route::get('/{user}/annunci', [FrontController::class,'userAnnouncements'])->name('userAnnouncements');
+Route::get('/user/annunci', [FrontController::class,'userAnnouncements'])->name('userAnnouncements');
 
 //Rotte per Annunci e Categorie
 

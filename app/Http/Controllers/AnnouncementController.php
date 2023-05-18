@@ -22,7 +22,7 @@ class AnnouncementController extends Controller
     }
 
      public function searchAnnouncement (Request $request){
-        $announcements=Announcement::search($request->searched)->where('is_accepted', true)->paginate(10);
+        $announcements=Announcement::search($request->searched)->where('is_accepted', true)->orderBy('created_at', 'DESC')->paginate(12);
         return view('annunci.indexAnnouncement', compact('announcements'));
     }
      public function reportAnnouncement (Announcement $announcement){
