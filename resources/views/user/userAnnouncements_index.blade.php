@@ -1,8 +1,20 @@
 <x-layout>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
 
+            </div>
+        </div>
+    </div>
     <div class="container-fluid">
         <div class="row justify-content-center">
-            <div class="col-12">
+            <div class="div col-3 bgmy1">
+                <h1 class="">Il tuo profilo</h1>
+</div>
+
+
+            
+            <div class="col-9">
                 <h1>Benvenut* {{ Auth::user()->name }},</h1>
                 <h2> hai caricato "Numero annunci" </h2>
             </div>
@@ -38,6 +50,7 @@
             </div>
         </div>
     </div>
+
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-sm-12 d-flex justify-content-center">
@@ -49,5 +62,4 @@
 
         </div>
     </div>
-
 </x-layout>
