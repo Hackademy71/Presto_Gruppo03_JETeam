@@ -82,8 +82,9 @@ class NewArticle extends Component
         //     'category_id'=>$category->id,
         // ]);
         
-        session()->flash('message', 'Articolo inserito con successo, sarà pubblicato dopo la revisione');
+        // session()->flash('message', 'Articolo inserito con successo, sarà pubblicato dopo la revisione');
         $this->cleanForm();
+        redirect('/articleNew')->with('message','Articolo inserito con successo, sarà pubblicato dopo la revisione');
     }
 
     public function updated($propertyName)
