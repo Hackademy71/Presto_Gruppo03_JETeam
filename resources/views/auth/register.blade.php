@@ -19,7 +19,7 @@
                         <form class="mt-2"method="POST" action="{{ route('register') }}">
                             @csrf
                             <div class="mb-3 text-center">
-                                <label class="form-label f-p">Nome</label>
+                                <label class="form-label f-p">Nome Profilo</label>
                                 <input type="text" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp" name="name">
                                 @error('name')

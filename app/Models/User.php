@@ -23,8 +23,16 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'is_revisor',
-
+        'is_revisor', 
+        'city',
+        'state',
+        'CAP',
+        'address',
+        'gender',
+        'tel_number',
+        'contactMethod',
+        'nickname', 
+        'surname',
     ];
 
     /**
@@ -50,6 +58,9 @@ class User extends Authenticatable
     // }
     public function announcements () {
         return $this->hasMany(Announcement::class);
+    }
+    public function storeProfile() {
+
     }
 
    

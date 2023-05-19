@@ -6,11 +6,14 @@ use App\Http\Controllers\FrontController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\RevisorController;
 use App\Http\Controllers\AnnouncementController;
+use App\Http\Controllers\UserController;
 
 Route::get('/', [PublicController::class,'welcome'])->name('welcome');
 
 //Rotte per Users
 Route::get('/user/annunci', [FrontController::class,'userAnnouncements'])->name('userAnnouncements');
+Route::patch('/user/{user}', [UserController::class,'showProfile'])->name('showProfile');
+Route::get('/user/{user}', [UserController::class,'getProfile'])->name('getProfile');
 //Rotte per Annunci e Categorie
 
 Route::get('/articleNew', [AnnouncementController::class, 'create'])->name('articleNew');
