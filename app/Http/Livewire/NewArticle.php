@@ -74,7 +74,6 @@ class NewArticle extends Component
                 new ResizeImage($newImage->path, 400 ,300),
                 new GoogleVisionSafeSearch($newImage->id),
                 new GoogleVisionLabelImage($newImage->id),
-
                 ])->dispatch($newImage->id);
                 
             }

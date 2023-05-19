@@ -53,10 +53,11 @@ class RemoveFaces implements ShouldQueue
     }
     $w=$bounds [2][0] - $bounds [0][0];
     $h=$bounds [2][1] - $bounds [0][1];
+   
 
     $image=Spatieimage::load($srcPath);
 
-    $image->watermark('public/img/deadpool.png')
+    $image->watermark('/img/deadpool.png')
     ->watermarkPosition('top-left')
     ->watermarkPadding($bounds [0][0], $bounds [0][1])
     ->watermarkWidth($w, Manipulation::UNIT_PIXELS)
