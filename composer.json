@@ -7,7 +7,7 @@
     "require": {
         "php": "^8.1",
         "google/cloud": "^0.205.0",
-        "google/cloud-vision": "*",
+        "google/cloud-vision": "^1.6",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/fortify": "^1.17",
         "laravel/framework": "^10.8",

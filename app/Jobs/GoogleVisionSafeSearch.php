@@ -2,13 +2,14 @@
 
 namespace App\Jobs;
 
-use Google\Cloud\Vision\V1\ImageAnnotatorClient;
+use App\Models\Image;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldBeUnique;
+use Illuminate\Queue\SerializesModels;
+use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Queue\SerializesModels;
+use Illuminate\Contracts\Queue\ShouldBeUnique;
+use Google\Cloud\Vision\V1\ImageAnnotatorClient;
 
 class GoogleVisionSafeSearch implements ShouldQueue
 {
