@@ -13,7 +13,7 @@
                 <div class="col-6 col-sm-3 d-flex justify-content-center mt-4 align-items-center">
                     <div class="card" style="width: 18rem;">
                         <div class="container card-img-top">
-                            <div id="announcement-{{$announcement->id}}" class="carousel slide" data-bs-ride="true">
+                            <div id="announcement-{{ $announcement->id }}" class="carousel slide" data-bs-ride="true">
                                 {{-- <div class="carousel-indicators">
                                     <button type="button" data-bs-target="#announcement-{{$announcement->id}}"
                                         data-bs-slide-to="0" class="active" aria-current="true"
@@ -47,12 +47,12 @@
                                     </div>
                                 @endif
                                 <button class="carousel-control-prev tx-color" type="button"
-                                    data-bs-target="#announcement-{{$announcement->id}}" data-bs-slide="prev">
+                                    data-bs-target="#announcement-{{ $announcement->id }}" data-bs-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Previous</span>
                                 </button>
                                 <button class="carousel-control-next tx-color" type="button"
-                                    data-bs-target="#announcement-{{$announcement->id}}" data-bs-slide="next">
+                                    data-bs-target="#announcement-{{ $announcement->id }}" data-bs-slide="next">
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Next</span>
                                 </button>
