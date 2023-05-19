@@ -22,7 +22,7 @@ class RemoveFaces implements ShouldQueue
     private $announcement_image_id;
     public function __construct($announcement_image_id)
     {
-        $this->$announcement_image_id=$announcement_image_id;
+        $this->announcement_image_id=$announcement_image_id;
     }
 
     /**
@@ -36,16 +36,16 @@ class RemoveFaces implements ShouldQueue
     }
    
 
-    $srcPath=storage_path('app/public' . $i->path);
+    $srcPath=storage_path('app/public/' . $i->path);
     $image=file_get_contents($srcPath);
-    puten('GOOGLE_APPLICATION_CREDENTIALS='.base_path('google_credential_json'));
+    putenv('GOOGLE_APPLICATION_CREDENTIALS=' . base_path('google_credential.json'));
 
-    $imageAnnotator =new ImageAnnotatorClient();
+    $imageAnnotator=new ImageAnnotatorClient();
     $response=$imageAnnotator->faceDetection($image);
     $faces = $response->getFaceAnnotations();
 
     foreach ($faces as $face) {
-    $vertices=$face->getBoundingPoly()-> getVertices();
+    $vertices=$face->getBoundingPoly()->getVertices();
 
     $bounds = [];
     foreach ($vertices as $vertex) {
@@ -55,14 +55,14 @@ class RemoveFaces implements ShouldQueue
     $h=$bounds [2][1] - $bounds [0][1];
    
 
-    $image=Spatieimage::load($srcPath);
+    $image=SpatieImage::load($srcPath);
 
-    $image->watermark('/img/deadpool.png')
+    $image->watermark(base_path('resources/img/deadpool.png'))
     ->watermarkPosition('top-left')
     ->watermarkPadding($bounds [0][0], $bounds [0][1])
-    ->watermarkWidth($w, Manipulation::UNIT_PIXELS)
-    ->watermarkHeight($h, Manipulation::UNIT_PIXELS)
-    ->watermarkFit(Manipulation::FIT_STRETCH);
+    ->watermarkWidth($w, Manipulations::UNIT_PIXELS)
+    ->watermarkHeight($h, Manipulations::UNIT_PIXELS)
+    ->watermarkFit(Manipulations::FIT_STRETCH);
 
     $image->save($srcPath);
     
