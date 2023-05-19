@@ -3,7 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
-use App\Models\Revisor_announcement;
+use App\Models\Profile;
 use App\Models\Announcement;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
@@ -24,15 +24,6 @@ class User extends Authenticatable
         'email',
         'password',
         'is_revisor', 
-        'city',
-        'state',
-        'CAP',
-        'address',
-        'gender',
-        'tel_number',
-        'contactMethod',
-        'nickname', 
-        'surname',
     ];
 
     /**
@@ -56,10 +47,11 @@ class User extends Authenticatable
     // public function announcements(){
     //     return $this->belongsTo('annoucement');
     // }
-    public function announcements () {
+    public function announcements(){
         return $this->hasMany(Announcement::class);
     }
-    public function storeProfile() {
+    public function profile(){
+        return $this->hasOne(Profile::class);
 
     }
 

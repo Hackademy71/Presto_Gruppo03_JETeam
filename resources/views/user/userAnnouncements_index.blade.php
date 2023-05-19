@@ -10,10 +10,21 @@
         <div class="row justify-content-center">
             <div class="div col-3 bgmy1">
                 <h1 class="">Il tuo profilo</h1>
-</div>
+                <h5 class="card-title f-p">Nome {{ Auth::user()->name }}</h5>
+                <p class="card-text f-s">Email: {{ Auth::user()->email }}</p>
+
+                @if (Auth::user()->profile)
+                    <h5 class="card-title f-p">{{ Auth::user()->profile->nickname }}</h5>
+                    <p class="card-text f-s">Città: {{ Auth::user()->profile->city }}</p>
+                    <p class="card-text f-s">CAP: {{ Auth::user()->profile->CAP }}</p>
+                    <a href="{{ route('userProfile') }}" class="btn bgmy4 f-p m-3">Modifica i tuoi dati</a>
+                @else
+                    <a href="{{ route('userProfile') }}">Aggiungi più dati al tuo Profilo</a>
+                @endif
+            </div>
 
 
-            
+
             <div class="col-9">
                 <h1>Benvenut* {{ Auth::user()->name }},</h1>
                 <h2> hai caricato "Numero annunci" </h2>

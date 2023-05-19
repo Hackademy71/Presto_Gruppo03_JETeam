@@ -12,8 +12,8 @@ Route::get('/', [PublicController::class,'welcome'])->name('welcome');
 
 //Rotte per Users
 Route::get('/user/annunci', [FrontController::class,'userAnnouncements'])->name('userAnnouncements');
-Route::patch('/user/{user}', [UserController::class,'showProfile'])->name('showProfile');
-Route::get('/user/{user}', [UserController::class,'getProfile'])->name('getProfile');
+Route::get('/user', [UserController::class, "userProfile"])->name('userProfile');
+Route::post('/postuser', [UserController::class, 'postUserData'])->name('postProfile');
 //Rotte per Annunci e Categorie
 
 Route::get('/articleNew', [AnnouncementController::class, 'create'])->name('articleNew');
