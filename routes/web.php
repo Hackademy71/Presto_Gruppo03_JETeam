@@ -29,7 +29,7 @@ Route::get('/announcement/refuse/{announcement}', [RevisorController::class, 're
 
 Route::get('/workWithUs', [RevisorController::class,'workWithUs'])->middleware('auth')->name('workWithUs');
 Route::get('/revisor/{user}', [RevisorController::class,'makeRevisor'])->name('make.revisor');
-Route::get('/revisor/recheck', [RevisorController::class, 'recheck'])->name('recheck');
+Route::get('/recheck', [RevisorController::class, 'recheck'])->name('recheck');
 Route::post('/revisor/defDelete/{announcement}', [RevisorController::class,'defDelete'])->name('defDelete');
 
 //Rotte per ricerca e cambio lingua
