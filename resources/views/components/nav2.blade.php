@@ -11,17 +11,15 @@
                  {{-- upper-nav --}}
                  <div class="col-12 upper-nav bgmy1">
                      <nav class="nav justify-content-center align-items-center h-100">
+                         @guest
+                         <a class="nav-link tx-color" href="{{ route('login') }}">Login/Signup</a>
+                         {{-- <li><a class="dropdown-item tx-color" href="{{ route('register') }}">Registrati</a></li> --}}
+                         @else
                          <div class="dropdown px-2">
                              <a class="text-decoration-none tx-color dropdown-toggle" href="#" role="button"
                                  data-bs-toggle="dropdown" aria-expanded="false">
                                  Area Utente
                              </a>
-                             @guest
-                                 <ul class="dropdown-menu">
-                                     <li><a class="dropdown-item tx-color" href="{{ route('login') }}">Login/Signup</a></li>
-                                     {{-- <li><a class="dropdown-item tx-color" href="{{ route('register') }}">Registrati</a></li> --}}
-                                 </ul>
-                             @else
                                  <ul class="dropdown-menu">
                                      <li><a class="dropdown-item tx-color" href="{{route('userAnnouncements')}}">Profilo Utente</a></li>
                                      <li>

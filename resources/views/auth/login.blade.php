@@ -1,7 +1,7 @@
 <x-layout>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-6 mt-4 mb-3">
+            <div class="col-sm-6 mb-3">
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12 mt-4 mb-3">
@@ -55,14 +55,12 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="row justify-content-center ">
-            <div class="col-md-6 mx-auto justify-content-center">
-                <div class="container-fluid">
+            {{-- INIZIO FORM DI ACCESSO a DX --}}
+            <div class="col-sm-6 mx-auto justify-content-center">
+                <div class="container-fluid mt-5 mb-2">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h1 class="f-s text-center">Accedi</h1>
+                            <h1 class="f-s text-center mt-4 mb-3">Accedi</h1>
                         </div>
                     </div>
                 </div>
@@ -93,9 +91,14 @@
                                     <span class="f-s error text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
-                            <div class="mb-3 form-check">
-                                <label for="exampleCheck1" class="form-check-label f-s"> Ricordati di me</label>
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1" name="remember">
+                            <div class="row d-flex">
+                                {{-- Tasto "ricordati di me" da avvicinare botton a scritta --}}
+                                <div class="mb-3 form-check">
+                                    <div class="col-12">
+                                        <input type="checkbox" class="form-check-input justify-content-end" id="RememberMe" name="remember">
+                                        <label for="RememberMe" class="form-check-label f-s justify-content-start"> Ricordati di me</label>
+                                    </div>
+                                </div>
                             </div>
                             <div class="text-center">
                                 <button type="submit" class="btn bgmy3 f-s text fw-bold">Login</button>
@@ -106,7 +109,9 @@
 
                 </div>
             </div>
+
         </div>
+
     </div>
 
 </x-layout>
