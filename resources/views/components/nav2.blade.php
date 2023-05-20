@@ -18,8 +18,8 @@
                              </a>
                              @guest
                                  <ul class="dropdown-menu">
-                                     <li><a class="dropdown-item tx-color" href="{{ route('login') }}">Login</a></li>
-                                     <li><a class="dropdown-item tx-color" href="{{ route('register') }}">Registrati</a></li>
+                                     <li><a class="dropdown-item tx-color" href="{{ route('login') }}">Login/Signup</a></li>
+                                     {{-- <li><a class="dropdown-item tx-color" href="{{ route('register') }}">Registrati</a></li> --}}
                                  </ul>
                              @else
                                  <ul class="dropdown-menu">
