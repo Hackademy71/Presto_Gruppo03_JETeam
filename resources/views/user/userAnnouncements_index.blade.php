@@ -1,54 +1,79 @@
 <x-layout>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12">
+    <div class="container-fluid ">
+       {{-- Area dettagli Utente --}}
+        <div class="row justify-content-center">
+            <div class="col-3 bgmy1 justify-content-center">
+                <h1 class="bold">Il tuo profilo</h1>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-12 justify-content-center">
 
+                            <div class="bg-white card-border justify-content-center" style="width: 18rem;">
+
+                                <h5 class="card-title f-p">Nome {{ Auth::user()->name }}</h5>
+                                <p class="card-text f-s">Email: {{ Auth::user()->email }}</p>
+                                
+                                @if (Auth::user()->profile)
+                                <h5 class="card-title f-p">Nickname: {{ Auth::user()->profile->nickname }}</h5>
+                                    <p class="card-text f-s">Cognome: {{ Auth::user()->profile->surname }}</p>
+                                    <p class="card-text f-s">Sesso: {{ Auth::user()->profile->gender }}</p>
+                                    <p class="card-text f-s">Nazionalità: {{ Auth::user()->profile->state }}</p>
+                                    <p class="card-text f-s">Città: {{ Auth::user()->profile->city }}</p>
+                                    <p class="card-text f-s">Indirizzo: {{ Auth::user()->profile->address }}</p>
+                                    <p class="card-text f-s">CAP: {{ Auth::user()->profile->CAP }}</p>
+                                    <p class="card-text f-s">Numero di telefono: {{ Auth::user()->profile->tel_number }}</p>
+                                    <p class="card-text f-s">Preferenza di contatto: @if(Auth::user()->profile->contactMethod) Email e numero di telefono @else Solo Email @endif</p>
+
+
+
+                            </div>
+                            <a href="{{ route('userProfileModule') }}" class="btn bgmy4 f-p m-3">Modifica i tuoi dati</a>
+                        @else
+                            <a href="{{ route('userProfileModule') }}" class="btn bgmy4 f-p m-3">Aggiungi più dati al tuo Profilo</a>
+                        </div>
+                        @endif
+
+                        @if (Auth::user()->is_revisor)
+                            <a class="tx-color nav-link" href="{{ route('recheck') }}">Annunci revisionati</a>
+                        @endif
+                    </div>
+
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row justify-content-center">
-            <div class="div col-3 bgmy1">
-                <h1 class="">Il tuo profilo</h1>
-                <h5 class="card-title f-p">Nome {{ Auth::user()->name }}</h5>
-                <p class="card-text f-s">Email: {{ Auth::user()->email }}</p>
-
-                @if (Auth::user()->profile)
-                    <h5 class="card-title f-p">{{ Auth::user()->profile->nickname }}</h5>
-                    <p class="card-text f-s">Città: {{ Auth::user()->profile->city }}</p>
-                    <p class="card-text f-s">CAP: {{ Auth::user()->profile->CAP }}</p>
-                    <a href="{{ route('userProfile') }}" class="btn bgmy4 f-p m-3">Modifica i tuoi dati</a>
-                @else
-                    <a href="{{ route('userProfile') }}">Aggiungi più dati al tuo Profilo</a>
-                @endif
-
-                @if (Auth::user()->is_revisor)
-                    <a class="tx-color" href="{{ route('recheck') }}">Annunci revisionati</a>
-                @endif
-            </div>
+        {{-- Fine Area Dettagli Utente --}}
 
 
-
-            <div class="col-9">
-                <h1>Benvenut* {{ Auth::user()->name }},</h1>
-                <h2> hai caricato
-                    {{-- {{$announcements['user'].lenght()}}   --}}
-                    </h2> 
-            </div>
-            {{-- <div class="row ms-3 justify-content-start">
-                <div class="col-3 bg-gray400">
-                    Area dettagli profilo
+        {{-- Sezione annunci --}}
+        <div class="col-9">
+            {{-- Intitolazione --}}
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-12 justify-content-center d-flex align-items-center">
+                        <h1 class="bold">Benvenut* {{ Auth::user()->name }},</h1>
+                        <h2> hai caricato
+                            {{-- {{$announcements['user'].lenght()}}   --}}
+                        </h2>
+                    </div>
                 </div>
-                <span class="vh-100"></span> --}}
-                <div class="col-9">
+            </div>
+            
+            {{-- Card generica --}}
+                <div class="card-border">
 
                     @if (Auth::user()->is_revisor)
                         <div class="container-fluid">
-                            @if ($announcements['to_check']=='is_empty')
+                            @if ($announcements['to_check'] == 'is_empty')
                                 <div class="row justify-content-center">
-                                    {{$message}}
-                                    <a class="dropdown-item tx-color" href="{{ route('recheck') }}">Vai agli annunci che
-                                        hai revisionato</a>
+                                    <div
+                                        class="col-12 d-flex bg-success border justify-content-center  align-items-center">
+                                        <p class="text-white">{{ $message }}</p>
+                                    </div>
+                                    <div class="col-12 d-flex justify-content-center">
+                                        <a class="tx-color nav-link" href="{{ route('recheck') }}">Vai agli annunci
+                                            che
+                                            hai revisionato</a>
+                                    </div>
                                 </div>
                             @else
                                 <div class="row">
@@ -135,11 +160,11 @@
                         {{-- A seguire commentata card da RevisorArea precedente --}}
 
                         {{-- <div class="d-flex justify-content-center align-items-center mt-4 mb-3">
-                        <div class="card card-border" style="width: 18rem;">
-                            <div class="container card-img-top">
-                                <div id="announcement-{{$announcements['to_check'][0]->id}}" class="carousel slide" data-bs-ride="true">
-                                    
-                                    @if ($announcements['to_check'][0]->images()->get()->isNotEmpty())
+                                        <div class="card card-border" style="width: 18rem;">
+                                            <div class="container card-img-top">
+                                                <div id="announcement-{{$announcements['to_check'][0]->id}}" class="carousel slide" data-bs-ride="true">
+                                                    
+                                                    @if ($announcements['to_check'][0]->images()->get()->isNotEmpty())
                                         <div class="carousel-inner">
                                             @foreach ($announcements['to_check'][0]->images as $image)
                                                 <div class="carousel-item @if ($loop->first) active @endif">
@@ -211,59 +236,62 @@
                         {{-- Fine Area Revisore --}}
                         {{-- Inizio area annunci caricati dall'User --}}
                     @endif
-                    @foreach ($announcements['user'] as $announcement)
-                        <div class="col-sm-3 d-flex justify-content-center mt-4 align-items-center">
-                            <div class="card card-border" style="width: 18rem;">
-                                <img src="{{ !$announcement->images()->get()->isEmpty()? $announcement->images()->first()->getUrl(400, 300): 'https://picsum.photos/200' }}"
-                                    class="card-img-top" alt="">
-                                <div class="card-body">
-                                    <h5 class="card-title f-p">{{ $announcement->name }}</h5>
-                                    <p class="card-text f-s">{{ $announcement->description }}</p>
-                                    <p class="card-text f-s">{{ $announcement->price }} €</p>
-                                    <p class="card-text f-s">Aggiunto il
-                                        {{ $announcement->created_at->format('d/m/Y') }}</p>
-                                    <a href="{{ route('categoryShow', ['category' => $announcement->category]) }}"
-                                        class="btn bgmy4 f-p m-3">Categoria:
-                                        {{ $announcement->category->name }}</a>
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-4">
-                                                <a href="{{ route('detArticle', compact('announcement')) }}"
-                                                    class="btn bgmy4 f-p m-3">Visualizza dettaglio</a>
-                                            </div>
-                                            <div class="col-4">
-                                                <a href="{{ route('modifyAnnouncement', compact('announcement')) }}"
-                                                    class="btn bgmy4 f-p m-3">Modifica l'annuncio</a>
-                                            </div>
-                                            <div class="col-4">
-                                                <form
-                                                    class="m-0"action="{{ route('defDelete', ['announcement' => $announcement]) }}"
-                                                    method="POST">
-                                                    @csrf
-                                                    <button class="btn bgmy4 mt-1 f-p" type="submit">Elimina</button>
-                                                </form>
-                                            </div>
+                </div>
+                @foreach ($announcements['user'] as $announcement)
+                    <div class="col-sm-3 d-flex justify-content-center mt-4 align-items-center">
+                        <div class="card card-border" style="width: 18rem;">
+                            <img src="{{ !$announcement->images()->get()->isEmpty()? $announcement->images()->first()->getUrl(400, 300): 'https://picsum.photos/200' }}"
+                                class="card-img-top" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title f-p">{{ $announcement->name }}</h5>
+                                <p class="card-text f-s">{{ $announcement->description }}</p>
+                                <p class="card-text f-s">{{ $announcement->price }} €</p>
+                                <p class="card-text f-s">Aggiunto il
+                                    {{ $announcement->created_at->format('d/m/Y') }}</p>
+                                <a href="{{ route('categoryShow', ['category' => $announcement->category]) }}"
+                                    class="btn bgmy4 f-p m-3">Categoria:
+                                    {{ $announcement->category->name }}</a>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <a href="{{ route('detArticle', compact('announcement')) }}"
+                                                class="btn bgmy4 f-p m-3">Visualizza dettaglio</a>
+                                        </div>
+                                        <div class="col-4">
+                                            <a href="{{ route('modifyAnnouncement', compact('announcement')) }}"
+                                                class="btn bgmy4 f-p m-3">Modifica l'annuncio</a>
+                                        </div>
+                                        <div class="col-4">
+                                            <form
+                                                class="m-0"action="{{ route('defDelete', ['announcement' => $announcement]) }}"
+                                                method="POST">
+                                                @csrf
+                                                <button class="btn bgmy4 mt-1 f-p" type="submit">Elimina</button>
+                                            </form>
                                         </div>
                                     </div>
+                                </div>
 
-                                </div>
                             </div>
-                        </div>
-                    @endforeach
-                    <div class="container-fluid">
-                        <div class="row justify-content-center">
-                            <div class="col-sm-12 d-flex justify-content-center">
-                                <div class="fw-bold mt-4">
-                                    {{ $announcements['user']->links() }}
-                
-                                </div>
-                            </div>
-                
                         </div>
                     </div>
+                @endforeach
+                <div class="container-fluid">
+                    <div class="row justify-content-center">
+                        <div class="col-sm-12 d-flex justify-content-center">
+                            <div class="fw-bold mt-4">
+                                {{ $announcements['user']->links() }}
+
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
-            </div>
         </div>
+
+    </div>
+
+    </div>
     </div>
 
 </x-layout>

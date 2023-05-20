@@ -21,7 +21,7 @@
                                  Area Utente
                              </a>
                                  <ul class="dropdown-menu">
-                                     <li><a class="dropdown-item tx-color" href="{{route('userAnnouncements')}}">Profilo Utente</a></li>
+                                     <li><a class="dropdown-item tx-color" href="{{route('userProfile')}}">Profilo Utente</a></li>
                                      <li>
                                          <form class="m-0"action="{{ route('logout') }}" method="POST">
                                              @csrf
