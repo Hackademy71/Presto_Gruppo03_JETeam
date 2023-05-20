@@ -23,7 +23,7 @@
                 @endif
 
                 @if (Auth::user()->is_revisor)
-                    <a class="dropdown-item tx-color" href="{{ route('recheck') }}">Annunci revisionati</a>
+                    <a class="tx-color" href="{{ route('recheck') }}">Annunci revisionati</a>
                 @endif
             </div>
 
@@ -31,18 +31,20 @@
 
             <div class="col-9">
                 <h1>Benvenut* {{ Auth::user()->name }},</h1>
-                <h2> hai caricato "Numero annunci" </h2>
+                <h2> hai caricato
+                    {{-- {{$announcements['user'].lenght()}}   --}}
+                    </h2> 
             </div>
-            <div class="row ms-3 justify-content-start">
+            {{-- <div class="row ms-3 justify-content-start">
                 <div class="col-3 bg-gray400">
                     Area dettagli profilo
                 </div>
-                <span class="vh-100"></span>
+                <span class="vh-100"></span> --}}
                 <div class="col-9">
 
                     @if (Auth::user()->is_revisor)
                         <div class="container-fluid">
-                            @if ($announcements['to_check'][0]=='is_empty')
+                            @if ($announcements['to_check']=='is_empty')
                                 <div class="row justify-content-center">
                                     {{$message}}
                                     <a class="dropdown-item tx-color" href="{{ route('recheck') }}">Vai agli annunci che
@@ -248,20 +250,20 @@
                             </div>
                         </div>
                     @endforeach
+                    <div class="container-fluid">
+                        <div class="row justify-content-center">
+                            <div class="col-sm-12 d-flex justify-content-center">
+                                <div class="fw-bold mt-4">
+                                    {{ $announcements['user']->links() }}
+                
+                                </div>
+                            </div>
+                
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="container-fluid">
-        <div class="row justify-content-center">
-            <div class="col-sm-12 d-flex justify-content-center">
-                <div class="fw-bold mt-4">
-                    {{ $announcements->links() }}
-
-                </div>
-            </div>
-
-        </div>
-    </div>
 </x-layout>

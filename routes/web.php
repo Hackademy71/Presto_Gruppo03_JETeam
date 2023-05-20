@@ -11,7 +11,7 @@ use App\Http\Controllers\UserController;
 Route::get('/', [PublicController::class,'welcome'])->name('welcome');
 
 //Rotte per Users
-Route::get('/user/annunci', [FrontController::class,'userAnnouncements'])->name('userAnnouncements');
+Route::get('/user/profile', [FrontController::class,'userAnnouncements'])->name('userAnnouncements');
 Route::get('/user', [UserController::class, "userProfile"])->name('userProfile');
 Route::post('/postuser', [UserController::class, 'postUserData'])->name('postProfile');
 //Rotte per Annunci e Categorie
