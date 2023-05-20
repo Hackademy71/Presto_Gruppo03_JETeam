@@ -33,7 +33,8 @@
 
                                  </ul>
                              </div>
-                             <div class="dropdown px-2">
+                             {{-- DropDown Eliminato di Area Revisore --}}
+                             {{-- <div class="dropdown px-2">
                                  @if (Auth::user()->is_revisor)
                                      <a class="text-decoration-none dropdown-toggle tx-color" href="#"
                                          role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -47,8 +48,8 @@
                                          <li><a class="dropdown-item tx-color" href="{{ route('recheck') }}">Recheck</a></li>
                                      </ul>
                                  @endif
+                                </div> --}}
                              @endguest
-                         </div>
                      </nav>
                  </div>
                  {{-- botton-nav --}}

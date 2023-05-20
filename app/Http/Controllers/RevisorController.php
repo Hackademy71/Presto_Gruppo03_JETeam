@@ -13,9 +13,11 @@ use Illuminate\Support\Facades\Artisan;
 class RevisorController extends Controller
 {
 
-    public function index(){
+
+    public function index(){//IN TEORIA ora dovrebbe essere inutilizzata questa funzione
         $announcement_to_check=Announcement::where('is_accepted', null)->get();
-         return view('revisor.indexRevisor',compact ('announcement_to_check'));
+
+        return view('revisor.indexRevisor',compact ('announcement_to_check'));
         
     }
     public function acceptAnnouncement(Announcement $announcement){
