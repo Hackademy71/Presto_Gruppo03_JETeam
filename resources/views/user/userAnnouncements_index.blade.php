@@ -78,7 +78,7 @@
                             @else
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <div id="announcement-{{ $announcements['to_check'][0]->id }}"
+                                        <div id="announcement-{{ $announcements['to_check']->id }}"
                                             class="carousel slide" data-bs-ride="true">
                                             {{-- <div class="carousel-indicators">
                                             <button type="button" data-bs-target="#announcement-{{$announcement->id}}" data-bs-slide-to="0"
@@ -88,12 +88,12 @@
                                             <button type="button" data-bs-target="#announcement-{{$announcement->id}}" data-bs-slide-to="2"
                                                 aria-label="Slide 3"></button>
                                         </div> --}}
-                                            @if ($announcements['to_check'][0]->images()->get()->isNotEmpty())
+                                            @if ($announcements['to_check']->images()->get()->isNotEmpty())
                                                 <div class="carousel-inner">
-                                                    @foreach ($announcements['to_check'][0]->images as $image)
+                                                    @foreach ($announcements['to_check']->images as $image)
                                                         <div
                                                             class="carousel-item @if ($loop->first) active @endif">
-                                                            <img src="{{ $announcements['to_check'][0]->images()->first()->getUrl(400, 300) }}"
+                                                            <img src="{{ $announcements['to_check']->images()->first()->getUrl(400, 300) }}"
                                                                 class="img-fluid p-3 rounded" alt="...">
                                                         </div>
                                                     @endforeach
@@ -115,14 +115,14 @@
                                                 </div>
                                             @endif
                                             <button class="carousel-control-prev" type="button"
-                                                data-bs-target="#announcement-{{ $announcements['to_check'][0]->id }}"
+                                                data-bs-target="#announcement-{{ $announcements['to_check']->id }}"
                                                 data-bs-slide="prev">
                                                 <span class="carousel-control-prev-icon text-dark"
                                                     aria-hidden="true"></span>
                                                 <span class="visually-hidden">Previous</span>
                                             </button>
                                             <button class="carousel-control-next" type="button"
-                                                data-bs-target="#announcement-{{ $announcements['to_check'][0]->id }}"
+                                                data-bs-target="#announcement-{{ $announcements['to_check']->id }}"
                                                 data-bs-slide="next">
                                                 <span class="carousel-control-next-icon text-dark"
                                                     aria-hidden="true"></span>
@@ -132,24 +132,27 @@
                                     </div>
                                     <div class="col-sm-6">
                                         <h2 class="f-s text-center fw-bold mt-5">
-                                            {{ $announcements['to_check'][0]->name }}
+                                            {{ $announcements['to_check']->name }}
                                         </h2>
                                         <p class="fs-3 text-center mt-4">
-                                            €{{ $announcements['to_check'][0]->price }}
+                                            €{{ $announcements['to_check']->price }}
                                         </p>
                                         <h5 class="f-s text-center mt-4">
-                                            {{ $announcements['to_check'][0]->description }}
+                                            {{ $announcements['to_check']->description }}
                                         </h5>
                                         <p class="fs-3 text-center mt-4">
-                                            Venditore: {{ $announcements['to_check'][0]->user->name }}
+                                            Venditore: {{ $announcements['to_check']->user->name }}
                                         </p>
                                         <p class="fs-3 text-center mt-4">
                                             Aggiunto il:
-                                            {{ $announcements['to_check'][0]->created_at->format('d/m/Y') }}
+                                            {{ $announcements['to_check']->created_at->format('d/m/Y') }}
                                         </p>
-                                        <a href="{{ route('acceptAnnouncement', ['announcement' => $announcement]) }}"
+                                        @if (true) $announcement=$announcements['to_check'];
+                                        @endif
+                                        <a href="{{ route('acceptAnnouncement', ['announcement'=>'announcement']) }}"
                                             class="btn bgmy4 f-p">Approva</a>
-                                        <a href="{{ route('refuseAnnouncement', ['announcement' => $announcement]) }}"
+                                        
+                                        <a href="{{ route('refuseAnnouncement', ['announcement'=>'announcement']) }}"
                                             class="btn bgmy4 f-p">Rifiuta</a>
                                     </div>
                                 </div>
@@ -162,11 +165,11 @@
                         {{-- <div class="d-flex justify-content-center align-items-center mt-4 mb-3">
                                         <div class="card card-border" style="width: 18rem;">
                                             <div class="container card-img-top">
-                                                <div id="announcement-{{$announcements['to_check'][0]->id}}" class="carousel slide" data-bs-ride="true">
+                                                <div id="announcement-{{$announcements['to_check']->id}}" class="carousel slide" data-bs-ride="true">
                                                     
-                                                    @if ($announcements['to_check'][0]->images()->get()->isNotEmpty())
+                                                    @if ($announcements['to_check']->images()->get()->isNotEmpty())
                                         <div class="carousel-inner">
-                                            @foreach ($announcements['to_check'][0]->images as $image)
+                                            @foreach ($announcements['to_check']->images as $image)
                                                 <div class="carousel-item @if ($loop->first) active @endif">
                                                     <img src="{{ $image->getUrl(400, 300) }}" class=" d-block w-100"
                                                         alt="...">
@@ -207,23 +210,23 @@
                                         </div>
                                     @endif
                                     <button class="carousel-control-prev" type="button"
-                                        data-bs-target="#announcement-{{$announcements['to_check'][0]->id}}" data-bs-slide="prev">
+                                        data-bs-target="#announcement-{{$announcements['to_check']->id}}" data-bs-slide="prev">
                                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                         <span class="visually-hidden">Previous</span>
                                     </button>
                                     <button class="carousel-control-next" type="button"
-                                        data-bs-target="#announcement-{{$announcements['to_check'][0]->id}}" data-bs-slide="next">
+                                        data-bs-target="#announcement-{{$announcements['to_check']->id}}" data-bs-slide="next">
                                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                         <span class="visually-hidden">Next</span>
                                     </button>
                                 </div>
                                 <div class="card-body">
-                                    <h5 class="card-title f-p">{{ $announcements['to_check'][0]->name }}</h5>
-                                    <p class="card-text f-s">{{ $announcements['to_check'][0]->description }}</p>
-                                    <p class="card-text f-s">{{ $announcements['to_check'][0]->price }} €</p>
-                                    <p class="card-text f-s">{{ $announcements['to_check'][0]->category->name }}</p>
+                                    <h5 class="card-title f-p">{{ $announcements['to_check']->name }}</h5>
+                                    <p class="card-text f-s">{{ $announcements['to_check']->description }}</p>
+                                    <p class="card-text f-s">{{ $announcements['to_check']->price }} €</p>
+                                    <p class="card-text f-s">{{ $announcements['to_check']->category->name }}</p>
                                     <p class="card-text f-s">Aggiunto il
-                                        {{ $announcements['to_check'][0]->created_at->format('d/m/Y') }}
+                                        {{ $announcements['to_check']->created_at->format('d/m/Y') }}
                                     </p>
                                     <a href="{{ route('acceptAnnouncement', ['announcement' => $announcement]) }}"
                                         class="btn bgmy4 f-p">Approva</a>
