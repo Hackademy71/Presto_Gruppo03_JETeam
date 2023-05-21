@@ -44,7 +44,7 @@ class RevisorController extends Controller
         $announcement->is_accepted = false;
         // $announcement->user_id=Auth::user()->id;
         $announcement->save();
-        return redirect()->back()->with('message', "Peccato, hai rifiutato l'annuncio");
+        return redirect(route('userProfile'))->with('message', "Peccato, hai rifiutato l'annuncio");
     }
 
     public function workWithUs()

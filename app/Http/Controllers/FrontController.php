@@ -34,7 +34,9 @@ class FrontController extends Controller
         if($announcements['to_check']=='is_empty'){
         return view('user.userAnnouncements_index', compact('announcements'))->with('message','Non ci sono annunci da revisionare');
         }
-        return view('user.userAnnouncements_index', compact('announcements'));
+        $announcements_to_check=$announcements['to_check'];
+        $announcements_user=$announcements['user'];
+        return view('user.userAnnouncements_index', compact('announcements_to_check','announcements_user'));
 
     }
     public function indexRevisor(){

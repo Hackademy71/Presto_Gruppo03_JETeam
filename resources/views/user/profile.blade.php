@@ -6,8 +6,8 @@
             </div>
         </div>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-12 mx-0">
+        <div class="row justify-content-center">
+            <div class="col-sm-5 mx-0">
                 <div class="card-login d-flex justify-content-center align-items-center">
                 <div class="card-content">
                     <form action="{{ Auth::user()->profile ? route('profileUpdate') : route('postProfile') }}" method="POST">
