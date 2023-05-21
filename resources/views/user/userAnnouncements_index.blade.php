@@ -3,25 +3,25 @@
         {{-- Area dettagli Utente --}}
         <div class="row justify-content-center">
             <div class="col-12 col-lg-3 bgmy1 justify-content-center">
-                <h1 class="f-p fw-bold">Il tuo profilo</h1>
+                <h1 class="f-p text-center fw-bold my-4">Il tuo profilo</h1>
                 <div class="container-fluid">
-                    <div class="row-fluid align-content-center">
+                    <div class="row-fluid align-items-center">
                         <div class="col-sm-12 justify-content-center">
 
-                            <div class="bg-white card-border justify-content-center" style="width: 18rem;">
+                            <div class="bg-white card-border rounded justify-content-center" style="width: 18rem;">
 
-                                <h5 class="card-title f-p">Nome {{ Auth::user()->name }}</h5>
-                                <p class="card-text f-s">Email: {{ Auth::user()->email }}</p>
+                                <h5 class="card-title text-center f-p">Nome {{ Auth::user()->name }}</h5>
+                                <p class="card-text text-center f-s">Email: {{ Auth::user()->email }}</p>
 
                                 @if (Auth::user()->profile)
-                                    <h5 class="card-title f-p">Nickname: {{ Auth::user()->profile->nickname }}</h5>
-                                    <p class="card-text f-s">Cognome: {{ Auth::user()->profile->surname }}</p>
-                                    <p class="card-text f-s">Sesso: {{ Auth::user()->profile->gender }}</p>
-                                    <p class="card-text f-s">Nazionalità: {{ Auth::user()->profile->state }}</p>
-                                    <p class="card-text f-s">Città: {{ Auth::user()->profile->city }}</p>
-                                    <p class="card-text f-s">Indirizzo: {{ Auth::user()->profile->address }}</p>
-                                    <p class="card-text f-s">CAP: {{ Auth::user()->profile->CAP }}</p>
-                                    <p class="card-text f-s">Numero di telefono: {{ Auth::user()->profile->tel_number }}
+                                    <h5 class="card-title text-center f-p">Nickname: {{ Auth::user()->profile->nickname }}</h5>
+                                    <p class="card-text text-center f-s">Cognome: {{ Auth::user()->profile->surname }}</p>
+                                    <p class="card-text text-center f-s">Sesso: {{ Auth::user()->profile->gender }}</p>
+                                    <p class="card-text text-center f-s">Nazionalità: {{ Auth::user()->profile->state }}</p>
+                                    <p class="card-text text-center f-s">Città: {{ Auth::user()->profile->city }}</p>
+                                    <p class="card-text text-center f-s">Indirizzo: {{ Auth::user()->profile->address }}</p>
+                                    <p class="card-text text-center f-s">CAP: {{ Auth::user()->profile->CAP }}</p>
+                                    <p class="card-text text-center f-s">Numero di telefono: {{ Auth::user()->profile->tel_number }}
                                     </p>
                                     <p class="card-text f-s">Preferenza di contatto: @if (Auth::user()->profile->contactMethod)
                                             Email e numero di telefono
