@@ -20,31 +20,22 @@ class FrontController extends Controller
         session()->put('locale', $lang);
         return redirect()->back();
     }
-    public function userAnnouncements()
-    {
-        $announcements=[
-            'to_check'=>[],
-            'user'=>[]
-        ];
-        if(Auth::user()->is_revisor){
-            $announcements['to_check']=$this->indexRevisor();
-            
-        }
-        $announcements['user']=Announcement::where('user_id', Auth::user()->id)->where('is_accepted', true)->orderBy('created_at', 'DESC')->paginate(6);
-        if($announcements['to_check']=='is_empty'){
-        return view('user.userAnnouncements_index', compact('announcements'))->with('message','Non ci sono annunci da revisionare');
-        }
-        $announcements_to_check=$announcements['to_check'];
-        $announcements_user=$announcements['user'];
-        return view('user.userAnnouncements_index', compact(['announcements_to_check','announcements_user']));
+    public static function userAnnouncements()
+    {  
+        $announcements=Announcement::where('user_id', Auth::user()->id)->where('is_accepted', true)->orderBy('created_at', 'DESC')->paginate(6);
 
+        return $announcements;
     }
-    public function indexRevisor(){
+    public static function indexRevisor(){
         $announcement_to_check=Announcement::where('is_accepted',false)->orderBy('created_at', 'DESC')->first();
-
         if(!$announcement_to_check){//Con un dd ho verificato che è null se non ha annunci da verificare
             $announcement_to_check='is_empty';
         }
         return $announcement_to_check;
     }
+    public function show(){
+        // $announcements=Announcement::get();
+        return view('user.userAnnouncements_index');
+    }
+
 }
