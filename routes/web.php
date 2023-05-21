@@ -11,7 +11,7 @@ use App\Http\Controllers\UserController;
 Route::get('/', [PublicController::class,'welcome'])->name('welcome');
 
 //Rotte per Users
-Route::get('/user/profile', [FrontController::class,'userAnnouncements'])->name('userProfile');
+Route::get('/user/profile', [FrontController::class,'show'])->name('userProfile');
 Route::get('/user', [UserController::class, "userProfile"])->name('userProfileModule');
 Route::post('/postuser', [UserController::class, 'postUserData'])->name('postProfile');
 Route::put('/profile/update/', [UserController::class, 'profileUpdate'])->name('profileUpdate');
