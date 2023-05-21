@@ -21,13 +21,14 @@
                                 <p class="card-text f-s m-2">{{ $announcement->description }}</p>
                                 <p class="card-text f-s m-2">{{ $announcement->price }} €</p>
                                 <p class="card-text f-s m-2">Categoria: {{ $announcement->category->name }}</p>
-                                <p class="card-text f-s m-2">Aggiunto il {{ $announcement->created_at->format('d/m/Y') }}
+                                <p class="card-text f-s m-2">Aggiunto il
+                                    {{ $announcement->created_at->format('d/m/Y') }}
                                 </p>
                                 <a href="{{ route('detArticle', compact('announcement')) }}"
                                     class="btn bgmy4 f-p m-3">Visualizza dettaglio</a>
                                 @auth
                                     @if (Auth::user()->is_revisor && $announcement->revisor_id === Auth::user()->id)
-                                        <a href="{{ route('refuseAnnouncement', ['announcement' => $announcement]) }}"
+                                        <a href="{{ route('refuseAnnouncement', compact(['announcement' => $announcements_to_check])) }}"
                                             class="btn btn-danger f-p m-3">Rimanda in revisione</a>
                                     @endif
                                 @endauth
@@ -35,19 +36,12 @@
                         </div>
                     </div>
                 @endif
-            @empty
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12 text-center">
-                            <div class="alert alert-warning" role="alert">
-                                <h1 class="f-p">Non sono presenti annunci in questa categoria</h1>
-                                <h2 class="f-p">Sii il primo</h2>
-                                <a class="btn bgmy4 f-p" href="{{ route('articleNew') }}">Inserisci articolo</a>
-                                <h3 class="f-p">Altre categorie</h3>
-                            </div>
-                        </div>
-            @endforelse
         </div>
+            @empty
+            
+                <x-categories />
+            
+            @endforelse
     </div>
 
 </x-layout>
