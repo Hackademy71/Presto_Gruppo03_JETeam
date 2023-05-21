@@ -14,7 +14,7 @@
                                 <p class="card-text text-center f-s">Email: {{ Auth::user()->email }}</p>
 
                                 @if (Auth::user()->profile)
-                                    <h5 class="card-title text-center f-p">Nickname: {{ Auth::user()->profile->nickname }}</h5>
+                                    <p class="card-title text-center fw-5 f-p">Nickname: {{ Auth::user()->profile->nickname }}</p>
                                     <p class="card-text text-center f-s">Cognome: {{ Auth::user()->profile->surname }}</p>
                                     <p class="card-text text-center f-s">Sesso: {{ Auth::user()->profile->gender }}</p>
                                     <p class="card-text text-center f-s">Nazionalità: {{ Auth::user()->profile->state }}</p>
