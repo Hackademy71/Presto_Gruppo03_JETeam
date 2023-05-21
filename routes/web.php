@@ -2,11 +2,12 @@
 
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FaqsController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\RevisorController;
 use App\Http\Controllers\AnnouncementController;
-use App\Http\Controllers\UserController;
 
 Route::get('/', [PublicController::class,'welcome'])->name('welcome');
 
@@ -35,7 +36,7 @@ Route::post('/revisor/defDelete/{announcement}', [AnnouncementController::class,
 Route::get('/workWithUs', [RevisorController::class,'workWithUs'])->middleware('auth')->name('workWithUs');
 Route::get('/revisor/{user}', [RevisorController::class,'makeRevisor'])->name('make.revisor');
 Route::get('/recheck', [RevisorController::class, 'recheck'])->name('recheck');
-Route::get('/faqs', [FaqsController::class, 'faqs'])->name('faqs'); //da rivedere
+
 
 //Rotte per ricerca e cambio lingua
 
