@@ -63,8 +63,8 @@ class RevisorController extends Controller
     public function recheck()
     {
         if(!Auth::user()){
-            alert('Attenzione! Non sei ')
-            return 
+            alert('Attenzione! Non sei revisore');
+            return; 
         }
         $announcements = Auth::user()->announcements();
         $announcements = Announcement::where('revisor_id', (Auth::user()->id))->orderBy('created_at', 'DESC')->get();
