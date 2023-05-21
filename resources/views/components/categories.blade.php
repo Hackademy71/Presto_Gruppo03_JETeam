@@ -1,4 +1,4 @@
-<div class="containeralert alert-warning" role="alert">
+<div class="container-fluid alert alert-warning" role="alert">
     <div class="row">
         <div class="col-sm-12 text-center">
             <div>
@@ -8,15 +8,18 @@
                 <h3 class="f-p">Altre categorie</h3>
             </div>
         </div>
-        <div class="col-sm-12 text-center">
-            <ul class="list-group" style="flex-direction: row;">
+        <div class="row">
+            <ul class="list-group" style="flex-direction: row">
                 @foreach ($categories as $category)
-                    <li><a class="list-group-item tx-color"
-                            href="{{ route('categoryShow', compact('category')) }}">{{ $category->name }}</a>
-                    </li>
-                @endforeach
-            </ul>
-
+                <div class="col-12 col-lg-6 text-center">
+                        <li class="list-group-item">
+                            <a class="tx-color nav-link"
+                                href="{{ route('categoryShow', compact('category')) }}">{{ $category->name }}</a>
+                        </li>
+                    </div>
+                    @endforeach
+                </ul>
         </div>
+
     </div>
 </div>

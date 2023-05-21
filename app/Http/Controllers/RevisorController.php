@@ -18,12 +18,12 @@ class RevisorController extends Controller
 
     //! QUINDI LA COMMENTO nel caso di problemi decommentare
 
-    // public function index(){
-    //     $announcement_to_check=Announcement::where('is_accepted', null)->get();
+    public function index(){
+        $announcement_to_check=Announcement::where('is_accepted', null)->get();
 
-    //     return view('revisor.indexRevisor',compact ('announcement_to_check'));
+        return view('revisor.indexRevisor',compact ('announcement_to_check'));
 
-    // }
+    }
     public function acceptAnnouncement(Announcement $announcement)
     {
 
@@ -37,14 +37,14 @@ class RevisorController extends Controller
         return redirect()->back()->with('message', "Complimenti, hai accettato l'annuncio");
     }
 
-    public function refuseAnnouncement(Announcement $announcements_to_check)
+    public function refuseAnnouncement(Announcement $announcement)
     {
 
-        $announcements_to_check->setRevisor();
-        $announcements_to_check->is_accepted = false;
+        $announcement->setRevisor();
+        $announcement->is_accepted = false;
         // $announcement_to_check->user_id=Auth::user()->id;
-        $announcements_to_check->save();
-        return redirect(route('userProfile'))->with('message', "Peccato, hai rifiutato l'annuncio");
+        $announcement->save();
+        return redirect()->back()->with('message', "Peccato, hai rifiutato l'annuncio");
     }
 
     public function workWithUs()
@@ -72,8 +72,5 @@ class RevisorController extends Controller
         return view('revisor.recheck', compact('announcements'));
     }
 
-    public function accept(Announcement $announcement){
-
-
-    }
+   
 }

@@ -11,7 +11,6 @@
     <div class="container-fluid">
         <div class="row justify-content-center">
             @forelse ($announcements as $announcement)
-                @if ($announcement->is_accepted)
                     <div class="col-sm-3 d-flex justify-content-center mt-4 align-items-center">
                         <div class="card card-border" style="width: 18rem;">
                             <img src="{{ !$announcement->images()->get()->isEmpty()? $announcement->images()->first()->getUrl(400, 300): 'https://picsum.photos/200' }}"
@@ -27,21 +26,19 @@
                                 <a href="{{ route('detArticle', compact('announcement')) }}"
                                     class="btn bgmy4 f-p m-3">Visualizza dettaglio</a>
                                 @auth
-                                    @if (Auth::user()->is_revisor && $announcement->revisor_id === Auth::user()->id)
+                                    {{-- @if (Auth::user()->is_revisor && $announcement->revisor_id === Auth::user()->id)
                                         <a href="{{ route('refuseAnnouncement', compact(['announcement' => $announcements_to_check])) }}"
                                             class="btn btn-danger f-p m-3">Rimanda in revisione</a>
-                                    @endif
+                                    @endif --}}
                                 @endauth
                             </div>
                         </div>
-                    </div>
-                @endif
-        </div>
-            @empty
-            
-                <x-categories />
-            
-            @endforelse
-    </div>
-
+                    </div>                    
+                </div>
+                @empty        
+        
+        <x-categories />
+        
+    </div>    
+    @endforelse
 </x-layout>
