@@ -26,8 +26,8 @@ Route::get('/category/{category}', [FrontController::class,'categoryShow'] )->na
 //Rotte per i Revisori
 
 Route::get('/revisor/home', [RevisorController::class, 'index'])->middleware('isRevisor')->name('indexRevisor');
-Route::get('/announcement/accept/{announcement}', [RevisorController::class, 'acceptAnnouncement'])->name ('acceptAnnouncement');
-Route::get('/announcement/refuse/{announcement}', [RevisorController::class, 'refuseAnnouncement'])->name ('refuseAnnouncement');
+Route::get('/announcement/accept/{announcements_to_check}', [RevisorController::class, 'acceptAnnouncement'])->name ('acceptAnnouncement');
+Route::get('/announcement/refuse/{announcements_to_check}', [RevisorController::class, 'refuseAnnouncement'])->name ('refuseAnnouncement');
 Route::post('/revisor/defDelete/{announcement}', [AnnouncementController::class,'destroy'])->name('defDelete');
 
 // Rotte footer
@@ -44,3 +44,6 @@ Route::post('/lingua/{lang}',[FrontController::class,'setLanguage'])->name('set_
 //Rotta segnalazione annunci
 
 Route::get('/report/{announcement}', [AnnouncementController::class, 'reportAnnouncement'])->name('reportAnnouncement');
+
+// Route::get('/announcementCheck/accept', [RevisorController::class, 'accept'])->name('accept');
+// Route::get('/announcementCheck/refuse', [RevisorController::class, 'refuse'])->name('refuse');

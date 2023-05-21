@@ -37,13 +37,13 @@ class RevisorController extends Controller
         return redirect()->back()->with('message', "Complimenti, hai accettato l'annuncio");
     }
 
-    public function refuseAnnouncement(Announcement $announcement)
+    public function refuseAnnouncement(Announcement $announcements_to_check)
     {
 
-        $announcement->setRevisor();
-        $announcement->is_accepted = false;
-        // $announcement->user_id=Auth::user()->id;
-        $announcement->save();
+        $announcements_to_check->setRevisor();
+        $announcements_to_check->is_accepted = false;
+        // $announcement_to_check->user_id=Auth::user()->id;
+        $announcements_to_check->save();
         return redirect(route('userProfile'))->with('message', "Peccato, hai rifiutato l'annuncio");
     }
 
@@ -70,5 +70,10 @@ class RevisorController extends Controller
         $announcements = Announcement::where('revisor_id', (Auth::user()->id))->orderBy('created_at', 'DESC')->get();
 
         return view('revisor.recheck', compact('announcements'));
+    }
+
+    public function accept(Announcement $announcement){
+
+
     }
 }

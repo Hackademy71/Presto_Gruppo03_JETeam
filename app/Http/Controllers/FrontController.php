@@ -36,7 +36,7 @@ class FrontController extends Controller
         }
         $announcements_to_check=$announcements['to_check'];
         $announcements_user=$announcements['user'];
-        return view('user.userAnnouncements_index', compact('announcements_to_check','announcements_user'));
+        return view('user.userAnnouncements_index', compact(['announcements_to_check','announcements_user']));
 
     }
     public function indexRevisor(){
