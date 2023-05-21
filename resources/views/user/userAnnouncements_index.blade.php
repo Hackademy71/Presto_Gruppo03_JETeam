@@ -154,10 +154,10 @@
                                         {{ $announcements_to_check->created_at->format('d/m/Y') }}
                                     </p>
                                    
-                                    <a href="{{ route('acceptAnnouncement', ['announcements_to_check' => 'announcement']) }}"
+                                    <a href="{{ route('acceptAnnouncement', compact(['announcements_to_check' => 'announcement'])) }}"
                                         class="btn bgmy4 f-p">Approva</a>
 
-                                    <a href="{{ route('refuseAnnouncement', ['announcements_to_check' => 'announcement']) }}"
+                                    <a href="{{ route('refuseAnnouncement', compact(['announcements_to_check' => 'announcement'])) }}"
                                         class="btn bgmy4 f-p">Rifiuta</a>
                                 </div>
                             </div>
@@ -272,7 +272,7 @@
                                                     class="btn bgmy4 f-p">Modifica</a>
                                             </div>
                                             <div class="col-sm-3">
-                                                <form class="" action="{{ route('defDelete', ['announcement' => $announcement]) }}"                                              method="POST">
+                                                <form class="" action="{{ route('defDelete', compact(['announcement' => $announcement])) }}"                                              method="POST">
                                                     @csrf
                                                     <button class="btn bgmy4 f-p" type="submit">Elimina</button>
                                                 </form>
