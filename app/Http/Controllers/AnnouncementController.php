@@ -30,27 +30,14 @@ class AnnouncementController extends Controller
         $announcement->save();
         return redirect()->back()->with('message',"Grazie per la segnalazione, un revisore controllerà l'annuncio");
      }
-     public function modifyAnnouncement(Announcement $announcement){
-        return view('annunci.modifyAnnouncement',compact('announcement'));
-     }
     /**
      * Show the form for creating a new resource.
      */
+    // Rimanda poi in LIVEWIRE controller per il salvataggio
     public function create()
     {
         return view('annunci.articleNew'); 
-        
-        
     }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
     /**
      * Display the specified resource.
      */
@@ -64,22 +51,20 @@ class AnnouncementController extends Controller
      */
     public function edit(Announcement $announcement)
     {
-        //
+        return view('annunci.modifyAnnouncement',compact('announcement'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Announcement $announcement)
-    {
-        //
-    }
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(Announcement $announcement)
     {
+        $announcement->delete();
+        return redirect()->back()->with('message',"Complimenti, hai eliminato definitivamente l'annuncio");
         //
     }
 }

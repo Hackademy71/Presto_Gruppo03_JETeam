@@ -20,7 +20,7 @@ Route::put('/profile/update/', [UserController::class, 'profileUpdate'])->name('
 Route::get('/articleNew', [AnnouncementController::class, 'create'])->name('articleNew');
 Route::get('/annunci/detArticle/{announcement}', [AnnouncementController::class, 'show'])->name('detArticle');
 Route::get('/index/annunci', [AnnouncementController::class, 'index'])->name('indexAnnouncement');
-Route::get('/modifica/{announcement}',[AnnouncementController::class,'modifyAnnouncement'])->name('modifyAnnouncement');
+Route::get('/modifica/{announcement}',[AnnouncementController::class,'edit'])->name('modifyAnnouncement');
 Route::get('/category/{category}', [FrontController::class,'categoryShow'] )->name('categoryShow');
 
 //Rotte per i Revisori
@@ -28,13 +28,13 @@ Route::get('/category/{category}', [FrontController::class,'categoryShow'] )->na
 Route::get('/revisor/home', [RevisorController::class, 'index'])->middleware('isRevisor')->name('indexRevisor');
 Route::get('/announcement/accept/{announcement}', [RevisorController::class, 'acceptAnnouncement'])->name ('acceptAnnouncement');
 Route::get('/announcement/refuse/{announcement}', [RevisorController::class, 'refuseAnnouncement'])->name ('refuseAnnouncement');
+Route::post('/revisor/defDelete/{announcement}', [AnnouncementController::class,'destroy'])->name('defDelete');
 
 // Rotte footer
 
 Route::get('/workWithUs', [RevisorController::class,'workWithUs'])->middleware('auth')->name('workWithUs');
 Route::get('/revisor/{user}', [RevisorController::class,'makeRevisor'])->name('make.revisor');
 Route::get('/recheck', [RevisorController::class, 'recheck'])->name('recheck');
-Route::post('/revisor/defDelete/{announcement}', [RevisorController::class,'defDelete'])->name('defDelete');
 
 //Rotte per ricerca e cambio lingua
 
