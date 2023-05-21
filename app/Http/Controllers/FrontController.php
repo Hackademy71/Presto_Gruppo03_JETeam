@@ -30,7 +30,7 @@ class FrontController extends Controller
             $announcements['to_check']=$this->indexRevisor();
             
         }
-        $announcements['user']=Announcement::where('user_id', Auth::user()->id)->where('is_accepted', true)->orderBy('created_at', 'DESC')->paginate(4);
+        $announcements['user']=Announcement::where('user_id', Auth::user()->id)->where('is_accepted', true)->orderBy('created_at', 'DESC')->paginate(6);
         if($announcements['to_check']=='is_empty'){
         return view('user.userAnnouncements_index', compact('announcements'))->with('message','Non ci sono annunci da revisionare');
         }

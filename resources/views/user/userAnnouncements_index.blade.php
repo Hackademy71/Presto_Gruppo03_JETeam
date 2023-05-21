@@ -41,7 +41,7 @@
                         @endif
 
                         @if (Auth::user()->is_revisor)
-                            <a class="tx-color nav-link" href="{{ route('recheck') }}">Annunci revisionati</a>
+                            <a class="btn f-p bgmy3" href="{{ route('recheck') }}">Annunci revisionati</a>
                         @endif
                     </div>
 
@@ -55,12 +55,12 @@
         <div class="col-md-9">
             {{-- Intitolazione --}}
             <div class="container-fluid">
-                <div class="row justify-content-center">
+                <div class="row justify-content-center my-4">
                     <div class="col-12 justify-content-center d-flex align-items-center">
-                        <h1 class="bold">Benvenut* {{ Auth::user()->name }},</h1>
-                        <h2> hai caricato
+                        <h1 class="fw-bold f-p ">Benvenut* {{ Auth::user()->name }},</h1>
+                        <h1 class="fw-bold f-p"> hai caricato
                             {{-- {{$announcements['user'].lenght()}}   --}}
-                        </h2>
+                        </h1>
                     </div>
                 </div>
             </div>
