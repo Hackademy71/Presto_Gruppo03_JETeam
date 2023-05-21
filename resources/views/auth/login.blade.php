@@ -5,8 +5,8 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12 mt-4 mb-3">
-                            <h3 class="f-s text-center">Se ancora non hai un profilo,</h3>
-                            <h3 class="f-s text-center">compila il form per registrarti!</h3>
+                            <h3 class="f-s fw-bold text-center">Se ancora non hai un profilo,</h3>
+                            <h3 class="f-s fw-bold text-center">compila il form per registrarti!</h3>
                         </div>
                     </div>
                 </div>
@@ -47,7 +47,7 @@
                                 @enderror
                             </div>
                             <div class="text-center">
-                                <button type="submit" class="btn bgmy3 f-p text fw-bold">Registrati</button>
+                                <button type="submit" class="btn bgmy3 f-s text fw-bold">Registrati</button>
                             </div>
                         </form>
                     </div>
@@ -89,15 +89,15 @@
                                     <span class="f-s error text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
-                            <div class="row d-flex">
-                                {{-- Tasto "ricordati di me" da avvicinare botton a scritta --}}
+                            {{-- <div class="row d-flex">
+                                Tasto "ricordati di me" da avvicinare botton a scritta
                                 <div class="mb-3 form-check">
                                     <div class="col-12">
                                         <input type="checkbox" class="form-check-input justify-content-end" id="RememberMe" name="remember">
                                         <label for="RememberMe" class="form-check-label f-s justify-content-start"> Ricordati di me</label>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="text-center">
                                 <button type="submit" class="btn bgmy3 f-s text fw-bold">Login</button>
 

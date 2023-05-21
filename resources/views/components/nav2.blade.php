@@ -3,7 +3,7 @@
      <div class="row">
          {{-- logo --}}
          <div class="col-2 col-lg-1 bgmy2">
-             <img class="img-fluid" width="100" src="/img/logo.png" alt="">
+             <a href="{{route('welcome')}}"><img class="img-fluid" width="100" src="/img/logo.png" alt=""></a>
          </div>
          {{-- navbars --}}
          <div class="col-10 col-lg-8">
