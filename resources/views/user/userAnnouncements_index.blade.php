@@ -2,11 +2,11 @@
     <div class="container-fluid ">
         {{-- Area dettagli Utente --}}
         <div class="row justify-content-center">
-            <div class="col-12 col-lg-3 bgmy1 justify-content-center">
+            <div class="col-12 col-lg-3 bgmy1 align-items-center rounded-end">
                 <h1 class="f-p text-center fw-bold my-4">Il tuo profilo</h1>
                 <div class="container-fluid">
                     <div class="row-fluid align-items-center">
-                        <div class="col-sm-12 justify-content-center">
+                        <div class="col-sm-12 justify-content-center bg-danger">
 
                             <div class="bg-white card-border rounded justify-content-center" style="width: 18rem;">
 
@@ -32,17 +32,19 @@
 
 
                             </div>
-                            <a href="{{ route('userProfileModule') }}" class="btn bgmy4 f-p m-3">Modifica i tuoi
-                                dati</a>
-                        @else
-                            <a href="{{ route('userProfileModule') }}" class="btn bgmy4 f-p m-3">Aggiungi più dati al
-                                tuo Profilo</a>
-                        </div>
-                        @endif
-
-                        @if (Auth::user()->is_revisor)
-                            <a class="btn f-p bgmy3" href="{{ route('recheck') }}">Annunci revisionati</a>
-                        @endif
+                            <div class="col-12 d-grid gap-2 col-lg-6 mx-auto">
+                                <a href="{{ route('userProfileModule') }}" class="btn bgmy4 f-p m-3">Modifica i tuoi
+                                    dati</a>
+                            @else
+                                <a href="{{ route('userProfileModule') }}" class="btn bgmy4 f-p m-3">Aggiungi più dati al
+                                    tuo Profilo</a>
+                            </div>
+                            @endif
+    
+                            @if (Auth::user()->is_revisor)
+                                <a class="btn f-p bgmy3" href="{{ route('recheck') }}">Annunci revisionati</a>
+                            @endif                                
+                              </div>
                     </div>
 
                 </div>
@@ -153,12 +155,11 @@
                                         Aggiunto il:
                                         {{ $announcements_to_check->created_at->format('d/m/Y') }}
                                     </p>
-                                   
-                                    <a href="{{ route('refuseAnnouncement', compact('announcements_to_check')) }}"
-                                        class="btn bgmy4 f-p">Rifiuta</a>
-                                    <a href="{{ route('acceptAnnouncement', compact('announcements_to_check')) }}"
-                                        class="btn bgmy4 f-p">Approva</a>
 
+                                    <div class="d-grid gap-2 d-md-block">
+                                        <button class="btn bgmy4 mt-2" href="{{ route('refuseAnnouncement', compact('announcements_to_check')) }}" type="button">Rifiuta</button>
+                                        <button class="btn bgmy4 mt-2" href="{{ route('acceptAnnouncement', compact('announcements_to_check')) }}" type="button">Approva</button>                                        
+                                      </div>                                   
                                 </div>
                             </div>
 
@@ -186,23 +187,18 @@
                                     {{-- <a href="{{ route('categoryShow', ['category' => $announcement->category]) }}"
                                         class="btn bgmy4 f-p">Categoria:
                                         {{ $announcement->category->name }}</a> --}}
-                                    <div class="container-fluid">
+                                       
+                                     <div class="container-fluid">
                                         <div class="row d-flex justify-content-between">
-                                            <div class="col-sm-3">
-                                                <a href="{{ route('detArticle', compact('announcement')) }}"
-                                                    class="btn bgmy4 f-p">Dettaglio</a>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <a href="{{ route('modifyAnnouncement', compact('announcement')) }}"
-                                                    class="btn bgmy4 f-p">Modifica</a>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <form class="" action="{{ route('defDelete', compact('announcement')) }}"                                              method="POST">
+                                            <div class="d-grid gap-2 d-md-block">
+                                                <button class="btn bgmy4 mt-1" href="{{ route('detArticle', compact('announcement')) }} type="button">Dettaglio</button>
+                                                <button class="btn bgmy4 mt-1" href="{{ route('modifyAnnouncement', compact('announcement')) }}" type="button">Modifica</button>
+                                                <form action="{{ route('defDelete', compact('announcement'))}}" method="POST">
                                                     @csrf
-                                                    <button class="btn bgmy4 f-p" type="submit">Elimina</button>
+                                                <button class="btn bgmy3 mt-1" type="button">Elimina</button>
                                                 </form>
-                                            </div>
-                                        </div>
+                                              </div>  
+                                       </div>
                                     </div>
 
                                 </div>

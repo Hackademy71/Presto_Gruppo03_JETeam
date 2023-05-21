@@ -9,7 +9,7 @@
         </div>
     </div>
     <div class="container-fluid">
-        <div class="row">
+        <div class="row card-login">
             <div class="col-sm-6">
                 <div id="announcement-{{$announcement->id}}" class="carousel slide" data-bs-ride="true">
                     {{-- <div class="carousel-indicators">
@@ -54,7 +54,7 @@
                     </button>
                 </div>
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-6 mx-auto">
                 <h2 class="f-s text-center fw-bold mt-5">
                     {{ $announcement->name }}
                 </h2>
@@ -70,9 +70,12 @@
                 <p class="fs-3 text-center mt-4">
                     Aggiunto il: {{ $announcement->created_at->format('d/m/Y') }}
                 </p>
-                <a href="#" class="btn bgmy4 f-p text-center">Contatta venditore</a>
-                <a href="{{route('reportAnnouncement', compact('announcement'))}}" class="f-s text-center tx-link">Segnala annuncio</a>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <button class="btn bgmy4 f-p" type="button">Contatta venditore</button>                    
+                    <a href="{{route('reportAnnouncement', compact('announcement'))}}" class="f-s text-center tx-link">Segnala annuncio</a>
+                  </div>
             </div>
+            
         </div>
     </div>
     {{-- <h1>Dettaglio</h1>
