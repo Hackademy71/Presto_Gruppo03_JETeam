@@ -12,7 +12,7 @@
                  <div class="col-12 upper-nav bgmy1">
                      <nav class="nav justify-content-center align-items-center h-100">
                          @guest
-                         <a class="nav-link tx-color" href="{{ route('login') }}">Login/Signup</a>
+                         <a class="nav-link tx-color" href="{{ route('login') }}">Accedi</a>
                          {{-- <li><a class="dropdown-item tx-color" href="{{ route('register') }}">Registrati</a></li> --}}
                          @else
                          <div class="dropdown px-2">
@@ -20,7 +20,7 @@
                                  data-bs-toggle="dropdown" aria-expanded="false">
                                  Area Utente
                              </a>
-                                 <ul class="dropdown-menu">
+                                 <ul class="dropdown-menu tx-color">
                                      <li><a class="dropdown-item tx-color" href="{{route('userProfile')}}">Profilo Utente</a></li>
                                      <li>
                                          <form class="m-0"action="{{ route('logout') }}" method="POST">
@@ -29,8 +29,11 @@
                                          </form>
                                      </li>
 
-                                 </ul>
+                                 </ul>                                
+                                 
+    
                              </div>
+
                              {{-- DropDown Eliminato di Area Revisore --}}
                              {{-- <div class="dropdown px-2">
                                  @if (Auth::user()->is_revisor)
@@ -48,6 +51,27 @@
                                  @endif
                                 </div> --}}
                              @endguest
+                             <div class="dropdown px-2">
+                                <a class="text-decoration-none dropdown-toggle tx-color" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Lingue
+                            </a>
+                                <ul class="dropdown-menu tx-color">
+                                    <li>
+                                        <x-_locale lang="it" />
+                                        It
+                                    </li>
+                                    <li>
+                                        <x-_locale lang="en" />
+                                        En
+                                    </li>
+                                    <li>
+                                        <x-_locale lang="es" />
+                                        Es
+                                    </li>
+
+                                </ul>
+                            </div>
                      </nav>
                  </div>
                  {{-- botton-nav --}}
@@ -61,9 +85,9 @@
                                  Annunci
                              </a>
                              <ul class="dropdown-menu">
-                                 <li><a class="dropdown-item" href="{{ route('indexAnnouncement') }}">Tutti gli
+                                 <li><a class="dropdown-item tx-color" href="{{ route('indexAnnouncement') }}">Tutti gli
                                          annunci</a></li>
-                                 <li><a class="dropdown-item" href="{{ route('articleNew') }}">Inserisci annuncio</a>
+                                 <li><a class="dropdown-item tx-color" href="{{ route('articleNew') }}">Inserisci annuncio</a>
                                  </li>
                              </ul>
                          </div>
@@ -74,43 +98,22 @@
                              </a>
                              <ul class="dropdown-menu">
                                  @foreach ($categories as $category)
-                                     <li><a class="dropdown-item"
+                                     <li><a class="dropdown-item tx-color"
                                              href="{{ route('categoryShow', compact('category')) }}">{{ $category->name }}</a>
                                      </li>
                                  @endforeach
                              </ul>
                             </div>
-                            <div class="dropdown px-2">
-                                <a class="text-decoration-none text-white dropdown-toggle" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Lingue
-                            </a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <x-_locale lang="it" />
-                                        Italiano
-                                    </li>
-                                    <li>
-                                        <x-_locale lang="en" />
-                                        English
-                                    </li>
-                                    <li>
-                                        <x-_locale lang="es" />
-                                        Español
-                                    </li>
-
-                                </ul>
-                            </div>
-
+                            
                      </nav>
                  </div>
              </div>
          </div>
          {{-- searchbar --}}
          <div class="col-12 col-lg-3 bgmy1 d-flex align-items-center justify-content-center">
-             <form class="d-flex m-0" role="search" action="{{ route('searchAnn') }}" method="GET">
+             <form class="d-flex m-2" role="search" action="{{ route('searchAnn') }}" method="GET">
                  @csrf
-                 <input class="form-control m-2 rounded" type="search" placeholder="Search" aria-label="Search"
+                 <input class="form-control rounded" type="search" placeholder="Search" aria-label="Search"
                      name="searched">
                  <button class="btn btn-outline bgoutline3" type="submit"><i class="bi bi-search"></i></button>
              </form>

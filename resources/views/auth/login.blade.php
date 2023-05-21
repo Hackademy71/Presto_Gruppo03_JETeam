@@ -6,15 +6,13 @@
                     <div class="row">
                         <div class="col-sm-12 mt-4 mb-3">
                             <h3 class="f-s text-center">Se ancora non hai un profilo,</h3>
-                            <h1 class="f-s text-center">compila il form per registrarti!</h1>
+                            <h3 class="f-s text-center">compila il form per registrarti!</h3>
                         </div>
                     </div>
                 </div>
                 <div class="card-login d-flex justify-content-center align-items-center">
                     <div class="card-content">
-                        {{-- <h3 class="f-s text-center">
-                                  Registrati
-                              </h3> --}}
+                        
                         <form class="mt-2"method="POST" action="{{ route('register') }}">
                             @csrf
                             <div class="mb-3 text-center">
@@ -57,7 +55,7 @@
             </div>
             {{-- INIZIO FORM DI ACCESSO a DX --}}
             <div class="col-sm-6 mx-auto justify-content-center">
-                <div class="container-fluid mt-5 mb-2">
+                <div class="container-fluid mt-4 mb-2">
                     <div class="row">
                         <div class="col-sm-12">
                             <h1 class="f-s text-center mt-4 mb-3">Accedi</h1>
