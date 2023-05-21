@@ -44,9 +44,11 @@ color: #bee4d6
 }
 
 .hero-image {
-  background-image: url("../../public/img/online.png");  
+  background-image: url("../../public/img/online2.png");  
   background-size:cover;
-  height: 50vh;
+  min-height: 400px;
+  height: 100%;
+  max-width: 100%;
 }
 
 .hero-text {
