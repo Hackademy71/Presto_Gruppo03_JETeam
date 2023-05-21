@@ -5,7 +5,7 @@
             <li class="nav-item"><a href="{{ route('workWithUs') }}" class="nav-link px-2 text-muted f-s">Lavora con
                     noi</a></li>
             <li class="nav-item"><a href="#" class="nav-link px-2 text-muted f-s">Pricing</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted f-s">FAQs</a></li>
+            <li class="nav-item"><a href="{{route('faqs')}}" class="nav-link px-2 text-muted f-s">FAQs</a></li>
             <li class="nav-item"><a href="#" class="nav-link px-2 text-muted f-s">About</a></li>            
         </ul>
         <p class="text-center text-muted f-s">© 2022 Company, Inc</p>
