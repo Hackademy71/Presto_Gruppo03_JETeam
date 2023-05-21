@@ -67,7 +67,7 @@
             </div>
 
             {{-- Card generica --}}
-            <div class="card-border">
+            <div class="card-login">
 
                 @if (Auth::user()->is_revisor)
                     <div class="container-fluid">
@@ -137,7 +137,7 @@
                                         </button>
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-6 ">
                                     <h2 class="f-s text-center fw-bold mt-5">
                                         {{ $announcements['to_check']->name }}
                                     </h2>
@@ -154,9 +154,11 @@
                                         Aggiunto il:
                                         {{ $announcements['to_check']->created_at->format('d/m/Y') }}
                                     </p>
+                                    <div class="d-none">
                                     @if (true)
-                                        $announcement=$announcements['to_check'];
+                                       $announcement=$announcements['to_check'];
                                     @endif
+                                    </div>
                                     <a href="{{ route('acceptAnnouncement', ['announcement' => 'announcement']) }}"
                                         class="btn bgmy4 f-p">Approva</a>
 
