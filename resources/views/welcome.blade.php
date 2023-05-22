@@ -18,12 +18,12 @@
                                     <h5 class="card-title f-p">{{ $announcement->name }}</h5>
                                     <p class="card-text f-s">{{ $announcement->description }}</p>
                                     <p class="card-text f-s">{{ $announcement->price }} €</p>
-                                    <p class="card-text f-s">Aggiunto il
+                                    <p class="card-text f-s">{{ __('ui.aggiunto-il') }}
                                         {{ $announcement->created_at->format('d/m/Y') }}</p>
                                     <a href="{{ route('detArticle', compact('announcement')) }}"
-                                        class="btn bgmy4 f-p m-3">Visualizza dettaglio</a>
+                                        class="btn bgmy4 f-p m-3">{{__('ui.visualizza-dettaglio')}}</a>
                                     <a href="{{ route('categoryShow', ['category' => $announcement->category]) }}"
-                                        class="btn bgmy4 f-p m-3">Categoria: {{ $announcement->category->name }}</a>
+                                        class="btn bgmy4 f-p m-3">{{__('ui.categorie') }}: {{ $announcement->category->name }}</a>
                                 </div>
                             </div>
                         </div>

@@ -63,7 +63,7 @@
             <div class="container-fluid">
                 <div class="row justify-content-center my-4">
                     <div class="col-9 justify-content-center d-flex align-items-center">
-                        <h1 class="fw-bold f-p ">Benvenut* {{ Auth::user()->name }},</h1>
+                        <h1 class="fw-bold f-p ">Ciao {{ Auth::user()->name }}</h1>
                     </div>
                 </div>
             </div>
@@ -71,7 +71,7 @@
             {{-- Card generica --}}
             <h2> Annunci da revisionare 
             <span class="btn rounded-5 fw-bold bgmy3"> {{ App\Models\Announcement::toBeRevisionedCount() }}<span
-                    class="visually-hidden f-p">Unreaded messages</span> </span></h2>
+                    class="visually-hidden f-p">Messaggi non letti</span> </span></h2>
 
             
             <x-announcements-revisor :announcement="$announcement"/>

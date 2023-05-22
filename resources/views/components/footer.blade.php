@@ -7,6 +7,6 @@
             <li class="nav-item"><a href="#" class="nav-link px-2 text-muted f-s">FAQs</a></li>
             <li class="nav-item"><a href="#" class="nav-link px-2 text-muted f-s">{{ __('ui.dove-siamo') }}</a></li>            
         </ul>
-        <p class="text-center text-muted f-s">© 2022 Company, Inc</p>
+        <p class="text-center text-muted f-s">© 2023 Presto.it</p>
     </footer>
 </div>

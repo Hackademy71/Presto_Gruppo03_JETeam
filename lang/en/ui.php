@@ -17,5 +17,8 @@ return [
     'categorie' => 'Departments',
     'lingue' => 'Language',
     'lavora' => 'Work with us',
-    'dove-siamo' => 'Where we are'
+    'dove-siamo' => 'Where we are',
+    'visualizza-dettaglio' => 'View details',
+    'aggiunto-il' => 'Added on'
+
 ];

@@ -6,7 +6,7 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-4">
+            <div class="col-md-5">
 
                 <form wire:submit.prevent="store">
                     <div class="mb-3">

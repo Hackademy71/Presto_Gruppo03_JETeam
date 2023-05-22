@@ -10,9 +10,7 @@
                         <p class="text-white">Non ci sono annunci da revisionare!</p>
                     </div>
                     <div class="col-12 d-flex justify-content-center">
-                        <a class="tx-color nav-link" href="{{ route('recheck') }}">Vai agli annunci
-                            che
-                            hai revisionato</a>
+                        <a class="tx-color nav-link" href="{{ route('recheck') }}">Vai agli annunci che hai revisionato</a>
                     </div>
                 </div>
             @else
