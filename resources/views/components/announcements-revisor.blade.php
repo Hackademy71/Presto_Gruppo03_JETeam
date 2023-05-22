@@ -26,10 +26,10 @@
                                     <div class="carousel-inner">
                                         @foreach ($announcement->images as $image)
                                             <div
-                                                class="carousel-item col-md-6 @if ($loop->first) active @endif">
+                                                class="carousel-item col-lg-6 @if ($loop->first) active @endif">
                                                 <img src="{{ $image->getUrl(400, 300) }}" class=" d-block w-100"
                                                     alt="...">
-                                                <div class="col-md-3 border-end">
+                                                <div class="col-lg-3 border-end">
                                                     <h5 class="mt-2 tc-accent">Tags</h5>
                                                     <div class="p-2">
                                                         @if ($image->labels)
@@ -39,7 +39,7 @@
                                                         @endif
                                                     </div>
                                                 </div>
-                                                <div class="col-md-3">
+                                                <div class="col-lg-3">
                                                     <div class="card-body">
                                                         <h5 class="tc-accent">Revisione Immagini</h5>
                                                         <p>Adulti: <span class="{{ $image->adult }}"></span></p>

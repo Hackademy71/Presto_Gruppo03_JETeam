@@ -16,6 +16,8 @@ Route::get('/user/profile', [FrontController::class,'show'])->name('userProfile'
 Route::get('/user', [UserController::class, "userProfile"])->name('userProfileModule');
 Route::post('/postuser', [UserController::class, 'postUserData'])->name('postProfile');
 Route::put('/profile/update/', [UserController::class, 'profileUpdate'])->name('profileUpdate');
+Route::get('/contact', [UserController::class, 'contactUser'])->name('contactUser');
+Route::get('/contact/module/{user}', [UserController::class, 'contactModule'])->name('contactModule');
 //Rotte per Annunci e Categorie
 
 Route::get('/articleNew', [AnnouncementController::class, 'create'])->name('articleNew');

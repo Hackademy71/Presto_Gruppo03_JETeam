@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Profile;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ContactUser;
+use App\Models\Announcement;
 
 class UserController extends Controller
 {
@@ -45,6 +49,16 @@ class UserController extends Controller
       ]);
 
       return redirect(route('userProfile'));
+  }
+  public function contactUser(User $user, Request $request)
+  {
+   $message=$request;
+   
+   Mail::to($user->email)->send(new ContactUser($user, Auth::user(), $message));
+   return redirect('/')->with('message', 'Hai inviato una mail a {{$user->name}}');
+  }
+  public function contactModule(Announcement $announcement){
+   return view('user.contact',compact('announcement'));
   }
 
    }
