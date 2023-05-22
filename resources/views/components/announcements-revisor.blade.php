@@ -24,35 +24,38 @@
                                 <div id="announcement-{{ $announcement->id }}" class="carousel slide"
                                     data-bs-ride="true">
                                     <div class="carousel-inner">
-                                        @foreach ($announcement->images as $image)
+                                        <div class="row">
+
+                                            @foreach ($announcement->images as $image)
                                             <div
-                                                class="carousel-item col-lg-6 @if ($loop->first) active @endif">
-                                                <img src="{{ $image->getUrl(400, 300) }}" class=" d-block w-100"
-                                                    alt="...">
-                                                <div class="col-lg-3 border-end">
-                                                    <h5 class="mt-2 tc-accent">Tags</h5>
-                                                    <div class="p-2">
-                                                        @if ($image->labels)
-                                                            @foreach ($image->labels as $label)
-                                                                <p class="d-inline">{{ $label }},</p>
-                                                            @endforeach
-                                                        @endif
-                                                    </div>
+                                            class="carousel-item col-lg-6 @if ($loop->first) active @endif">
+                                            <img src="{{ $image->getUrl(400, 300) }}" class=" d-block w-100"
+                                            alt="...">
+                                            <div class="col-lg-3 border-end">
+                                                <h5 class="mt-2 tc-accent">Tags</h5>
+                                                <div class="p-2">
+                                                    @if ($image->labels)
+                                                    @foreach ($image->labels as $label)
+                                                    <p class="d-inline">{{ $label }},</p>
+                                                    @endforeach
+                                                    @endif
                                                 </div>
-                                                <div class="col-lg-3">
-                                                    <div class="card-body">
-                                                        <h5 class="tc-accent">Revisione Immagini</h5>
-                                                        <p>Adulti: <span class="{{ $image->adult }}"></span></p>
-                                                        <p>Satira: <span class="{{ $image->spoof }}"></span></p>
-                                                        <p>Medicina: <span class="{{ $image->medical }}"></span></p>
-                                                        <p>Violenza: <span class="{{ $image->violence }}"></span></p>
-                                                        <p>Contenuto Ammiccante: <span
-                                                                class="{{ $image->racy }}"></span></p>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="card-body">
+                                                    <h5 class="tc-accent">Revisione Immagini</h5>
+                                                    <p>Adulti: <span class="{{ $image->adult }}"></span></p>
+                                                    <p>Satira: <span class="{{ $image->spoof }}"></span></p>
+                                                    <p>Medicina: <span class="{{ $image->medical }}"></span></p>
+                                                    <p>Violenza: <span class="{{ $image->violence }}"></span></p>
+                                                    <p>Contenuto Ammiccante: <span
+                                                        class="{{ $image->racy }}"></span></p>
                                                     </div>
                                                 </div>
                                             </div>
-                                        @endforeach
-                                    </div>
+                                            @endforeach
+                                        </div>
+                                        </div>
                                     <button class="carousel-control-prev" type="button"
                                         data-bs-target="#announcement-{{ $announcement->id }}" data-bs-slide="prev">
                                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
