@@ -91,8 +91,8 @@
                             </p>
 
                             <div class="d-grid gap-2 d-md-block">
-                                <button class="btn bgmy4 mt-2" href="{{ route('refuseAnnouncement', compact('announcement')) }}" type="button">Rifiuta</button>
-                                <button class="btn bgmy4 mt-2" href="{{ route('acceptAnnouncement', compact('announcement')) }}" type="button">Approva</button>                                        
+                                <a class="btn bgmy4 mt-2" href="{{ route('refuseAnnouncement', compact('announcement')) }}" >Rifiuta</a>
+                                <a class="btn bgmy4 mt-2" href="{{ route('acceptAnnouncement', compact('announcement')) }}" >Approva</a>                                        
                               </div>                                   
                         </div>
                     </div>
