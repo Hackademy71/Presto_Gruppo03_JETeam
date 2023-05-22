@@ -72,7 +72,9 @@
             </div>
 
             {{-- Card generica --}}
-            <h2> Il primo annuncio da revisionare </h2>
+            <h2> Annuncio da revisionare </h2>
+            <span> {{ App\Models\Announcement::toBeRevisionedCount() }}<span
+                    class="visually-hidden f-p">Unreaded messages</span> </span>
 
             
             <x-announcements-revisor :announcement="$announcement"/>
