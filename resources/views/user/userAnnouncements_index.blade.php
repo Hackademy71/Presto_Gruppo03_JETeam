@@ -55,16 +55,16 @@
 
                 </div>
             </div>
-        </div>
+
         {{-- Fine Area Dettagli Utente --}}
 
 
         {{-- Sezione annunci --}}
-        <div class="col-md-9">
+        <div class="col-12 col-lg-9">
             {{-- Intitolazione --}}
             <div class="container-fluid">
                 <div class="row justify-content-center my-4">
-                    <div class="col-12 justify-content-center d-flex align-items-center">
+                    <div class="col-9 justify-content-center d-flex align-items-center">
                         <h1 class="fw-bold f-p ">Benvenut* {{ Auth::user()->name }},</h1>
                         <h1 class="fw-bold f-p"> hai caricato
                             {{-- {{$announcements['user'].lenght()}}   --}}
@@ -85,6 +85,6 @@
         </div>
 
     </div>
-
+</div>
 
 </x-layout>

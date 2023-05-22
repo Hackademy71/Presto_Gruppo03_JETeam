@@ -6,7 +6,7 @@
 
         @if (Auth::user()->is_revisor)
             <div class="container-fluid">
-                @if ($announcement!==null)
+                @if ($announcement==null)
                     <div class="row justify-content-center">
                         <div class="col-12 d-flex bg-success border justify-content-center  align-items-center">
                             {{-- <p class="text-white">{{ $message }}</p> --}}
@@ -84,7 +84,7 @@
                                 {{ $announcement->description }}
                             </h5>
                             <p class="fs-3 text-center mt-4">
-                                Venditore: {{ $announcement->user->name }}
+                               
                             </p>
                             <p class="fs-3 text-center mt-4">
                                 Aggiunto il:
