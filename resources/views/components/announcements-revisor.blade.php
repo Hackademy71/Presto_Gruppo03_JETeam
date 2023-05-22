@@ -21,7 +21,7 @@
                 @else
                     <div class="row">
                         <div class="col-sm-12">
-                            <div id="announcement-{{ $announcement->id }}" class="carousel slide"
+                            <div id="announcement-{{ $announcement->id }}" class="carousel slide col-md-6"
                                 data-bs-ride="true">
                                 {{-- <div class="carousel-indicators">
                                     <button type="button" data-bs-target="#announcement-{{$announcement->id}}" data-bs-slide-to="0"
@@ -34,10 +34,11 @@
                                 @if ($announcement->images()->get()->isNotEmpty())
                                 <div class="carousel-inner row">
                                     @foreach ($announcement->images as $image)
-                                        <div class="carousel-item col-md-6 @if ($loop->first) active @endif">
-                                            <img src="{{ $image->getUrl(400, 300) }}" class=" d-block w-100"
+                                        <div class="carousel-item @if ($loop->first) active @endif">
+                                            <img src="{{ $image->getUrl(400, 300) }}" class=" d-block "
                                                 alt="...">
                                         </div>
+                                </div>
                                         <div class="col-md-3 border-end">
                                             <h5 class="mt-2 tc-accent">Tags</h5>
                                             <div class="p-2">
@@ -59,7 +60,7 @@
                                             </div>
                                         </div>
                                     @endforeach
-                                </div>
+                                
                             @else
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
