@@ -12,7 +12,7 @@
                  <div class="col-12 upper-nav bgmy1">
                      <nav class="nav justify-content-center align-items-center h-100">
                          @guest
-                         <a class="nav-link tx-color" href="{{ route('login') }}">Accedi</a>
+                         <a class="nav-link tx-color" href="{{ route('login') }}">{{ __('ui.login') }}</a>
                          {{-- <li><a class="dropdown-item tx-color" href="{{ route('register') }}">Registrati</a></li> --}}
                          @else
                          <div class="dropdown px-2">
@@ -21,11 +21,11 @@
                                  Area Utente
                              </a>
                                  <ul class="dropdown-menu tx-color">
-                                     <li><a class="dropdown-item tx-color" href="{{route('userProfile')}}">Profilo Utente</a></li>
+                                     <li><a class="dropdown-item tx-color" href="{{route('userProfile')}}">{{ __('ui.profilo-utente') }}</a></li>
                                      <li>
                                          <form class="m-0"action="{{ route('logout') }}" method="POST">
                                              @csrf
-                                             <button class="btn tx-color" type="submit">Logout</button>
+                                             <button class="btn tx-color" type="submit">{{ __('ui.logout') }}</button>
                                          </form>
                                      </li>
 
@@ -54,7 +54,7 @@
                              <div class="dropdown px-2">
                                 <a class="text-decoration-none dropdown-toggle tx-color" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                Lingue
+                                {{ __('ui.lingue') }}
                             </a>
                                 <ul class="dropdown-menu tx-color">
                                     <li>
@@ -82,20 +82,17 @@
                          <div class="dropdown px-2">
                              <a class="text-decoration-none text-white dropdown-toggle" href="#" role="button"
                                  data-bs-toggle="dropdown" aria-expanded="false">
-                                 Annunci
+                                 {{ __('ui.annunci') }}
                              </a>
                              <ul class="dropdown-menu">
-                                 <li><a class="dropdown-item tx-color" href="{{ route('indexAnnouncement') }}">Tutti gli
-                                         annunci</a></li>
-                                 <li><a class="dropdown-item tx-color" href="{{ route('articleNew') }}">Inserisci annuncio</a>
+                                 <li><a class="dropdown-item tx-color" href="{{ route('indexAnnouncement') }}">{{ __('ui.tutti-gli-annunci') }}</a></li>
+                                 <li><a class="dropdown-item tx-color" href="{{ route('articleNew') }}">{{ __('ui.inserisci-annuncio') }}</a>
                                  </li>
                              </ul>
                          </div>
                          <div class="dropdown px-2">
                              <a class="text-decoration-none text-white dropdown-toggle" href="#" role="button"
-                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                 Categorie
-                             </a>
+                                 data-bs-toggle="dropdown" aria-expanded="false">{{ __('ui.categorie') }}</a>
                              <ul class="dropdown-menu">
                                  @foreach ($categories as $category)
                                      <li><a class="dropdown-item tx-color"

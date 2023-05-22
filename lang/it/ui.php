@@ -17,4 +17,5 @@ return [
     'categorie' => 'Categorie',
     'lingue' => 'Lingue',
     'lavora' => 'Lavora con noi',
+    'dove-siamo' => 'Dove siamo'
 ];
