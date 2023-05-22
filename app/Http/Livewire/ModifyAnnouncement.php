@@ -33,7 +33,7 @@ class ModifyAnnouncement extends Component
             'category_id'=>$this->catAnnouncement,
             'user_id'=>Auth::user()->id,
         ]);
-        return redirect()->back()->with('message', "Complimenti, annuncio modificato");
+        return redirect(route('userProfile'))->with('message', "Complimenti, annuncio modificato");
     }
 
     public function render()

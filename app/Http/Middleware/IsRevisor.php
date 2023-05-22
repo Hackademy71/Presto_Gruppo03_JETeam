@@ -19,6 +19,6 @@ class IsRevisor
         if(Auth::check() && Auth::user()->is_revisor){
             return $next($request);
         }
-        return redirect('/')->with('access.denied', 'Attenzione! Non sei riconosciuto come Revisore');
+        return redirect('/berevisor')->with('message', 'Attenzione! Non sei riconosciuto come Revisore');
     }
 }

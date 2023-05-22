@@ -26,16 +26,17 @@ Route::get('/category/{category}', [FrontController::class,'categoryShow'] )->na
 
 //Rotte per i Revisori
 
-Route::get('/revisor/home', [RevisorController::class, 'index'])->middleware('isRevisor')->name('indexRevisor');
+// Route::get('/revisor/home', [RevisorController::class, 'index'])->middleware('isRevisor')->name('indexRevisor');
 Route::get('/announcement/accept/{announcement}', [RevisorController::class, 'acceptAnnouncement'])->name ('acceptAnnouncement');
 Route::get('/announcement/refuse/{announcement}', [RevisorController::class, 'refuseAnnouncement'])->name ('refuseAnnouncement');
 Route::post('/revisor/defDelete/{announcement}', [AnnouncementController::class,'destroy'])->name('defDelete');
+Route::get('/berevisor',[RevisorController::class,'beRevisor'])->name('beRevisor');
 
 // Rotte footer
 
 Route::get('/workWithUs', [RevisorController::class,'workWithUs'])->middleware('auth')->name('workWithUs');
 Route::get('/revisor/{user}', [RevisorController::class,'makeRevisor'])->name('make.revisor');
-Route::get('/recheck', [RevisorController::class, 'recheck'])->name('recheck');
+Route::get('/recheck', [RevisorController::class, 'recheck'])->middleware('isRevisor')->name('recheck');
 
 
 //Rotte per ricerca e cambio lingua

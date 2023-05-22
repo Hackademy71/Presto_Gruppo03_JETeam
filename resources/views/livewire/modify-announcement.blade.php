@@ -50,36 +50,7 @@
                             <span class=" text-danger f-s error">{{ $message }}</span>
                         @enderror
                     </div>
-                    <div class="my-3">
-                        <p class="f-p my-3">Aggiungi delle foto al tuo annuncio</p>
-                        <input wire:model="temporary_images" type="file" name="images" multiple
-                            class="form-control shadow @error('temporary_images.*') is-invalid @enderror"
-                            placeholder="Img" />
-                        @error('temporary_images.*')
-                            <p class="text-danger mt-2">{{ $message }}</p>
-                        @enderror
-                    </div>
-                    @if (!empty($images))
-                        <div class="row">
-                            <div class="col-12">
-                                <p>Anteprima Foto</p>
-                                <div class="row border border-4 border-info rounded shadow py-4">
-                                    @foreach ($images as $key => $image)
-                                        <div class="col my-3">
-                                            <div class="img-preview mx-auto shadow rounded">
-                                                {{-- style="background-image:url({{ $image->temporaryUrl() }}) cover;"> --}}
-                                                {{-- <img class="img-fluid" src="{{$image->temporaryUrl()}}" alt=""> --}}
-                                                <img class="img-fluid" src="{{$image->getUrl(400, 300)}}" alt="">
-                                            </div>
-                                            <button type="button"
-                                                class="btn btn-danger shadow d-block text-center mt-2 mx-auto"
-                                                wire:click="removeImage({{ $key }})">Cancella</button>
-                                        </div>
-                                    @endforeach
-                                </div>
-                            </div>
-                        </div>
-                    @endif
+                    
                 </form>
                 <div class="col-sm-12 d-flex justify-content-center my-5">
                     <button type="button" wire:click="store" class=" f-p btn bgmy4">Modifica articolo</button>
