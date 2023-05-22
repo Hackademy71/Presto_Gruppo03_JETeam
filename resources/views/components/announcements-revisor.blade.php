@@ -24,6 +24,7 @@
                                 <div id="announcement-{{ $announcement->id }}" class="carousel slide col-md-12"
                                     data-bs-ride="true">
                                     <div class="carousel-inner">
+                                        //immagini e labels
                                         @foreach ($announcement->images as $image)
                                             <div
                                                 class="carousel-item col-md-6 @if ($loop->first) active @endif">
