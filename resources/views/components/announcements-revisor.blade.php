@@ -17,11 +17,11 @@
             @else
                 <div class="row">
                     <div class="col-sm-12">
+                        
+                        
+                        @if ($announcement->images()->get()->isNotEmpty())
                         <div class="row">
-
-
-                            @if ($announcement->images()->get()->isNotEmpty())
-                                <div id="announcement-{{ $announcement->id }}" class="carousel slide col-md-12"
+                                <div id="announcement-{{ $announcement->id }}" class="carousel slide"
                                     data-bs-ride="true">
                                     <div class="carousel-inner">
                                         //immagini e labels
@@ -53,25 +53,26 @@
                                                 </div>
                                             </div>
                                     </div>
-                                    @endforeach
-                                    <button class="carousel-control-prev" type="button" data-bs-target="#announcement-{{ $announcement->id }}"
-                                        data-bs-slide="prev">
-                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                        <span class="visually-hidden">Previous</span>
-                                    </button>
-                                    <button class="carousel-control-next" type="button" data-bs-target="#announcement-{{ $announcement->id }}"
-                                        data-bs-slide="next">
-                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                        <span class="visually-hidden">Next</span>
-                                    </button>
+                            @endforeach
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#announcement-{{ $announcement->id }}" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#announcement-{{ $announcement->id }}" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
                             
                         </div>
+                    </div>
                     @else
                         <div class="row">
                             <div class="col-md-12">
                                 <div id="announcement-{{ $announcement->id }}" class="carousel slide col-md-6"
                                     data-bs-ride="true">
-                                    
+
 
                                     <div class="carousel-inner ">
                                         <div class="carousel-item active">
@@ -84,26 +85,24 @@
                                             <img src="https://picsum.photos/200" class="d-block w-100" alt="...">
                                         </div>
                                     </div>
-                                    <button class="carousel-control-prev" type="button" data-bs-target="#announcement-{{ $announcement->id }}"
-                                        data-bs-slide="prev">
+                                    <button class="carousel-control-prev" type="button"
+                                        data-bs-target="#announcement-{{ $announcement->id }}" data-bs-slide="prev">
                                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                         <span class="visually-hidden">Previous</span>
                                     </button>
-                                    <button class="carousel-control-next" type="button" data-bs-target="#announcement-{{ $announcement->id }}"
-                                        data-bs-slide="next">
+                                    <button class="carousel-control-next" type="button"
+                                        data-bs-target="#announcement-{{ $announcement->id }}" data-bs-slide="next">
                                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                         <span class="visually-hidden">Next</span>
                                     </button>
                                 </div>
                             </div>
                         </div>
-                    </div>
             @endif
-            
+
         </div>
 
 
-</div>
 </div>
 <div class="row">
     <div class="col-md-12">
