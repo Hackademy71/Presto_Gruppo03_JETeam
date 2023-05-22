@@ -8,7 +8,7 @@
         <div class="row justify-content-center">
             <div class="col-4">
 
-                <form wire:submit.prevent="update">
+                <form wire:submit.prevent="store">
                     <div class="mb-3">
                         <label class="form-label my-3 f-p">Titolo Annuncio</label>
                         <input type="text" class="form-control @error('name') is-invalid @enderror"
@@ -82,7 +82,7 @@
                     @endif
                 </form>
                 <div class="col-sm-12 d-flex justify-content-center my-5">
-                    <button type="button" wire:click="update" class=" f-p btn bgmy4">Modifica articolo</button>
+                    <button type="button" wire:click="store" class=" f-p btn bgmy4">Modifica articolo</button>
                 </div>
             </div>
         </div>

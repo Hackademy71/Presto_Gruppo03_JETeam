@@ -3,6 +3,8 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use App\Models\Announcement;
+use Illuminate\Support\Facades\Auth;
 
 class ModifyAnnouncement extends Component
 {
@@ -12,7 +14,7 @@ class ModifyAnnouncement extends Component
     public $catAnnouncement;
     public $images=[];
     public $temporary_images;
-    public $announcement;
+    public Announcement $announcement;
 
     public function mount(){
         $this->name=$this->announcement->name;
@@ -23,12 +25,14 @@ class ModifyAnnouncement extends Component
         
 
     }
-    public function update(){
-        $this->announcement->name=$this->name;
-        $this->announcement->description=$this->description;
-        $this->announcement->price=$this->price;
-        $this->announcement->category=$this->catAnnouncement;
-        $this->announcement->save();
+    public function store(){
+        $this->announcement->update([
+            'name'=>$this->name,
+            'description'=>$this->description,
+            'price'=>$this->price,
+            'category_id'=>$this->catAnnouncement,
+            'user_id'=>Auth::user()->id,
+        ]);
         return redirect()->back()->with('message', "Complimenti, annuncio modificato");
     }
 
