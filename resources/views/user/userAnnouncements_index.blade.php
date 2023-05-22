@@ -40,6 +40,7 @@
                             <div class="col-12 d-grid gap-2 col-lg-6 mx-auto">
                                 <a href="{{ route('userProfileModule') }}" class="btn bgmy4 f-p m-3">Modifica i tuoi
                                     dati</a>
+                            </div>
                             @else
                                 <a href="{{ route('userProfileModule') }}" class="btn bgmy4 f-p m-3">Aggiungi più dati
                                     al
