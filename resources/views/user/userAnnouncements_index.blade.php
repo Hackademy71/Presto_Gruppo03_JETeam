@@ -74,6 +74,7 @@
             </div>
 
             {{-- Card generica --}}
+            <a href="{{route('indexRevisor')}}"> Vai a revisionare gli annunci </a>
 
             {{-- Fine Area Revisore --}}
             {{-- Inizio area annunci caricati dall'User --}}
