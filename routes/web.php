@@ -50,5 +50,6 @@ Route::post('/lingua/{lang}',[FrontController::class,'setLanguage'])->name('set_
 
 Route::get('/report/{announcement}', [AnnouncementController::class, 'reportAnnouncement'])->name('reportAnnouncement');
 
-// Route::get('/announcementCheck/accept', [RevisorController::class, 'accept'])->name('accept');
-// Route::get('/announcementCheck/refuse', [RevisorController::class, 'refuse'])->name('refuse');
+//Rotta pagine in costruzione
+
+Route::get('onBuild', [PublicController::class,'onBuild'])->name('onBuild');
