@@ -17,9 +17,7 @@
                          @else
                          <div class="dropdown px-2">
                              <a class="text-decoration-none tx-color dropdown-toggle" href="#" role="button"
-                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                 Area Utente
-                             </a>
+                                 data-bs-toggle="dropdown" aria-expanded="false">{{ __('ui.area-utente') }}</a>
                                  <ul class="dropdown-menu tx-color">
                                      <li><a class="dropdown-item tx-color" href="{{route('userProfile')}}">{{ __('ui.profilo-utente') }}</a></li>
                                      <li>
