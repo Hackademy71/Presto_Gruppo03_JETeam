@@ -12,21 +12,21 @@ class announcementsRevisor extends Component
     /**
      * Create a new component instance.
      */
-    public $data;
-    public function __construct($data)
+    public $announcement;
+    public function __construct($announcement)
     {
-        $this=$data;
+        $this->announcement=$announcement;
     }
     public function takeAnnouncements()
     {
-        $announcement=FrontController::indexRevisor();
         return view('components.announcements-user',compact('announcement'));
     }
     /**
      * Get the view / contents that represent the component.
      */
     public function render(): View|Closure|string
-    {
-        return view('components.announcements-revisor',compact('data'));
+    {  
+        $announcement=FrontController::indexRevisor();
+        return view('components.announcements-revisor',compact('announcement'));
     }
 }

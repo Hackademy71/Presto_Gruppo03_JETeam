@@ -2,6 +2,7 @@
     <!-- You must be the change you wish to see in the world. - Mahatma Gandhi -->
     {{-- Card generica --}}
     <div class="card-login">
+        {{-- @dd($announcement) --}}
 
         @if (Auth::user()->is_revisor)
             <div class="container-fluid">

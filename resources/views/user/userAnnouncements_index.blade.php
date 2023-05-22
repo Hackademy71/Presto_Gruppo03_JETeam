@@ -74,14 +74,16 @@
             </div>
 
             {{-- Card generica --}}
-            <a href="{{route('indexRevisor')}}"> Vai a revisionare gli annunci </a>
+
+            <a href="{{ route('indexRevisor') }}"> LINK PROVVISORIO Vai a revisionare gli annunci </a>
+            <x-announcements-revisor :announcement="$announcement"/>
+
 
             {{-- Fine Area Revisore --}}
             {{-- Inizio area annunci caricati dall'User --}}
-            
         </div>
 
     </div>
-    
+
 
 </x-layout>

@@ -34,8 +34,11 @@ class FrontController extends Controller
         return $announcement_to_check;
     }
     public function show(){
-        // $announcements=Announcement::get();
-        return view('user.userAnnouncements_index');
+        $announcement=Announcement::where('is_accepted',false)->orderBy('created_at', 'DESC')->first();
+        if(!$announcement){
+            $announcement='is_empty';
+        }
+        return view('user.userAnnouncements_index', compact('announcement'));
     }
 
 }
