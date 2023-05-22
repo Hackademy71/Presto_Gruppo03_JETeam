@@ -6,7 +6,7 @@
 
         @if (Auth::user()->is_revisor)
             <div class="container-fluid">
-                @if (isEmpty($announcement))
+                @if ($announcement!==null)
                     <div class="row justify-content-center">
                         <div class="col-12 d-flex bg-success border justify-content-center  align-items-center">
                             {{-- <p class="text-white">{{ $message }}</p> --}}
