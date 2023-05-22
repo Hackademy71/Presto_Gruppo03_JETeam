@@ -17,10 +17,10 @@
             @else
                 <div class="row">
                     <div class="col-sm-12">
-                        
-                        
+
+
                         @if ($announcement->images()->get()->isNotEmpty())
-                        <div class="row">
+                            <div class="row">
                                 <div id="announcement-{{ $announcement->id }}" class="carousel slide"
                                     data-bs-ride="true">
                                     <div class="carousel-inner">
@@ -52,38 +52,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                    </div>
-                            @endforeach
-                            <button class="carousel-control-prev" type="button"
-                                data-bs-target="#announcement-{{ $announcement->id }}" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button"
-                                data-bs-target="#announcement-{{ $announcement->id }}" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                            
-                        </div>
-                    </div>
-                    @else
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div id="announcement-{{ $announcement->id }}" class="carousel slide col-md-6"
-                                    data-bs-ride="true">
-
-
-                                    <div class="carousel-inner ">
-                                        <div class="carousel-item active">
-                                            <img src="https://picsum.photos/200" class="d-block w-100" alt="...">
-                                        </div>
-                                        <div class="carousel-item">
-                                            <img src="https://picsum.photos/200" class="d-block w-100" alt="...">
-                                        </div>
-                                        <div class="carousel-item">
-                                            <img src="https://picsum.photos/200" class="d-block w-100" alt="...">
-                                        </div>
+                                        @endforeach
                                     </div>
                                     <button class="carousel-control-prev" type="button"
                                         data-bs-target="#announcement-{{ $announcement->id }}" data-bs-slide="prev">
@@ -95,43 +64,81 @@
                                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                         <span class="visually-hidden">Next</span>
                                     </button>
+
                                 </div>
                             </div>
+                        @else
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div id="announcement-{{ $announcement->id }}" class="carousel slide col-md-6"
+                                        data-bs-ride="true">
+
+
+                                        <div class="carousel-inner ">
+                                            <div class="carousel-item active">
+                                                <img src="https://picsum.photos/200" class="d-block w-100"
+                                                    alt="...">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="https://picsum.photos/200" class="d-block w-100"
+                                                    alt="...">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="https://picsum.photos/200" class="d-block w-100"
+                                                    alt="...">
+                                            </div>
+                                        </div>
+                                        <button class="carousel-control-prev" type="button"
+                                            data-bs-target="#announcement-{{ $announcement->id }}"
+                                            data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button"
+                                            data-bs-target="#announcement-{{ $announcement->id }}"
+                                            data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
+
+                    </div>
+
+
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="f-s text-center fw-bold mt-5">
+                            {{ $announcement->name }}
+                        </h2>
+                        <p class="fs-3 text-center mt-4">
+                            €{{ $announcement->price }}
+                        </p>
+                        <h5 class="f-s text-center mt-4">
+                            {{ $announcement->description }}
+                        </h5>
+                        <p class="fs-3 text-center mt-4">
+
+                        </p>
+                        <p class="fs-3 text-center mt-4">
+                            Aggiunto il:
+                            {{ $announcement->created_at->format('d/m/Y') }}
+                        </p>
+
+                        <div class="d-grid gap-2 d-md-block">
+                            <a class="btn bgmy4 mt-2"
+                                href="{{ route('refuseAnnouncement', compact('announcement')) }}">Rifiuta</a>
+                            <a class="btn bgmy4 mt-2"
+                                href="{{ route('acceptAnnouncement', compact('announcement')) }}">Approva</a>
                         </div>
+                    </div>
+                </div>
+
+
             @endif
-
         </div>
-
-
-</div>
-<div class="row">
-    <div class="col-md-12">
-        <h2 class="f-s text-center fw-bold mt-5">
-            {{ $announcement->name }}
-        </h2>
-        <p class="fs-3 text-center mt-4">
-            €{{ $announcement->price }}
-        </p>
-        <h5 class="f-s text-center mt-4">
-            {{ $announcement->description }}
-        </h5>
-        <p class="fs-3 text-center mt-4">
-
-        </p>
-        <p class="fs-3 text-center mt-4">
-            Aggiunto il:
-            {{ $announcement->created_at->format('d/m/Y') }}
-        </p>
-
-        <div class="d-grid gap-2 d-md-block">
-            <a class="btn bgmy4 mt-2" href="{{ route('refuseAnnouncement', compact('announcement')) }}">Rifiuta</a>
-            <a class="btn bgmy4 mt-2" href="{{ route('acceptAnnouncement', compact('announcement')) }}">Approva</a>
-        </div>
-    </div>
-</div>
-
-
-@endif
-</div>
 </div>
 @endif
