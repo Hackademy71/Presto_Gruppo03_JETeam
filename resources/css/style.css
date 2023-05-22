@@ -42,9 +42,13 @@ color: #bee4d6
 .tx-color{
   color: #AD3E18;
 }
+.body-image{
+  background: rgb(255,210,179);
+  background: linear-gradient(90deg, rgba(255,210,179,1) 0%, rgba(255,164,105,0.7232142857142857) 48%, rgba(255,129,87,1) 100%);
+}
 
 .hero-image {
-  background-image: url("../../public/img/online2.png");  
+  background-image: url("../../public/img/Screenshot_2023-05-22_191416-removebg-preview.png");  
   background-size:cover;
   min-height: 400px;
   height: 100%;
@@ -96,9 +100,10 @@ color: #bee4d6
 
 .card-border {
   background-color: #fff;
-  border: 2px solid #ffd2b3;
+  border: 2px solid #AD3E18;
   overflow: hidden;
-  box-shadow: 0 4px 21px -12px #AD3E18;
+  box-shadow: 0 4px 21px -12px #ffd2b3;
+  border-radius: 20px;
 }
 
 .card-login {

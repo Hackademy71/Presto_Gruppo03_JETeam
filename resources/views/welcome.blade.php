@@ -2,8 +2,8 @@
     <div class="container-fluid mt-5">
         <div class="row">
             <div class="col-sm-12 ps-0 hero-image hero-text text-start h-100">
-                <h1 class="f-p fw-bold fs-1 justify-content-end text-gradient-50 tx-color my-5"> {{ __('ui.welcome') }}</h1>
-                    <p class="f-p fs-2 justify-content-center text-gradient-50 tx-color my-5">
+                <h1 class="f-p fw-bold fs-1 justify-content-end text-gradient-50 tx-color my-5 mx-5"> {{ __('ui.welcome') }}</h1>
+                    <p class="f-p fs-2 justify-content-center text-gradient-50 tx-color my-5 mx-5">
                         {{ __('ui.slogan') }}
                     </p>
             </div>

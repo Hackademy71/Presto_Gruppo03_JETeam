@@ -9,7 +9,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
 </head>
-    <body>
+    <body class="body-image">
     <x-nav2/>
     @if (session()->has('message'))
     <div class="flex flex-row justify-center my-2 alert alert-success">
