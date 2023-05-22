@@ -67,21 +67,20 @@
                 <div class="row justify-content-center my-4">
                     <div class="col-9 justify-content-center d-flex align-items-center">
                         <h1 class="fw-bold f-p ">Benvenut* {{ Auth::user()->name }},</h1>
-                        <h1 class="fw-bold f-p"> hai caricato
-                            {{-- {{$announcements['user'].lenght()}}   --}}
-                        </h1>
                     </div>
                 </div>
             </div>
 
             {{-- Card generica --}}
+            <h2> Il primo annuncio da revisionare </h2>
 
-            <a href="{{ route('indexRevisor') }}"> LINK PROVVISORIO Vai a revisionare gli annunci </a>
+            
             <x-announcements-revisor :announcement="$announcement"/>
 
 
             {{-- Fine Area Revisore --}}
             {{-- Inizio area annunci caricati dall'User --}}
+            <h2 class="text-center mt-3">I tuoi annunci </h2>
             <x-announcements-user1/>
         </div>
 
