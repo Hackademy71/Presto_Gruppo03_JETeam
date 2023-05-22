@@ -77,7 +77,7 @@
 
             {{-- Fine Area Revisore --}}
             {{-- Inizio area annunci caricati dall'User --}}
-            @endif
+            
         </div>
 
     </div>
