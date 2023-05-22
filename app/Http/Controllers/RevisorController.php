@@ -39,7 +39,11 @@ class RevisorController extends Controller
 
     public function refuseAnnouncement(Announcement $announcement)
     {
-
+        if($announcement->is_accepted||$announcement->is_accepted===0){
+            $announcement->is_accepted=null;
+            $announcement->save();
+        return redirect(route('userProfile'))->with('message', "Peccato, hai rifiutato l'annuncio");
+    };
         $announcement->setRevisor();
         $announcement->is_accepted = false;
         // $announcement_to_check->user_id=Auth::user()->id;
