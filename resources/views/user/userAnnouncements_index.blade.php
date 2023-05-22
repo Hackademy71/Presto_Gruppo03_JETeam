@@ -2,7 +2,7 @@
     <div class="container-fluid ">
         {{-- Area dettagli Utente --}}
         <div class="row justify-content-center">
-            <div class="col-12 col-lg-3 bgmy1 align-items-center rounded-end">
+            <div class="col-12 col-md-3 bgmy1 align-items-center rounded-end">
                 <h1 class="f-p text-center fw-bold my-4">Il tuo profilo</h1>
                 <div class="container-fluid">
                     <div class="row-fluid align-items-center">
