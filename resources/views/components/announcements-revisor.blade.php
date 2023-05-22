@@ -2,7 +2,8 @@
 <div class="card-login">
     @if (Auth::user()->is_revisor)
         <div class="container-fluid">
-            @if ($announcement == null)
+            
+            @if ($announcement == 'is_empty')
                 <div class="row justify-content-center">
                     <div class="col-12 d-flex bg-success border justify-content-center  align-items-center">
                         {{-- <p class="text-white">{{ $message }}</p> --}}

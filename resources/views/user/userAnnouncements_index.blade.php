@@ -6,17 +6,17 @@
                 <h1 class="f-p text-center fw-bold my-4">Il tuo profilo</h1>
                 <div class="container-fluid">
                     <div class="row-fluid align-items-center">
-                        <div class="col-sm-12 justify-content-center bg-danger">
+                        <div class="col-sm-12 justify-content-center">
 
-                            <div class="bg-white card-border rounded justify-content-center" style="width: 18rem;">
+                            <div class="bg-white card-border rounded justify-content-center" >
 
                                 <h5 class="card-title text-center f-p">Nome {{ Auth::user()->name }}</h5>
-                                <p class="card-text text-center f-s">Email: {{ Auth::user()->email }}</p>
+                                <p class="card-text text-center mt-2 f-s">Email: {{ Auth::user()->email }}</p>
 
                                 @if (Auth::user()->profile)
                                     <p class="card-title text-center fw-5 f-p">Nickname:
                                         {{ Auth::user()->profile->nickname }}</p>
-                                    <p class="card-text text-center f-s">Cognome: {{ Auth::user()->profile->surname }}
+                                    <p class="card-text text-center f-s mt-2">Cognome: {{ Auth::user()->profile->surname }}
                                     </p>
                                     <p class="card-text text-center f-s">Sesso: {{ Auth::user()->profile->gender }}</p>
                                     <p class="card-text text-center f-s">Nazionalità: {{ Auth::user()->profile->state }}
@@ -38,18 +38,15 @@
 
                             </div>
                             <div class="col-12 d-grid gap-2 col-lg-6 mx-auto">
-                                <a href="{{ route('userProfileModule') }}" class="btn bgmy4 f-p m-3">Modifica i tuoi
-                                    dati</a>
+                                <a href="{{ route('userProfileModule') }}" class="btn bgmy4 f-p m-3">Modifica dati</a>
                             </div>
                             @else
-                                <a href="{{ route('userProfileModule') }}" class="btn bgmy4 f-p m-3">Aggiungi più dati
-                                    al
-                                    tuo Profilo</a>
+                                <a href="{{ route('userProfileModule') }}" class="btn bgmy4 f-p m-3">Completa il tuo Profilo</a>
                             </div>
                             @endif
 
                             @if (Auth::user()->is_revisor)
-                                <a class="btn f-p bgmy3" href="{{ route('recheck') }}">Annunci revisionati</a>
+                                <a class="btn f-p bgmy3 mt-4" href="{{ route('recheck') }}">Annunci revisionati</a>
                             @endif
                         </div>
                     </div>
@@ -72,9 +69,9 @@
             </div>
 
             {{-- Card generica --}}
-            <h2> Annuncio da revisionare </h2>
-            <span> {{ App\Models\Announcement::toBeRevisionedCount() }}<span
-                    class="visually-hidden f-p">Unreaded messages</span> </span>
+            <h2> Annunci da revisionare 
+            <span class="btn rounded-5 fw-bold bgmy3"> {{ App\Models\Announcement::toBeRevisionedCount() }}<span
+                    class="visually-hidden f-p">Unreaded messages</span> </span></h2>
 
             
             <x-announcements-revisor :announcement="$announcement"/>
