@@ -12,6 +12,10 @@ class PublicController extends Controller
        
         return view('welcome', compact('announcements'));
     }
+
+    public function onBuild (){
+        return view ('onBuild');
+    }
    
    
 }

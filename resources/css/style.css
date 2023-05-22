@@ -160,3 +160,10 @@ button {
   width:200px;
   /* height: 200px; */
 }
+
+.immagine {
+  background-image: url("../../public/img/work_in_porgress_.jpg");  
+  min-height: 425px;
+  height: 100%;
+  max-width: 100%;
+}
