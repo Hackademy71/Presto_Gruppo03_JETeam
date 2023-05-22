@@ -1,8 +1,5 @@
-<!-- You must be the change you wish to see in the world. - Mahatma Gandhi -->
 {{-- Card generica --}}
 <div class="card-login">
-    {{-- @dd($announcement) --}}
-
     @if (Auth::user()->is_revisor)
         <div class="container-fluid">
             @if ($announcement == null)
@@ -26,14 +23,6 @@
                             @if ($announcement->images()->get()->isNotEmpty())
                                 <div id="announcement-{{ $announcement->id }}" class="carousel slide col-md-12"
                                     data-bs-ride="true">
-                                    {{-- <div class="carousel-indicators">
-                                        <button type="button" data-bs-target="#announcement-{{$announcement->id}}" data-bs-slide-to="0"
-                                            class="active" aria-current="true" aria-label="Slide 1"></button>
-                                        <button type="button" data-bs-target="#announcement-{{$announcement->id}}" data-bs-slide-to="1"
-                                            aria-label="Slide 2"></button>
-                                        <button type="button" data-bs-target="#announcement-{{$announcement->id}}" data-bs-slide-to="2"
-                                            aria-label="Slide 3"></button>
-                                    </div> --}}
                                     <div class="carousel-inner">
                                         @foreach ($announcement->images as $image)
                                             <div
@@ -63,6 +52,7 @@
                                                 </div>
                                             </div>
                                     </div>
+                                    @endforeach
                                     <button class="carousel-control-prev" type="button" data-bs-target="#announcement-{{ $announcement->id }}"
                                         data-bs-slide="prev">
                                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -73,21 +63,14 @@
                                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                         <span class="visually-hidden">Next</span>
                                     </button>
-                            @endforeach
+                            
                         </div>
                     @else
                         <div class="row">
                             <div class="col-md-12">
                                 <div id="announcement-{{ $announcement->id }}" class="carousel slide col-md-6"
                                     data-bs-ride="true">
-                                    {{-- <div class="carousel-indicators">
-                                        <button type="button" data-bs-target="#announcement-{{$announcement->id}}" data-bs-slide-to="0"
-                                            class="active" aria-current="true" aria-label="Slide 1"></button>
-                                        <button type="button" data-bs-target="#announcement-{{$announcement->id}}" data-bs-slide-to="1"
-                                            aria-label="Slide 2"></button>
-                                        <button type="button" data-bs-target="#announcement-{{$announcement->id}}" data-bs-slide-to="2"
-                                            aria-label="Slide 3"></button>
-                                    </div> --}}
+                                    
 
                                     <div class="carousel-inner ">
                                         <div class="carousel-item active">
