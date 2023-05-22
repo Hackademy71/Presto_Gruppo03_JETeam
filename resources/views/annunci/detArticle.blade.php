@@ -71,7 +71,7 @@
                     Aggiunto il: {{ $announcement->created_at->format('d/m/Y') }}
                 </p>
                 <div class="d-grid gap-2 col-6 mx-auto">
-                    <button class="btn bgmy4 f-p" type="button">Contatta venditore</button>                    
+                    <a href="{{route('onBuild')}}" class="btn bgmy4 f-p">Contatta venditore</button>                    
                     <a href="{{route('reportAnnouncement', compact('announcement'))}}" class="f-s text-center tx-link">Segnala annuncio</a>
                   </div>
             </div>
