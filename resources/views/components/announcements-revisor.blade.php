@@ -22,7 +22,9 @@
                     <div class="col-sm-12">
                         <div class="row">
 
-                            <div id="announcement-{{ $announcement->id }}" class="carousel slide col-md-6"
+                           
+                                @if ($announcement->images()->get()->isNotEmpty()) 
+                                <div id="announcement-{{ $announcement->id }}" class="carousel slide col-md-6"
                                 data-bs-ride="true">
                                 {{-- <div class="carousel-indicators">
                                         <button type="button" data-bs-target="#announcement-{{$announcement->id}}" data-bs-slide-to="0"
@@ -32,15 +34,14 @@
                                         <button type="button" data-bs-target="#announcement-{{$announcement->id}}" data-bs-slide-to="2"
                                             aria-label="Slide 3"></button>
                                     </div> --}}
-                                @if ($announcement->images()->get()->isNotEmpty())
                                     <div class="carousel-inner">
                                         @foreach ($announcement->images as $image)
                                             <div class="carousel-item @if ($loop->first) active @endif">
-                                                <img src="{{ $image->getUrl(400, 300) }}" class=" d-block "
+                                                <img src="{{ $image->getUrl(400, 300) }}" class=" d-block w-100"
                                                     alt="...">
                                             </div>
                                     </div>
-                            </div>
+                            
                             <div class="col-md-3 border-end">
                                 <h5 class="mt-2 tc-accent">Tags</h5>
                                 <div class="p-2">
@@ -63,9 +64,20 @@
                             </div>
                         </div>
             @endforeach
+                                </div>
         @else
         <div class="row">
             <div class="col-md-12">
+            <div id="announcement-{{ $announcement->id }}" class="carousel slide col-md-6"
+                                data-bs-ride="true">
+                                {{-- <div class="carousel-indicators">
+                                        <button type="button" data-bs-target="#announcement-{{$announcement->id}}" data-bs-slide-to="0"
+                                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                                        <button type="button" data-bs-target="#announcement-{{$announcement->id}}" data-bs-slide-to="1"
+                                            aria-label="Slide 2"></button>
+                                        <button type="button" data-bs-target="#announcement-{{$announcement->id}}" data-bs-slide-to="2"
+                                            aria-label="Slide 3"></button>
+                                    </div> --}}
 
                 <div class="carousel-inner ">
                     <div class="carousel-item active">
