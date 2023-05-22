@@ -11,7 +11,7 @@
     <div class="container-fluid">
         <div class="row card-login">
             <div class="col-sm-6">
-                <div id="announcement-{{$announcement->id}}" class="carousel slide" data-bs-ride="true">
+                <div id="announcement-{{$announcement->id}}" class="carousel slide carousel-dark " data-bs-ride="true">
                     {{-- <div class="carousel-indicators">
                         <button type="button" data-bs-target="#announcement-{{$announcement->id}}" data-bs-slide-to="0"
                             class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -24,7 +24,7 @@
                         <div class="carousel-inner">
                             @foreach ($announcement->images as $image)
                                 <div class="carousel-item @if ($loop->first) active @endif">
-                                    <img src="{{$announcement->images()->first()->getUrl(400, 300)}}" class="img-fluid p-3 rounded"
+                                    <img src="{{$announcement->images()->first()->getUrl(400, 300)}}" class="img-fluid p-3 rounded d-block w-100"
                                         alt="...">
                                 </div>
                             @endforeach

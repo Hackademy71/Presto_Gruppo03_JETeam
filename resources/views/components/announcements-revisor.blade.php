@@ -6,11 +6,11 @@
             
             @if ($announcement == 'is_empty')
                 <div class="row justify-content-center">
-                    <div class="col-12  bg-success border justify-content-center  align-items-center">
+                    <div class="col-12 bgmy4 border justify-content-center align-items-center rounded ">
                         {{-- <p class="text-white">{{ $message }}</p> --}}
-                        <p class="text-white">Non ci sono annunci da revisionare!</p>
+                        <p class="text-center mt-3">Non ci sono annunci da revisionare!</p>
                     </div>
-                    <div class="col-12 d-flex justify-content-center">
+                    <div class="col-12 d-flex justify-content-center mt-2">
                         <a class="tx-color nav-link" href="{{ route('recheck') }}">Vai agli annunci che hai revisionato</a>
                     </div>
                 </div>
@@ -21,24 +21,24 @@
 
                         @if ($announcement->images()->get()->isNotEmpty())
                             <div class="row d-flex">
-                                <div id="announcement-{{ $announcement->id }}" class="carousel slide"
+                                <div id="announcement-{{ $announcement->id }}" class="carousel carousel-dark slide"
                                     data-bs-ride="true">
                                     <div class="carousel-inner">
                                         <div class="row d-flex">
                                         <div class="col-md-12">
-                        <h2 class="f-s text-center fw-bold mt-5">
+                        <h2 class="f-s text-center fw-bold mt-1">
                             {{ $announcement->name }}
                         </h2>
-                        <p class="fs-3 text-center mt-4">
+                        <p class="fs-3 text-center mt-1">
                             €{{ $announcement->price }}
                         </p>
-                        <h5 class="f-s text-center mt-4">
+                        <h5 class="f-s text-center mt-1">
                             {{ $announcement->description }}
                         </h5>
-                        <p class="fs-3 text-center mt-4">
+                        <p class="fs-3 text-center mt-1">
 
                         </p>
-                        <p class="fs-3 text-center mt-4">
+                        <p class="fs-3 text-center mt-1">
                             Aggiunto il:
                             {{ $announcement->created_at->format('d/m/Y') }}
                         </p>                                           
@@ -46,7 +46,7 @@
                                             @foreach ($announcement->images as $image)
                                             <div
                                             class="carousel-item col-lg-6 @if ($loop->first) active @endif">
-                                            <img src="{{ $image->getUrl(400, 300) }}" class=" d-block w-100"
+                                            <img src="{{ $image->getUrl(400, 300) }}" class="d-block w-100"
                                             alt="...">
                                             <div class="col-md-12">
                                                 <h5 class="mt-2 f-s fw-bold">Tags</h5>
