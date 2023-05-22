@@ -18,31 +18,31 @@
                             <div class="mb-3 text-center">
                                 <label class="form-label f-p">Nome Profilo</label>
                                 <input type="text" class="form-control" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp" name="name">
-                                @error('name')
+                                    aria-describedby="emailHelp" name="name1">
+                                @error('name1')
                                     <span class="f-s error text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="mb-3 text-center">
                                 <label for="exampleInputEmail1" class="form-label f-p">Email</label>
                                 <input type="email" class="form-control" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp" name="email">
-                                @error('email')
+                                    aria-describedby="emailHelp" name="email1">
+                                @error('email1')
                                     <span class="f-s error text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="mb-3 text-center">
                                 <label for="exampleInputPassword1" class="form-label f-p">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" name="password">
-                                @error('password')
+                                <input type="password" class="form-control" id="exampleInputPassword1" name="password1">
+                                @error('password1')
                                     <span class="f-s error text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="mb-3 text-center">
                                 <label for="exampleInputPassword1" class="form-label f-p">Conferma Password</label>
                                 <input type="password" class="form-control" id="exampleInputPassword1"
-                                    name="password_confirmation">
-                                @error('password_confirmation')
+                                    name="password_confirmation1">
+                                @error('password_confirmation1')
                                     <span class="f-s error text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
