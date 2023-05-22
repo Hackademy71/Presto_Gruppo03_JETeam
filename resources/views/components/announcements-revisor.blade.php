@@ -1,6 +1,7 @@
 {{-- Card generica --}}
+
 <div class="card-login">
-    @if (Auth::user()->is_revisor)
+
         <div class="container-fluid">
             
             @if ($announcement == 'is_empty')
@@ -141,4 +142,4 @@
             @endif
         </div>
 </div>
-@endif
+

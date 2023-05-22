@@ -69,12 +69,14 @@
             </div>
 
             {{-- Card generica --}}
+            @if (Auth::user()->is_revisor)
             <h2> Annunci da revisionare 
             <span class="btn rounded-5 fw-bold bgmy3"> {{ App\Models\Announcement::toBeRevisionedCount() }}<span
                     class="visually-hidden f-p">Unreaded messages</span> </span></h2>
 
             
             <x-announcements-revisor :announcement="$announcement"/>
+            @endif
 
 
             {{-- Fine Area Revisore --}}
