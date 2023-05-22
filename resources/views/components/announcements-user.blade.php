@@ -1,8 +1,7 @@
-<div>
     <!-- People find pleasure in different ways. I find it in keeping my mind clear. - Marcus Aurelius -->
     <div class="container-fluid">
         <div class="row">
-            @foreach ($announcements as $announcement)
+            @foreach (Auth::user()->announcements as $announcement)
                 <div class="col-sm-4 d-flex justify-content-center mt-4 align-items-center">
                     <div class="card card-border" style="width: 18rem;">
                         <img src="{{ !$announcement->images()->get()->isEmpty()? $announcement->images()->first()->getUrl(400, 300): 'https://picsum.photos/200' }}"
@@ -46,4 +45,3 @@
                 
             </div>
         </div>
-</div>

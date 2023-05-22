@@ -6,10 +6,11 @@
 
         @if (Auth::user()->is_revisor)
             <div class="container-fluid">
-                @if ($announcement == 'is_empty')
+                @if (isEmpty($announcement))
                     <div class="row justify-content-center">
                         <div class="col-12 d-flex bg-success border justify-content-center  align-items-center">
-                            <p class="text-white">{{ $message }}</p>
+                            {{-- <p class="text-white">{{ $message }}</p> --}}
+                            <p class="text-white">Non ci sono annunci da revisionare!</p>
                         </div>
                         <div class="col-12 d-flex justify-content-center">
                             <a class="tx-color nav-link" href="{{ route('recheck') }}">Vai agli annunci

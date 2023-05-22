@@ -81,6 +81,7 @@
 
             {{-- Fine Area Revisore --}}
             {{-- Inizio area annunci caricati dall'User --}}
+            <x-announcements-user/>
         </div>
 
     </div>
