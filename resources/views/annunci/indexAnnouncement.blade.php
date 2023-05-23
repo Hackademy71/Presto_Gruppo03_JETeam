@@ -30,9 +30,14 @@
                     <div class="row">
                         <div class="col-sm-12 text-center">
                             <div class="alert alert-warning" role="alert">
-                                <h1 class="f-p">Non ci sono annunci in questa sezione</h1>
+                                <h1 class="f-p">Non ci sono annunci con i termini ricercati</h1>
                             </div>
                         </div>
+                    <div class="row">
+                        <div class="col-sm-12 text-center">
+                            <a href="route('articleNew')" class="btn bgmy4"> Aggiungi il primo </a>
+                        </div>
+                    </div>
             @endforelse
         </div>
     </div>
