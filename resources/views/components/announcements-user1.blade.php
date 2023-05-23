@@ -1,6 +1,6 @@
 <div class="container-fluid">
         <div class="row">
-            @foreach (Auth::user()->announcements as $announcement)
+            @forelse (Auth::user()->announcements as $announcement)
                 <div class="col-sm-4 d-flex justify-content-center mt-4 align-items-center">
                     <div class="card card-border" style="width: 18rem;">
                         <img src="{{ !$announcement->images()->get()->isEmpty()? $announcement->images()->first()->getUrl(400, 300): 'https://picsum.photos/200' }}"
@@ -36,7 +36,13 @@
                         </div>
                     </div>
                 </div>
-            @endforeach
+            @empty
+            <div class="col-sm-12 d-flex justify-content-center mt-4 align-items-center">
+                <p class="f-s ">Non hai ancora aggiunto annunci, cosa aspetti?</p>
+                <a class="btn bgmy4 f-p" href="{{ route('articleNew') }}">Inserisci articolo</a>
+            </div>
+
+            @endforelse
         </div>
         <div class="container-fluid">
             <div class="row justify-content-center">
