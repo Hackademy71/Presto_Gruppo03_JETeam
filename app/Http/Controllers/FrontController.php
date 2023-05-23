@@ -34,7 +34,7 @@ class FrontController extends Controller
         return $announcement_to_check;
     }
     public function show(){
-        $announcement=Announcement::where('is_accepted',null)->orderBy('created_at', 'DESC')->first();
+        $announcement=Announcement::where('is_accepted',null)->orderBy('created_at', 'ASC')->first();
         if(!$announcement){
             $announcement='is_empty';
         }

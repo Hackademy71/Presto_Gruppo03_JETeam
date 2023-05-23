@@ -9,6 +9,11 @@
                             <h5 class="card-title f-p">{{ $announcement->name }}</h5>
                             <p class="card-text f-s">{{ $announcement->description }}</p>
                             <p class="card-text f-s">{{ $announcement->price }} €</p>
+                            @if(!$announcement->is_accepted)
+                            <p class="card-text lead text-danger f-s">Articolo in attesa di un revisore</p>
+                            @else
+                            <p class="card-text lead text-success f-s">Articolo approvato</p>
+                            @endif
                             <p class="card-text f-s">Aggiunto il
                                 {{ $announcement->created_at->format('d/m/Y') }}</p>
                             {{-- <a href="{{ route('categoryShow', ['category' => $announcement->category]) }}"

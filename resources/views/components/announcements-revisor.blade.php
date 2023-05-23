@@ -15,6 +15,7 @@
                     </div>
                 </div>
             @else
+            @if ($announcement->user_id!==Auth::user()->id)
                 <div class="row">
                     <div class="col-sm-12">
 
@@ -148,8 +149,17 @@
                 
                     
                 
-
-
+                @else
+                <div class="row justify-content-center">
+                    <div class="col-12 bgmy4 border justify-content-center align-items-center rounded ">
+                        {{-- <p class="text-white">{{ $message }}</p> --}}
+                        <p class="text-center mt-3">Non ci sono annunci da revisionare!</p>
+                    </div>
+                    <div class="col-12 d-flex justify-content-center mt-2">
+                        <a class="tx-color nav-link" href="{{ route('recheck') }}">Vai agli annunci che hai revisionato</a>
+                    </div>
+                </div>
+            @endif
             @endif
         </div>       
 </div>

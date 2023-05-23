@@ -28,7 +28,6 @@ Route::get('/category/{category}', [FrontController::class,'categoryShow'] )->na
 
 //Rotte per i Revisori
 
-// Route::get('/revisor/home', [RevisorController::class, 'index'])->middleware('isRevisor')->name('indexRevisor');
 Route::get('/announcement/accept/{announcement}', [RevisorController::class, 'acceptAnnouncement'])->name ('acceptAnnouncement');
 Route::get('/announcement/refuse/{announcement}', [RevisorController::class, 'refuseAnnouncement'])->name ('refuseAnnouncement');
 Route::post('/revisor/defDelete/{announcement}', [AnnouncementController::class,'destroy'])->name('defDelete');
