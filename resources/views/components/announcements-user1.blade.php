@@ -38,8 +38,8 @@
                 </div>
             @empty
             <div class="col-sm-12 d-flex justify-content-center mt-4 align-items-center">
-                <p class="f-s ">Non hai ancora aggiunto annunci, cosa aspetti?</p>
-                <a class="btn bgmy4 f-p" href="{{ route('articleNew') }}">Inserisci articolo</a>
+                <p class="f-s mt-3">Non hai ancora aggiunto annunci, cosa aspetti?</p>
+                <a class="btn bgmy4 f-p mx-3" href="{{ route('articleNew') }}">Inserisci articolo</a>
             </div>
 
             @endforelse
@@ -54,3 +54,4 @@
                 
             </div>
         </div>
+        
